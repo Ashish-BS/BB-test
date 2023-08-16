@@ -1,0 +1,30 @@
+/* declaring the css variables colors */
+//default dark color
+
+// code color for blogs
+$dark-code: #282936;
+// colors
+$black: #000000;
+$white: #ffffff;
+// font
+$worksans: 'Work Sans';
+$bebas: 'Bebas';
+$theme-grey: #c2c2c2;
+$theme-color: #02ed5e;
+$secondary-color: #0b76e0;
+$theme-yellow: #fecf39;
+$theme-green: #008878;
+$theme-blue: #48398e;
+$theme-black: #060607;
+$border-color: #d0d0d0;
+
+// breakpoints
+@mixin breakpoint-430 {
+	@media (max-width: 430px) {
+		@content;
+	}
+}
+
+// [data-theme="light"] .b-tech-thumb:not(.no-border) {
+//   border: 2px solid var(--color-background-base-00019);
+// }
