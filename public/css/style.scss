@@ -455,7 +455,6 @@
 			}
 			@include media-breakpoint-down('sm') {
 				font-size: 18px;
-				
 			}
 		}
 	}
@@ -467,10 +466,10 @@
 	margin-top: 4rem;
 	overflow: auto;
 	padding: 50px;
-	@include media-breakpoint-down('md'){
+	@include media-breakpoint-down('md') {
 		padding: 40px;
 	}
-	@include media-breakpoint-down('sm'){
+	@include media-breakpoint-down('sm') {
 		padding: 15px;
 	}
 	.b-proof-section-header {
@@ -528,7 +527,7 @@
 		color: $black;
 		font-size: 16px;
 		float: right;
-		@include media-breakpoint-down('sm'){
+		@include media-breakpoint-down('sm') {
 			font-size: 7px;
 		}
 	}
@@ -537,10 +536,10 @@
 // how we do it section styles
 .b-how-we-do-it {
 	padding: 50px;
-	@include media-breakpoint-down('md'){
+	@include media-breakpoint-down('md') {
 		padding: 40px;
 	}
-	@include media-breakpoint-down('sm'){
+	@include media-breakpoint-down('sm') {
 		padding: 15px;
 	}
 	background-color: $theme-grey;
@@ -573,7 +572,7 @@
 		}
 		.b-section-text {
 			flex: 1;
-			@include media-breakpoint-down('sm'){
+			@include media-breakpoint-down('sm') {
 				margin-top: 10px;
 			}
 			.accordion-flush {
@@ -595,10 +594,10 @@
 // what will you get section styles
 .b-what-will-you-get {
 	padding: 50px;
-	@include media-breakpoint-down('md'){
+	@include media-breakpoint-down('md') {
 		padding: 40px;
 	}
-	@include media-breakpoint-down('sm'){
+	@include media-breakpoint-down('sm') {
 		padding: 15px;
 	}
 	.b-bordered-text {
