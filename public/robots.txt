@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://bombaysoftwares.com
+
+# Sitemaps
+Sitemap: https://bombaysoftwares.com/sitemap.xml

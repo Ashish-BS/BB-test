@@ -2,10 +2,10 @@ import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import Script from 'next/script';
 
-import 'public/css/style.scss';
-import 'public/css/fonts.css';
-import 'public/css/fonts-bebas.css';
 import 'public/css/all.min.css';
+import 'public/css/fonts.css';
+import 'public/css/style.scss';
+import 'public/css/fonts-bebas.css';
 import 'public/css/animate.min.css';
 import Layout from '@/components/Layout';
 
@@ -17,7 +17,7 @@ export default function App({ Component, pageProps }: AppProps) {
 			<Head>
 				<meta charSet='utf-8' />
 				<meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no' />
-				<title>Bombay Bees</title>
+				<title>BombayBees</title>
 				{/* <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png" /> */}
 				{/* <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png" /> */}
 			</Head>

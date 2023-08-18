@@ -4,7 +4,8 @@ import React from "react";
 const Footer: React.FC = () => {
   return (
     <>
-      <footer>footer</footer>
+      <footer className="b-footer">All Copyrights Reserved &#169;
+        BombayBees</footer>
     </>
   );
 };
