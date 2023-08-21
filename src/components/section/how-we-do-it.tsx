@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import React from 'react'
-import HowWeDoIt from '../../../public/images/how-we-do-it.jpg';
+import HowWeDoItImage from '../../../public/images/how-we-do-it.svg';
 import AccordionItem from '../common/accordion-item';
-import jsonData from '../../fixtures/how-we-do-it.json'
+import howWeDoItItems from '../../fixtures/how-we-do-it.json'
 
 const HowWeDoItSection: React.FC = () => {
   return (
@@ -14,11 +14,11 @@ const HowWeDoItSection: React.FC = () => {
           </div>
           <div className="b-section-content">
             <div className='b-section-image'>
-              <Image src={HowWeDoIt.src} width={499} height={312} alt='how we do it' />
+              <Image src={HowWeDoItImage.src} width={499} height={312} alt='how we do it' />
             </div>
             <div className="b-section-text">
               <div className="accordion-flush b-accordion-flush" id='b-accordion'>
-                {jsonData.map(item => <AccordionItem buttonTitle={item.title} accordionText={item.text} key={item.id} id={item.id} />)}
+                {howWeDoItItems.map(item => <AccordionItem buttonTitle={item.title} accordionText={item.text} key={item.id} id={item.id} />)}
               </div>
             </div>
           </div>
