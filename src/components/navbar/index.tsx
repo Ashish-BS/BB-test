@@ -93,7 +93,7 @@ const Navbar = () => {
                                     className={`nav-item b-nav-item ${currentPath === "/about-us" ? "active" : ""
                                         }`}
                                 >
-                                    <Link className="nav-link b-nav-link" href="/about">
+                                    <Link className="nav-link b-nav-link" href="/about-us">
                                         About
                                     </Link>
                                 </li>
