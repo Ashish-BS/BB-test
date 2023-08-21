@@ -9,7 +9,7 @@ const Navbar = () => {
         <header className='b-header'>
             <nav className="navbar navbar-expand-lg navbar-light">
                 <div className="container">
-                    <Link className="navbar-brand b-navbar-brand" href="#"><span className='b-yellow-title'>BOMBAY</span><span className='b-black-title'>BEES</span></Link>
+                    <Link className="navbar-brand b-navbar-brand" href="/"><span className='b-yellow-title'>BOMBAY</span><span className='b-black-title'>BEES</span></Link>
                     <div
                         className="collapse navbar-collapse justify-content-center"
                         id="navbarSupportedContent"
