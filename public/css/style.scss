@@ -128,7 +128,6 @@
 	padding-bottom: 10px;
 	background-color: $white;
 	nav {
-		z-index: 999;
 		padding-top: 10px;
 		padding-bottom: 10px;
 		justify-content: space-between;
@@ -152,17 +151,12 @@
 			}
 		}
 		.b-nav-item {
-			opacity: 0.9;
 			.nav-link {
 				color: $theme-black !important;
 				font-size: $navbar-menu-items;
 				font-weight: $medium;
 			}
-			&:hover {
-				opacity: 1;
-			}
 			&.active {
-				opacity: 1;
 				&:after {
 					content: '';
 					position: relative;
