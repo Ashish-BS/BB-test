@@ -1,7 +1,7 @@
 import SocialProofSection from "@/components/section/social";
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-import { checkInnerTextIsNotNull } from "../utils/helpers";
+import { innerTextLength } from "../utils/helpers";
 
 describe('Social Proof Section', () => {
     it('renders social proof section', () => {
@@ -10,7 +10,7 @@ describe('Social Proof Section', () => {
         expect(screen.getByTestId('b-social-proof-section')).toBeInTheDocument();
 
         // check the banner container has some heading text inside
-        const length = checkInnerTextIsNotNull(container, 'h2');
+        const length = innerTextLength(container, 'h2');
         expect(length).toBeGreaterThan(0);
 
     });

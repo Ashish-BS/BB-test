@@ -1,4 +1,4 @@
-export const checkInnerTextIsNotNull = (container: HTMLElement, tagName: keyof HTMLElementTagNameMap) => {
+export const innerTextLength = (container: HTMLElement, tagName: keyof HTMLElementTagNameMap) => {
 	const headline =
 		container.getElementsByTagName(tagName) && container.getElementsByTagName(tagName).length > 0
 			? container.getElementsByTagName(tagName)[0]

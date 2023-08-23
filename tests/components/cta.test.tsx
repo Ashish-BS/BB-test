@@ -1,7 +1,7 @@
 import CallToActionSection from "@/components/section/cta";
 import '@testing-library/jest-dom';
 import { render, screen } from '@testing-library/react';
-import { checkInnerTextIsNotNull } from "../utils/helpers";
+import { innerTextLength } from "../utils/helpers";
 
 describe('Call To Action Section', () => {
     it('renders call to action section', () => {
@@ -10,7 +10,7 @@ describe('Call To Action Section', () => {
         expect(screen.getByTestId('b-call-to-action')).toBeInTheDocument();
         
         // check the banner container has some heading text inside
-        const length = checkInnerTextIsNotNull(container, 'h4');
+        const length = innerTextLength(container, 'h4');
         expect(length).toBeGreaterThan(0);
     });
 });
