@@ -32,6 +32,13 @@ with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/
 |   |   ├── └── this directory contains all the images and icons used in the application
 |   |   ├── js
 |   |   ├── └── this directory contains all the static JS used in the application
+│   ├── tests
+|   |   ├── components
+│   │   │    └── this directory contains all unit test cases for components
+│   │   │
+│   │   ├── utils
+│   │   │    └── this directory contains all helper functions for test cases
+│   │ 
 ├── src
 │   ├── components
 │   │   └── common reusable react components
