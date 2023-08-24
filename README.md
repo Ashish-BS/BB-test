@@ -28,7 +28,7 @@ with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/
 │   │          │     └── `npm run lint` will executed to verify the es-lint code standards are followed
 │   │          └── tests
 │   │          │     └── for testing we use Jest
-│   │          │     └── `npm run test` will executed to verify all the test cases must pass thay are written inside tests directory
+│   │          │     └── `npm run test` will executed to verify all the test cases must pass that are written inside tests directory
 │   │          └── build
 │   │               └── `npm run build` will executed to verify that production build is created successfully
 │   ├── public
