@@ -6,7 +6,7 @@ import CompetitiveAdvantage from '../../../public/images/competitve-advantage.jp
 
 const WhatYouWillGetSection: React.FC = () => {
     return (
-        <section className='b-what-will-you-get'>
+        <section className='b-what-will-you-get' data-testid='b-what-will-you-get'>
             <div className="container">
                 <div className="d-flex justify-content-center align-items-center flex-column">
                     <div className='b-section-header'>

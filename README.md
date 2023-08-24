@@ -20,6 +20,17 @@ with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/
 
 ```
 
+│   ├── .husky
+│   │     └── pre-commit
+│   │          └── this file contains all the pre-commit hooks that are executed automatically before commiting the code
+│   │          └── lint
+│   │          │     └── for linting we use es-lint code standards
+│   │          │     └── `npm run lint` will executed to verify the es-lint code standards are followed
+│   │          └── tests
+│   │          │     └── for unit testing we use Jest
+│   │          │     └── `npm run test` will executed to verify all the unit test cases must pass that are written inside tests directory
+│   │          └── build
+│   │               └── `npm run build` will executed to verify that production build is created successfully
 │   ├── public
 |   |   └── css
 |   |   ├── └── scss
@@ -32,6 +43,13 @@ with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/
 |   |   ├── └── this directory contains all the images and icons used in the application
 |   |   ├── js
 |   |   ├── └── this directory contains all the static JS used in the application
+│   ├── tests
+|   |   ├── components
+│   │   │    └── this directory contains all unit test cases for components
+│   │   │
+│   │   ├── utils
+│   │   │    └── this directory contains all helper functions for test cases
+│   │ 
 ├── src
 │   ├── components
 │   │   └── common reusable react components
