@@ -20,6 +20,17 @@ with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/
 
 ```
 
+│   ├── .husky
+│   │     └── pre-commit
+│   │          └── this file contains all the pre-commit hooks that are executed automatically before commiting the code
+│   │          └── lint
+│   │          │     └── for linting we use es-lint code standards
+│   │          │     └── `npm run lint` will executed to verify the es-lint code standards are followed
+│   │          └── tests
+│   │          │     └── for testing we use Jest
+│   │          │     └── `npm run test` will executed to verify all the test cases must pass thay are written inside tests directory
+│   │          └── build
+│   │               └── `npm run build` will executed to verify that production build is created successfully
 │   ├── public
 |   |   └── css
 |   |   ├── └── scss
