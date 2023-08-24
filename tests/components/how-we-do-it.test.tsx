@@ -9,7 +9,7 @@ describe('How We Do It Section', () => {
         // check if the component is rendered
 		expect(screen.getByTestId('b-how-we-do-it')).toBeInTheDocument();
 
-        // check the banner container has some heading text inside
+        // check the how we do it container has some heading text inside
         const length = innerTextLength(container, 'h2');
         expect(length).toBeGreaterThan(0);
     });

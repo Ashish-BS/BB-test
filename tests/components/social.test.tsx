@@ -9,7 +9,7 @@ describe('Social Proof Section', () => {
         // check if the component is rendered
         expect(screen.getByTestId('b-social-proof-section')).toBeInTheDocument();
 
-        // check the banner container has some heading text inside
+        // check the social proof container has some heading text inside
         const length = innerTextLength(container, 'h2');
         expect(length).toBeGreaterThan(0);
 

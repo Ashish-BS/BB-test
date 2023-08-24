@@ -9,7 +9,7 @@ describe('Call To Action Section', () => {
         // check if the component is rendered
         expect(screen.getByTestId('b-call-to-action')).toBeInTheDocument();
         
-        // check the banner container has some heading text inside
+        // check the cta container has some heading text inside
         const length = innerTextLength(container, 'h4');
         expect(length).toBeGreaterThan(0);
     });
