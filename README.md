@@ -43,6 +43,7 @@ with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/
 |   |   ├── └── this directory contains all the images and icons used in the application
 |   |   ├── js
 |   |   ├── └── this directory contains all the static JS used in the application
+│   │   │
 │   ├── tests
 |   |   ├── components
 │   │   │    └── this directory contains all unit test cases for components
@@ -50,41 +51,41 @@ with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/
 │   │   ├── utils
 │   │   │    └── this directory contains all helper functions for test cases
 │   │ 
-├── src
-│   ├── components
-│   │   └── common reusable react components
-|   ├── enums
-│   │   └── each file contains enums used in the code
-|   ├── fixtures
-|   |   └── each file contains static data used in different components
-|   ├── hooks
-|   |   └── each file contains react hooks used in different components
-│   ├── pages
-│   │   └── each file in next js is a url. [https://nextjs.org/docs/basic-features/pages]
-│   ├── services
-│   │   ├── abstract layer to communicate to rest api
-│   │   └── it has module wise folders which contains methods for each action as required
-|   ├── stores
-│   │   └── redux store is defined in this directory
-|   |   └── any other store can be defined inside this directory
-|   ├── types
-|   |   └── component-types
-|   |   ├─  └── each file in this directory contains type information used as props for each component
-|   |   └── data
-|   |   ├─  └── each file in this directory contains type information for the data used
-|   |   └── form-schema
-|   |   ├─  └── each file in this directory contains type information for the forms used
-|   |   └── page-types
-|   |   ├─  └── each file in this directory contains type information used as page-props for the pages
-|   |   └── services
-|   |   ├─  └── each file in this directory contains return type information from services
-│   ├── utils
-│   │   └── utils has common methods which can be used on any page and component
-│   ├── validation
-│   │   └── each file in this directory contains form-validation schemas used for different forms
-│   ├── constants
-│   │   └── this file contains all the constants used in the application
-│   └── README.md
+├   ├── src
+│   │   ├── components
+│   │   │   └── common reusable react components
+|   |   ├── enums
+│   │   │   └── each file contains enums used in the code
+|   |   ├── fixtures
+|   |   |   └── each file contains static data used in different components
+|   |   ├── hooks
+|   |   |   └── each file contains react hooks used in different components
+│   │   ├── pages
+│   │   │   └── each file in next js is a url. [https://nextjs.org/docs/basic-features/pages]
+│   │   ├── services
+│   │   │   ├── abstract layer to communicate to rest api
+│   │   │   └── it has module wise folders which contains methods for each action as required
+|   |   ├── stores
+│   │   │   └── redux store is defined in this directory
+|   |   |   └── any other store can be defined inside this directory
+|   |   ├── types
+|   |   |   └── component-types
+|   |   |   ├─  └── each file in this directory contains type information used as props for each component
+|   |   |   └── data
+|   |   |   ├─  └── each file in this directory contains type information for the data used
+|   |   |   └── form-schema
+|   |   |   ├─  └── each file in this directory contains type information for the forms used
+|   |   |   └── page-types
+|   |   |   ├─  └── each file in this directory contains type information used as page-props for the pages
+|   |   |   └── services
+|   |   |   ├─  └── each file in this directory contains return type information from services
+│   │   ├── utils
+│   │   │   └── utils has common methods which can be used on any page and component
+│   │   ├── validation
+│   │   │   └── each file in this directory contains form-validation schemas used for different forms
+│   │   ├── constants
+│   │   │   └── this file contains all the constants used in the application
+│   │   └── README.md
 ```
 
 ## Getting Started
