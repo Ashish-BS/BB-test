@@ -7,7 +7,7 @@ const WhatYouWillGetSection: React.FC = () => {
         <section className='b-what-will-you-get' data-testid='b-what-will-you-get'>
             <div className="container">
                 <div className="d-flex justify-content-center align-items-center flex-column">
-                    <div className='b-section-header'>
+                    <div className='b-what-will-you-get-section-header'>
                         <h2 className='b-section-header'>What will you <span className='b-section-header b-bordered-text me-2'>get</span>?</h2>
                     </div>
                     {whatWillYouGetItems?.length ? whatWillYouGetItems.map(item => (

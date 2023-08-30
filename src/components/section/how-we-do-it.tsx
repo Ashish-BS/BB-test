@@ -9,7 +9,7 @@ const HowWeDoItSection: React.FC = () => {
     <section className='b-how-we-do-it' data-testid='b-how-we-do-it'>
       <div className="container">
         <div className="d-flex justify-content-center align-items-center flex-column">
-          <div className='b-section-header'>
+          <div className='b-how-we-do-it-section-header'>
             <h2 className='b-section-header'>How we <span className='b-section-header b-bordered-text me-2'>do</span>it?</h2>
           </div>
           <div className="b-section-content">

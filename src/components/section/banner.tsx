@@ -1,6 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
-import BannerArea from '../../../public/images/banner-area.jpg';
+import slyStrategistImage from '../../../public/images/sly-strategist.svg';
+import jungleJesterImage from '../../../public/images/jungle-jester.svg';
+import roaringManagerImage from '../../../public/images/roaring-manager.svg';
+import stubbornAccountantImage from '../../../public/images/stubborn-accountant.svg';
+import loyalAssistantImage from '../../../public/images/loyal-assistant.svg';
+import gallopGuruImage from '../../../public/images/gallop-guru.svg';
 import Bubbles from '../common/bubbles';
 
 const BannerSection: React.FC = () => {
@@ -17,7 +22,12 @@ const BannerSection: React.FC = () => {
             </div>
             <div className="b-banner-image-section">
                 <div className='b-banner-image'>
-                    <Image src={BannerArea.src} width={1523} height={718} alt='banner-area' />
+                    <Image src={slyStrategistImage} width={455} height={340} alt='sly-strategist' priority />
+                    <Image src={jungleJesterImage} width={455} height={340} alt='jungle-jester' priority />
+                    <Image src={roaringManagerImage} width={455} height={340} alt='roaring-manager' priority />
+                    <Image src={stubbornAccountantImage} width={455} height={340} alt='stubborn-accountant' priority />
+                    <Image src={loyalAssistantImage} width={455} height={340} alt='loyal-assistant' priority />
+                    <Image src={gallopGuruImage} width={455} height={340} alt='gallop-guru' priority />
                 </div>
                 <div className='b-image-caption'>
                     <div className='container'>
