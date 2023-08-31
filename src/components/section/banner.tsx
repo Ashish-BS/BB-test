@@ -22,21 +22,45 @@ const BannerSection: React.FC = () => {
                 <Bubbles />
             </div>
             <div className="b-banner-image-section">
-                <div className='b-banner-images'>
-                    <Image src={slyStrategistImage} width={455} height={240} alt='sly-strategist' priority className='b-banner-image' />
-                    <Image src={jungleJesterImage} width={455} height={240} alt='jungle-jester' priority className='b-banner-image' />
-                    <Image src={roaringManagerImage} width={455} height={240} alt='roaring-manager' priority className='b-banner-image' />
-                    <Image src={stubbornAccountantImage} width={455} height={240} alt='stubborn-accountant' priority className='b-banner-image' />
-                    <Image src={loyalAssistantImage} width={455} height={240} alt='loyal-assistant' priority className='b-banner-image' />
-                    <Image src={gallopGuruImage} width={455} height={240} alt='gallop-guru' priority className='b-banner-image' />
-                </div>
-                <div className='b-callout-container'>
-                    <Callout title='Sly Strategist' />
-                    <Callout title='Jungle Jester' />
-                    <Callout title='Roaring Manager' />
-                    <Callout title='Stubborn Accountant' />
-                    <Callout title='Loyal Assistant' />
-                    <Callout title='Gallop Guru' />
+                <div className="container-fluid p-0">
+                    <div className='b-banner-images'>
+                        <div className='b-banner-group'>
+                            <div className="b-callout-container">
+                                <Callout title='Sly Strategist' />
+                            </div>
+                            <Image src={slyStrategistImage} width={455} height={440} alt='sly-strategist' priority className='b-banner-image' />
+                        </div>
+                        <div className='b-banner-group'>
+                            <div className="b-callout-container">
+                                <Callout title='Jungle Jester' />
+                            </div>
+                            <Image src={jungleJesterImage} width={455} height={440} alt='jungle-jester' priority className='b-banner-image' />
+                        </div>
+                        <div className='b-banner-group'>
+                            <div className="b-callout-container">
+                                <Callout title='Roaring Manager' />
+                            </div>
+                            <Image src={roaringManagerImage} width={455} height={440} alt='roaring-manager' priority className='b-banner-image' />
+                        </div>
+                        <div className='b-banner-group'>
+                            <div className="b-callout-container">
+                                <Callout title='Stubborn Accountant' />
+                            </div>
+                            <Image src={stubbornAccountantImage} width={455} height={440} alt='stubborn-accountant' priority className='b-banner-image' />
+                        </div>
+                        <div className="b-banner-group">
+                            <div className="b-callout-container">
+                                <Callout title='Loyal Assistant' />
+                            </div>
+                            <Image src={loyalAssistantImage} width={455} height={440} alt='loyal-assistant' priority className='b-banner-image' />
+                        </div>
+                        <div className="b-banner-group">
+                            <div className="b-callout-container">
+                                <Callout title='Gallop Guru' />
+                            </div>
+                            <Image src={gallopGuruImage} width={455} height={440} alt='gallop-guru' priority className='b-banner-image' />
+                        </div>
+                    </div>
                 </div>
                 <div className='b-image-caption'>
                     <div className='container'>
