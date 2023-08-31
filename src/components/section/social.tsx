@@ -1,6 +1,5 @@
 import React from 'react'
-import ChartImage from '../../../public/images/chart.svg';
-import Image from 'next/image';
+import { SocialProofChart } from '../common/socail-proof-chart';
 
 const SocialProofSection: React.FC = () => {
     return (
@@ -15,7 +14,7 @@ const SocialProofSection: React.FC = () => {
                         <p>Check out Bombaybees remarkable social stats and the impact we've made!</p>
                     </div>
                     <div className='b-section-chart'>
-                        <Image src={ChartImage.src} width={1110} height={609} alt='stats-chart' />
+                        <SocialProofChart />
                     </div>
                 </div>
                 <div className='b-section-caption'>
