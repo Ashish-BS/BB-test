@@ -6,6 +6,7 @@ import roaringManagerImage from '../../../public/images/roaring-manager.svg';
 import stubbornAccountantImage from '../../../public/images/stubborn-accountant.svg';
 import loyalAssistantImage from '../../../public/images/loyal-assistant.svg';
 import gallopGuruImage from '../../../public/images/gallop-guru.svg';
+import BannerImage from '../../../public/images/banner-area.svg';
 import Bubbles from '../common/bubbles';
 
 const BannerSection: React.FC = () => {
@@ -22,13 +23,16 @@ const BannerSection: React.FC = () => {
             </div>
             <div className="b-banner-image-section">
                 <div className='b-banner-image'>
-                    <Image src={slyStrategistImage} width={455} height={340} alt='sly-strategist' priority />
+                    {/* <Image src={slyStrategistImage} width={455} height={340} alt='sly-strategist' priority />
                     <Image src={jungleJesterImage} width={455} height={340} alt='jungle-jester' priority />
                     <Image src={roaringManagerImage} width={455} height={340} alt='roaring-manager' priority />
                     <Image src={stubbornAccountantImage} width={455} height={340} alt='stubborn-accountant' priority />
                     <Image src={loyalAssistantImage} width={455} height={340} alt='loyal-assistant' priority />
-                    <Image src={gallopGuruImage} width={455} height={340} alt='gallop-guru' priority />
+                    <Image src={gallopGuruImage} width={455} height={340} alt='gallop-guru' priority /> */}
+
+                    <Image src={BannerImage} width={555} height={540} alt='gallop-guru' priority />
                 </div>
+
                 <div className='b-image-caption'>
                     <div className='container'>
                         <p>
