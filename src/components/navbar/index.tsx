@@ -33,7 +33,7 @@ const Navbar:React.FC = () => {
                         </ul>
                     </div>
                     <div className="b-header-right">
-                        <Link href="/contact-us" className="btn b-contact-btn">
+                        <Link href="/contact-us" className="btn b-contact-btn b-fill-btn-hover">
                             Let's talk
                         </Link>
                         <button

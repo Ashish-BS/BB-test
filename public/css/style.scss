@@ -18,20 +18,16 @@
 
 .b-section-header {
 	font-family: $bebas;
-	font-size: 70px;
+	font-size: 3rem;
 	line-height: 63px;
-	margin-block: 50px;
+	margin-block: 30px;
 
-	@include media-breakpoint-down('lg') {
-		font-size: 60px;
-		margin-block: 40px;
-	}
 	@include media-breakpoint-down('md') {
-		font-size: 50px;
-		margin-block: 30px;
+		font-size: 2.5rem;
 	}
 	@include media-breakpoint-down('sm') {
-		font-size: 40px;
+		font-size: 2rem;
+		margin-block: 5px;
 	}
 }
 
@@ -56,31 +52,27 @@
 		}
 	}
 	.b-accordion-button {
-		font-size: 24px;
+		font-size: 1.1rem;
 		font-weight: $semibold;
-		@include media-breakpoint-down('sm') {
-			font-size: 18px;
+		padding: 0.5rem 0.8rem;
+		@include media-breakpoint-down('md') {
+			font-size: 1rem;
 		}
 	}
 	.accordion-button {
 		padding-inline: 0;
 		color: $theme-black;
 		&:after {
-			width: 45px;
-			height: 45px;
-			background-size: 45px;
+			width: 35px;
+			height: 35px;
+			background-size: 35px;
 			background-image: url('../images/expand-icon.svg');
 			@include media-breakpoint-down('lg') {
-				width: 40px;
-				height: 40px;
-				background-size: 40px;
-			}
-			@include media-breakpoint-down('md') {
 				width: 30px;
 				height: 30px;
 				background-size: 30px;
 			}
-			@include media-breakpoint-down('sm') {
+			@include media-breakpoint-down('md') {
 				width: 20px;
 				height: 20px;
 				background-size: 20px;
@@ -93,15 +85,25 @@
 		}
 	}
 	.b-accordion-body {
-		font-size: 18px;
+		font-size: 1rem;
 		font-weight: $regular;
-		line-height: 27px;
+		line-height: 1.2rem;
 		padding-inline: 0;
-		@include media-breakpoint-down('sm') {
-			font-size: 16px;
-			line-height: 24px;
+		padding-block: 0.5rem;
+		@include media-breakpoint-down('md') {
+			font-size: 0.9rem;
+			line-height: 1.1rem;
 			padding-block: 0.5rem;
 		}
+	}
+}
+
+.b-fill-btn-hover {
+	transition: 0.3s;
+	&:hover {
+		background: $theme-black;
+		color: white;
+		outline-color: $theme-black;
 	}
 }
 
@@ -116,6 +118,61 @@
 	}
 }
 
+// callout-styles
+.b-callout-container {
+	position: absolute;
+	top: 10%;
+	.b-callout {
+		img {
+			width: 260px !important;
+		}
+		position: relative;
+		overflow: hidden;
+		.b-callout-title {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -85%);
+			font-size: 1rem;
+			font-weight: $regular;
+		}
+		&:nth-child(2) {
+			position: absolute;
+			left: 100%;
+			top: 15%;
+			img{
+				transform: scaleX(-1);
+			}
+		}
+		&:nth-child(3) {
+			position: absolute;
+			left: 670px;
+			top: 0;
+		}
+		&:nth-child(4) {
+			position: absolute;
+			left: 970px;
+			top: 0;
+			img{
+				transform: scaleX(-1);
+			}
+		}
+		&:nth-child(5) {
+			position: absolute;
+			left: 1370px;
+			top: 0;
+		}
+		&:nth-child(6) {
+			position: absolute;
+			left: 1650px;
+			top: 0;
+			img{
+				transform: scaleX(-1);
+			}
+		}
+	}
+}
+
 // navbar styles
 .b-header {
 	position: sticky;
@@ -124,18 +181,15 @@
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
-	padding-top: 10px;
-	padding-bottom: 10px;
 	background-color: $white;
 	nav {
-		z-index: 999;
 		padding-top: 10px;
 		padding-bottom: 10px;
 		justify-content: space-between;
 
 		.b-navbar-brand {
 			font-family: $bebas;
-			font-size: 40px;
+			font-size: 2.5rem;
 			font-weight: $regular;
 
 			img {
@@ -145,24 +199,21 @@
 			}
 
 			@include media-breakpoint-down('md') {
-				font-size: 35px;
+				font-size: 1.5rem;
 			}
 			@include media-breakpoint-down('sm') {
-				font-size: 30px;
+				font-size: 1rem;
 			}
 		}
 		.b-nav-item {
-			opacity: 0.9;
 			.nav-link {
 				color: $theme-black !important;
-				font-size: $navbar-menu-items;
+				font-size: 1.2rem;
 				font-weight: $medium;
+				transition: 0.3s;
 			}
+			&.active,
 			&:hover {
-				opacity: 1;
-			}
-			&.active {
-				opacity: 1;
 				&:after {
 					content: '';
 					position: relative;
@@ -174,6 +225,7 @@
 					left: 50%;
 					right: 50%;
 					top: -8px;
+
 					@include media-breakpoint-down('lg') {
 						display: none;
 					}
@@ -187,7 +239,6 @@
 			.b-contact-btn {
 				border-radius: 30px;
 				border-color: $theme-yellow;
-				color: $theme-black;
 				font-size: $navbar-menu-items;
 				font-weight: $medium;
 				padding-inline: 25px;
@@ -246,7 +297,7 @@
 				}
 				li {
 					a {
-						font-size: 30px;
+						font-size: 1.5rem;
 						font-weight: $semibold;
 						text-align: center;
 					}
@@ -254,7 +305,7 @@
 
 				.b-contact-btn {
 					margin-top: 30px;
-					font-size: 22px;
+					font-size: 1rem;
 					border-radius: 60px;
 					background-color: $white;
 					padding: 1rem 2rem;
@@ -267,14 +318,11 @@
 
 // Banner section styles
 .b-banner-section {
-	margin-top: 100px;
+	margin-top: 2.5rem;
 	font-family: $bebas;
 	text-align: center;
 	@include media-breakpoint-down('md') {
-		margin-top: 50px;
-	}
-	@include media-breakpoint-down('sm') {
-		margin-top: 10px;
+		margin-top: 0;
 	}
 	.b-banner-heading {
 		text-transform: uppercase;
@@ -283,12 +331,15 @@
 			img {
 				z-index: -1;
 				position: absolute;
+				opacity: 0;
+				animation: fade-in-out 3s ease-in-out infinite;
 				// light red dot
 				&:first-child {
 					bottom: 20px;
 					left: 150px;
 					width: 24px !important;
 					height: 24px !important;
+					animation-delay: 5s;
 
 					@include media-breakpoint-down('md') {
 						left: 10px;
@@ -305,6 +356,7 @@
 					left: 200px;
 					width: 40px !important;
 					height: 40px !important;
+					animation-delay: 4s;
 					@include media-breakpoint-down('lg') {
 						left: 20px;
 						top: -80px;
@@ -328,6 +380,7 @@
 					right: 150px;
 					width: 21px !important;
 					height: 21px !important;
+					animation-delay: 3s;
 					@include media-breakpoint-down('lg') {
 						right: 80px;
 					}
@@ -348,6 +401,7 @@
 					right: 200px;
 					width: 34px !important;
 					height: 34px !important;
+					animation-delay: 2s;
 					@include media-breakpoint-down('lg') {
 						right: 120px;
 					}
@@ -361,17 +415,18 @@
 				}
 				// red dot
 				&:nth-child(5) {
-					bottom: 200px;
-					right: 200px;
-					width: 74px !important;
-					height: 74px !important;
+					bottom: 120px;
+					right: 300px;
+					width: 64px !important;
+					height: 64px !important;
+					animation-delay: 5s;
 					@include media-breakpoint-down('lg') {
 						top: 0;
 						right: 20px;
 						width: 50px !important;
 						height: 50px !important;
 					}
-					
+
 					@include media-breakpoint-down('sm') {
 						top: 0;
 						right: 20px;
@@ -385,6 +440,7 @@
 					left: -5px;
 					width: 74px !important;
 					height: 74px !important;
+					animation-delay: 2s;
 					@include media-breakpoint-down('md') {
 						top: 50px;
 						left: -10px;
@@ -400,6 +456,7 @@
 					left: 340px;
 					width: 40px !important;
 					height: 40px !important;
+					animation-delay: 4s;
 					@include media-breakpoint-down('lg') {
 						bottom: 40px;
 						left: 40px;
@@ -418,88 +475,63 @@
 		}
 		h1 {
 			font-family: $bebas;
-			font-size: 70px;
+			font-size: 3.5rem;
 			font-weight: $regular;
-			line-height: 110px;
+			line-height: 5rem;
 			text-align: center;
 			@include media-breakpoint-down('lg') {
-				font-size: 55px;
-				line-height: 80px;
+				font-size: 2.5rem;
+				line-height: 4rem;
 			}
 			@include media-breakpoint-down('md') {
-				font-size: 40px;
-				line-height: 55px;
+				font-size: 2rem;
+				line-height: 3rem;
 			}
-		}
-		.b-tagline {
-			position: relative;
-			span {
-				font-family: $bebas;
-				font-size: 70px;
-				font-weight: $regular;
-				line-height: 110px;
-
-				@include media-breakpoint-down('lg') {
-					font-size: 55px;
-					line-height: 80px;
-				}
-				@include media-breakpoint-down('md') {
-					font-size: 40px;
-					line-height: 55px;
-				}
-				&:first-child {
-					-webkit-text-wrap: nowrap;
-					text-wrap: nowrap;
-					@include media-breakpoint-down('md') {
-						display: block;
-						-webkit-text-wrap: wrap;
-						text-wrap: wrap;
-					}
-				}
-				&.b-bordered-text {
-					position: relative;
-					&:after {
-						position: absolute;
-						content: '';
-						background-image: url('../images//paper-plane.svg');
-						background-size: cover;
-						width: 68px;
-						height: 68px;
-						top: -45px;
-						right: -30px;
-						@include media-breakpoint-down('lg') {
-							width: 52px;
-							height: 52px;
-							top: -35px;
-							right: -22px;
-						}
+			&.b-tagline {
+				span {
+					font-family: $bebas;
+					font-weight: $regular;
+					&:first-child {
 						@include media-breakpoint-down('md') {
-							width: 42px;
-							height: 42px;
-						}
-						@include media-breakpoint-down('sm') {
-							width: 32px;
-							height: 32px;
-							top: -20px;
-							right: -10px;
+							display: block;
 						}
 					}
-					color: $theme-yellow;
-					margin-inline: 10px;
-					border-color: $theme-black;
-					-webkit-text-wrap: nowrap;
-					text-wrap: nowrap;
-
-					@include media-breakpoint-down('lg') {
-						font-size: 55px;
-					}
-					@include media-breakpoint-down('md') {
-						font-size: 40px;
-						line-height: 55px;
+					&.b-bordered-text {
+						position: relative;
+						&:after {
+							position: absolute;
+							content: '';
+							background-image: url('../images//paper-plane.svg');
+							background-size: cover;
+							width: 68px;
+							height: 68px;
+							top: -45px;
+							right: -30px;
+							@include media-breakpoint-down('lg') {
+								width: 52px;
+								height: 52px;
+								top: -35px;
+								right: -22px;
+							}
+							@include media-breakpoint-down('md') {
+								width: 42px;
+								height: 42px;
+							}
+							@include media-breakpoint-down('sm') {
+								width: 32px;
+								height: 32px;
+								top: -20px;
+								right: -10px;
+							}
+						}
+						color: $theme-yellow;
+						margin-inline: 10px;
+						border-color: $theme-black;
 					}
 				}
 			}
 		}
+
 		.b-paper-plane-image {
 			position: absolute;
 			top: -40px;
@@ -512,32 +544,58 @@
 			}
 		}
 	}
-
+	// TODO: Fix banner image
 	.b-banner-image-section {
 		margin-top: 2rem;
-		img {
-			width: 100% !important;
-			height: auto !important;
-			margin-bottom: 1.5rem;
+		position: relative;
+		.b-banner-images {
+			position: relative;
+			border-bottom: 10px solid $gray-color;
+			height: 58vh;
+			overflow: hidden;
+			.b-banner-image {
+				position: absolute;
+				bottom: 0;
+				height: 70% !important;
+				max-height: 100% !important;
+				width: auto !important;
+				max-width: 100% !important;
+				@include media-breakpoint-down('sm') {
+					width: 120px !important;
+				}
+				&:first-child {
+					left: 0;
+				}
+				&:nth-child(2) {
+					left: 17%;
+				}
+				&:nth-child(3) {
+					left: 37%;
+				}
+				&:nth-child(4) {
+					left: 54%;
+					z-index: -1;
+				}
+				&:nth-child(5) {
+					right: 15%;
+				}
+				&:nth-child(6) {
+					right: 0;
+				}
+			}
 		}
 	}
 	.b-image-caption {
 		p {
 			text-align: center;
-			font-size: 28px;
+			font-size: 1.3rem;
 			font-weight: $regular;
-			line-height: 52px;
+			line-height: 2rem;
 			color: $theme-black;
-			@include media-breakpoint-down('lg') {
-				font-size: 25px;
-				line-height: 40px;
-			}
+
 			@include media-breakpoint-down('md') {
-				font-size: 20px;
-				line-height: 28px;
-			}
-			@include media-breakpoint-down('sm') {
-				font-size: 18px;
+				font-size: 1rem;
+				line-height: 1.4rem;
 			}
 		}
 	}
@@ -546,14 +604,10 @@
 // social-proof section styles
 .b-social-proof-section {
 	background: $theme-yellow-gradient;
-	margin-top: 4rem;
+	margin-top: 3rem;
 	overflow: auto;
-	padding: 50px;
-	@include media-breakpoint-down('md') {
-		padding: 40px;
-	}
 	@include media-breakpoint-down('sm') {
-		padding: 15px;
+		margin-top: 2rem;
 	}
 	.b-proof-section-header {
 		h2,
@@ -574,19 +628,17 @@
 		h3,
 		p {
 			color: $black;
-			font-size: 25px;
+			font-size: 1.4rem;
 			font-weight: $regular;
-			line-height: 37px;
+			line-height: 2rem;
 			text-align: center;
-			@include media-breakpoint-down('lg') {
-				font-size: 22px;
-			}
 			@include media-breakpoint-down('md') {
-				font-size: 20px;
+				font-size: 1.2rem;
+				line-height: 1.5rem;
 			}
 			@include media-breakpoint-down('sm') {
-				font-size: 16px;
-				line-height: 22px;
+				font-size: 1rem;
+				line-height: 1.2rem;
 			}
 		}
 		h3 {
@@ -599,7 +651,6 @@
 		border: 10px solid $white;
 		height: 90%;
 		margin-bottom: 20px;
-		margin-top: 30px;
 		img {
 			width: 100% !important;
 			height: 100% !important;
@@ -608,22 +659,19 @@
 	}
 	.b-section-caption {
 		color: $black;
-		font-size: 16px;
+		font-size: 1rem;
 		float: right;
 		@include media-breakpoint-down('sm') {
-			font-size: 7px;
+			font-size: 0.6rem;
 		}
 	}
 }
 
 // how we do it section styles
 .b-how-we-do-it {
-	padding: 50px;
-	@include media-breakpoint-down('md') {
-		padding: 40px;
-	}
+	padding: 30px 0;
 	@include media-breakpoint-down('sm') {
-		padding: 15px;
+		padding: 20px 0;
 	}
 	background-color: $theme-grey;
 	.b-bordered-text {
@@ -633,16 +681,20 @@
 	.b-section-content {
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 		width: 100%;
 		@include media-breakpoint-down('md') {
 			flex-direction: column;
+			align-items: stretch;
 		}
 		.b-section-image {
 			width: 100%;
 			flex: 1;
 			align-self: center;
+			display: flex;
+			justify-content: center;
 			img {
-				width: 499px !important;
+				width: 420px !important;
 				height: 312px !important;
 				@include media-breakpoint-down('lg') {
 					width: 300px !important;
@@ -656,7 +708,7 @@
 		}
 		.b-section-text {
 			flex: 1;
-			@include media-breakpoint-down('sm') {
+			@include media-breakpoint-down('md') {
 				margin-top: 20px;
 			}
 			.accordion-flush {
@@ -677,12 +729,9 @@
 
 // what will you get section styles
 .b-what-will-you-get {
-	padding: 50px;
-	@include media-breakpoint-down('md') {
-		padding: 40px;
-	}
+	padding: 20px 0;
 	@include media-breakpoint-down('sm') {
-		padding: 15px;
+		padding: 10px 0;
 	}
 	.b-bordered-text {
 		color: $theme-yellow;
@@ -707,13 +756,17 @@
 			}
 		}
 		& + :nth-child(n + 2) {
-			margin-top: 5rem;
+			@include media-breakpoint-down('sm') {
+				margin-top: 1.5rem;
+			}
 		}
 		.b-section-image {
 			flex: 1;
+			display: flex;
+			justify-content: center;
 			img {
-				width: 500px !important;
-				height: 365px !important;
+				width: 400px !important;
+				height: 325px !important;
 				@include media-breakpoint-down('md') {
 					width: 100% !important;
 					height: auto !important;
@@ -724,36 +777,28 @@
 			flex: 1;
 			.b-header-text {
 				h3 {
-					font-size: 30px;
+					font-size: 1.5rem;
 					font-weight: $semibold;
-					text-transform: uppercase;
 					color: $theme-yellow;
-					@include media-breakpoint-down('lg') {
-						font-size: 25px;
-					}
 					@include media-breakpoint-down('md') {
-						font-size: 22px;
+						font-size: 1.3rem;
 						text-align: center;
 						margin-top: 25px;
+					}
+					@include media-breakpoint-down('sm') {
+						margin-top: 15px;
 					}
 				}
 			}
 			.b-description {
 				p {
-					font-size: 25px;
-					line-height: 35px;
+					font-size: 1.2rem;
+					line-height: 1.5rem;
 					color: $theme-black;
-					@include media-breakpoint-down('lg') {
-						font-size: 22px;
-						line-height: 30px;
-					}
 					@include media-breakpoint-down('md') {
-						font-size: 18px;
-						line-height: 25px;
+						font-size: 0.95rem;
+						line-height: 1.1rem;
 						text-align: center;
-					}
-					@include media-breakpoint-down('sm') {
-						font-size: 16px;
 					}
 				}
 			}
@@ -764,20 +809,17 @@
 // call to action section styles
 .b-call-to-action {
 	background: $theme-yellow-gradient;
-	padding: 8rem;
-	@include media-breakpoint-down('md') {
-		padding: 5rem;
-	}
+	padding: 5rem 0;
 	@include media-breakpoint-down('sm') {
-		padding: 3rem 1rem;
+		padding: 2.5rem 0;
 	}
 	h4 {
 		color: $black;
 		text-align: center;
-		font-size: 30px;
+		font-size: 1.5rem;
 		font-weight: $semibold;
 		@include media-breakpoint-down('md') {
-			font-size: 25px;
+			font-size: 1.3rem;
 			line-height: 31px;
 		}
 	}
@@ -798,5 +840,15 @@
 		@include media-breakpoint-down('sm') {
 			margin-top: 0.8rem;
 		}
+	}
+}
+
+@keyframes fade-in-out {
+	0%,
+	100% {
+		opacity: 0;
+	}
+	50% {
+		opacity: 1;
 	}
 }

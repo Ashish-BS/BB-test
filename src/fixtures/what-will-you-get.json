@@ -1,28 +1,28 @@
 [
 	{
 		"id": 1,
-		"title": "Increase in sales and revenue",
+		"title": "Increase in Sales and Revenue",
 		"description": "The ability to attract more customers and increase sales by reaching the right people at the right time.",
 		"imageUrl": "../../../images/sales.svg",
 		"imageAlt": "increase-in-sales-and-revenue"
 	},
 	{
 		"id": 2,
-		"title": "Better customer management",
+		"title": "Better Customer Management",
 		"description": "The ability to understand and engage with customers better, resulting in increased customer loyalty and retention.",
 		"imageUrl": "../../../images/customer-management.svg",
 		"imageAlt": "better-customer-management"
 	},
 	{
 		"id": 3,
-		"title": "Cost savings",
+		"title": "Cost Savings",
 		"description": "The ability to save time and money by automating repetitive tasks and making data-driven decisions.",
 		"imageUrl": "../../../images/cost-saving.svg",
 		"imageAlt": "cost-savings"
 	},
 	{
 		"id": 4,
-		"title": "Competitive advantage",
+		"title": "Competitive Advantage",
 		"description": "The ability to stay ahead of the competition by using the latest technology and industry best practices.",
 		"imageUrl": "../../../images/competitve-advantage.svg",
 		"imageAlt": "competitive-advantage"
