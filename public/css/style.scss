@@ -448,7 +448,9 @@
 			border-bottom: 10px solid $gray-color;
 			display: flex;
 			justify-content: space-between;
-
+			@include media-breakpoint-down('md') {
+				display: none;
+			}
 			.b-banner-group {
 				height: 100%;
 				.b-banner-image {
@@ -498,6 +500,17 @@
 							transform: scaleX(-1);
 						}
 					}
+				}
+			}
+		}
+		.b-banner-static-image {
+			display: none;
+			@include media-breakpoint-down('md') {
+				display: block;
+				margin-top: 15%;
+				img{
+					max-width: 100% !important;
+					height: auto !important;
 				}
 			}
 		}

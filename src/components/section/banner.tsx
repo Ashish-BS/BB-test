@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import bannerCharactersData from '../../fixtures/banner-characters.json';
+import BannerImage from '../../../public/images/banner-area.jpg';
 import Bubbles from '../common/bubbles';
 import Callout from '../common/callout';
 
@@ -26,6 +27,9 @@ const BannerSection: React.FC = () => {
                                 <Image src={character.imageUrl} width={455} height={440} alt={character.imageAlt} priority className='b-banner-image' />
                             </div>
                         ))}
+                    </div>
+                    <div className='b-banner-static-image'>
+                        <Image src={BannerImage.src} width={1200} height={440} alt='banner-image' />
                     </div>
                 </div>
                 <div className='b-image-caption'>
