@@ -4,7 +4,7 @@ import whatWillYouGetItems from '../../fixtures/what-will-you-get.json'
 
 const WhatYouWillGetSection: React.FC = () => {
     return (
-        <section className='b-what-will-you-get' data-testid='b-what-will-you-get'>
+        <section className='b-what-will-you-get b-section' data-testid='b-what-will-you-get'>
             <div className="container">
                 <div className="d-flex justify-content-center align-items-center flex-column">
                     <div className='b-what-will-you-get-section-header'>

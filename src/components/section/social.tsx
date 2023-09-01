@@ -3,7 +3,7 @@ import { SocialProofChart } from '../common/socail-proof-chart';
 
 const SocialProofSection: React.FC = () => {
     return (
-        <section className='b-social-proof-section' data-testid='b-social-proof-section'>
+        <section className='b-social-proof-section b-section' data-testid='b-social-proof-section'>
             <div className="container">
                 <div className="d-flex flex-column align-items-center justify-content-center">
                     <div className="b-proof-section-header">
