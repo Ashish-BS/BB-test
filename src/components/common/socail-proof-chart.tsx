@@ -5,6 +5,8 @@ import ChartDataLabels from "chartjs-plugin-datalabels";
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ChartDataLabels);
 
+
+
 const options: ChartOptions<'bar'> = {
     responsive: true,
     plugins: {
@@ -14,7 +16,7 @@ const options: ChartOptions<'bar'> = {
         },
         title: {
             display: false
-        }
+        },
     }
 
 };
@@ -33,10 +35,17 @@ const data: ChartData<'bar'> = {
             backgroundColor: '#165BAA',
             datalabels: {
                 display: true,
-                color: "white",
+                color: "#165BAA",
                 formatter: Math.round,
                 align: 'top',
-                anchor: 'center'
+                anchor: 'end',
+                font: (context) => {
+                    const canvasWidth = context.chart.canvas.width;
+                    if (canvasWidth <= 676) {
+                        return { size: 8 };
+                    }
+                    return { size: 12 };
+                }
             },
             barPercentage: 0.5,
         },
@@ -46,10 +55,17 @@ const data: ChartData<'bar'> = {
             backgroundColor: '#FA7E1E',
             datalabels: {
                 display: true,
-                color: "white",
+                color: "#FA7E1E",
                 formatter: Math.round,
                 align: 'top',
-                anchor: 'center'
+                anchor: 'end',
+                font: (context) => {
+                    const canvasWidth = context.chart.canvas.width;
+                    if (canvasWidth <= 676) {
+                        return { size: 8 };
+                    }
+                    return { size: 12 };
+                }
             },
             barPercentage: 0.5
         },
