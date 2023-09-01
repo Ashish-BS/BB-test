@@ -15,13 +15,21 @@
 		background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='4' ry='4' stroke='black' stroke-width='3' stroke-dasharray='7%2c 9' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
 	}
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h5 {
+	margin: 0;
+	padding: 0;
+}
 
 .b-section-header {
 	font-family: $bebas;
 	font-size: 3rem;
 	line-height: 63px;
-	margin-block: 30px;
-
+	margin-bottom: 20px;
 	@include media-breakpoint-down('md') {
 		font-size: 2.5rem;
 	}
@@ -29,6 +37,10 @@
 		font-size: 2rem;
 		margin-block: 5px;
 	}
+}
+
+.b-section {
+	padding: 50px 0;
 }
 
 .b-accordion-flush {
@@ -151,6 +163,7 @@
 			}
 		}
 		.b-nav-item {
+			position: relative;
 			.nav-link {
 				color: $theme-black !important;
 				font-size: 1.2rem;
@@ -161,16 +174,14 @@
 			&:hover {
 				&:after {
 					content: '';
-					position: relative;
+					position: absolute;
 					display: block;
 					width: 8px;
 					height: 8px;
 					background-color: $theme-yellow;
 					border-radius: 50%;
 					left: 50%;
-					right: 50%;
-					top: -8px;
-
+					transform: translate(-50%, -50%);
 					@include media-breakpoint-down('lg') {
 						display: none;
 					}
@@ -263,11 +274,10 @@
 
 // Banner section styles
 .b-banner-section {
-	margin-top: 2.5rem;
 	font-family: $bebas;
 	text-align: center;
-	@include media-breakpoint-down('md') {
-		margin-top: 0;
+	@include media-breakpoint-down('sm'){
+		padding-bottom: 0;
 	}
 	.b-bubble-background {
 		position: absolute;
@@ -287,6 +297,9 @@
 				animation-delay: 5s;
 				left: 9%;
 				bottom: 16%;
+				@include media-breakpoint-down('sm'){
+					left: 0;
+				}
 			}
 			// blue dot
 			&:nth-child(2) {
@@ -311,6 +324,9 @@
 				@include media-breakpoint-down('md') {
 					right: 5%;
 					bottom: 23%;
+				}
+				@include media-breakpoint-down('sm'){
+					right: 0;
 				}
 			}
 			// purple dot
@@ -363,6 +379,10 @@
 					width: 25px !important;
 					height: 25px !important;
 					bottom: 0%;
+				}
+				@include media-breakpoint-down('sm') {
+					left: 2%;
+					bottom: -16%;
 				}
 			}
 		}
@@ -445,7 +465,7 @@
 		margin-top: 2rem;
 		position: relative;
 		.b-banner-images {
-			border-bottom: 10px solid $gray-color;
+			border-bottom: 5px solid $gray-color;
 			display: flex;
 			justify-content: space-between;
 			@include media-breakpoint-down('md') {
@@ -508,7 +528,7 @@
 			@include media-breakpoint-down('md') {
 				display: block;
 				margin-top: 15%;
-				img{
+				img {
 					max-width: 100% !important;
 					height: auto !important;
 				}
@@ -520,12 +540,10 @@
 			text-align: center;
 			font-size: 1.3rem;
 			font-weight: $regular;
-			line-height: 2rem;
 			color: $theme-black;
 
 			@include media-breakpoint-down('md') {
 				font-size: 1rem;
-				line-height: 1.4rem;
 			}
 		}
 	}
@@ -534,7 +552,6 @@
 // social-proof section styles
 .b-social-proof-section {
 	background: $theme-yellow-gradient;
-	margin-top: 3rem;
 	overflow: auto;
 	@include media-breakpoint-down('sm') {
 		margin-top: 2rem;
@@ -560,15 +577,12 @@
 			color: $black;
 			font-size: 1.4rem;
 			font-weight: $regular;
-			line-height: 2rem;
 			text-align: center;
 			@include media-breakpoint-down('md') {
 				font-size: 1.2rem;
-				line-height: 1.5rem;
 			}
 			@include media-breakpoint-down('sm') {
 				font-size: 1rem;
-				line-height: 1.2rem;
 			}
 		}
 		h3 {
@@ -601,10 +615,6 @@
 
 // how we do it section styles
 .b-how-we-do-it {
-	padding: 30px 0;
-	@include media-breakpoint-down('sm') {
-		padding: 20px 0;
-	}
 	background-color: $theme-grey;
 	.b-bordered-text {
 		color: $theme-yellow;
@@ -661,10 +671,6 @@
 
 // what will you get section styles
 .b-what-will-you-get {
-	padding: 20px 0;
-	@include media-breakpoint-down('sm') {
-		padding: 10px 0;
-	}
 	.b-bordered-text {
 		color: $theme-yellow;
 		border-color: $black;
@@ -673,9 +679,6 @@
 		display: flex;
 		width: 100%;
 		align-items: center;
-		@include media-breakpoint-down('md') {
-			flex-direction: column-reverse;
-		}
 		&:nth-child(odd) {
 			flex-direction: row-reverse;
 			@include media-breakpoint-down('md') {

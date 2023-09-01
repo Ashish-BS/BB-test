@@ -7,7 +7,7 @@ import Callout from '../common/callout';
 
 const BannerSection: React.FC = () => {
     return (
-        <section className='b-banner-section' data-testid='b-banner-section'>
+        <section className='b-banner-section b-section' data-testid='b-banner-section'>
             <div className='b-banner-heading'>
                 <div className='container'>
                     <h1 className='b-tagline'>

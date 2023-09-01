@@ -6,7 +6,7 @@ import howWeDoItItems from '../../fixtures/how-we-do-it.json'
 
 const HowWeDoItSection: React.FC = () => {
   return (
-    <section className='b-how-we-do-it' data-testid='b-how-we-do-it'>
+    <section className='b-how-we-do-it b-section' data-testid='b-how-we-do-it'>
       <div className="container">
         <div className="d-flex justify-content-center align-items-center flex-column">
           <div className='b-how-we-do-it-section-header'>
