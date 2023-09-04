@@ -9,7 +9,7 @@ const AccordionItem: React.FC<AccordionItemPropType> = ({ buttonTitle, accordion
                     {buttonTitle}
                 </button>
             </h2>
-            <div id={`panelsStayOpen-${id}`} className="accordion-collapse collapse" data-bs-parent="#b-accordion">
+            <div id={`panelsStayOpen-${id}`} className="accordion-collapse collapse">
                 <div className="accordion-body b-accordion-body" dangerouslySetInnerHTML={{ __html: accordionText }} />
             </div>
         </div>

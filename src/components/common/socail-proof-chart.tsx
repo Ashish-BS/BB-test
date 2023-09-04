@@ -13,6 +13,9 @@ const options: ChartOptions<'bar'> = {
         legend: {
             display: true,
             position: 'top',
+            labels: {
+                font: (() => ({ size: 12  }))
+            }
         },
         title: {
             display: false
