@@ -12,7 +12,7 @@ const Navbar:React.FC = () => {
         <header className='b-header'>
             <nav className="navbar navbar-expand-lg navbar-light">
                 <div className="container">
-                    <Link className="navbar-brand b-navbar-brand" href="/"><Image src={Logo.src} width={170} height={30} alt='BombayBees logo' /></Link>
+                    <Link className="navbar-brand b-navbar-brand" href="/"><Image src={Logo.src} width={170} height={50} alt='BombayBees logo' /></Link>
                     <div
                         className="collapse navbar-collapse justify-content-center"
                         id="navbarSupportedContent"
