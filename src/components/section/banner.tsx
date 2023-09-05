@@ -1,9 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
-import bannerCharactersData from '../../fixtures/banner-characters.json';
 import BannerImage from '../../../public/images/banner-area.png';
 import Bubbles from '../common/bubbles';
-import Callout from '../common/callout';
 
 const BannerSection: React.FC = () => {
     return (
