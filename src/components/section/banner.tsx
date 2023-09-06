@@ -25,17 +25,10 @@ const BannerSection: React.FC = () => {
                                 <Image src={character.imageUrl} width={455} height={440} alt={character.imageAlt} priority className='b-banner-image' />
                             </div>
                         ))} */}
-                        <Image src={BannerImage.src} width={1200} height={440} alt='banner-image' />
+                        <Image src={BannerImage.src} width={1200} height={590} alt='banner-image' />
                     </div>
                     <div className='b-banner-static-image'>
                         <Image src={BannerImage.src} width={1200} height={440} alt='banner-image' />
-                    </div>
-                </div>
-                <div className='b-image-caption'>
-                    <div className='container'>
-                        <p>
-                            Our digital marketing solution will increase your online visibility and drive more traffic to your website, delivering measurable results and a higher ROI.
-                        </p>
                     </div>
                 </div>
             </div>

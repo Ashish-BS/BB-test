@@ -115,7 +115,7 @@ h5 {
 	&:hover {
 		background: $theme-black;
 		color: white;
-		outline-color: $theme-black;
+		border: none;
 	}
 }
 
@@ -164,11 +164,15 @@ h5 {
 		}
 		.b-nav-item {
 			position: relative;
+			@include media-breakpoint-up('lg') {
+				margin-right: 30px;
+			}
 			.nav-link {
 				color: $theme-black !important;
-				font-size: 1.2rem;
+				font-size: 1rem;
 				font-weight: $medium;
 				transition: 0.3s;
+				padding: 0;
 			}
 			&.active,
 			&:hover {
@@ -276,8 +280,8 @@ h5 {
 .b-banner-section {
 	font-family: $bebas;
 	text-align: center;
-	@include media-breakpoint-down('sm'){
-		padding-bottom: 0;
+	@include media-breakpoint-down('sm') {
+		padding: 0;
 	}
 	.b-bubble-background {
 		position: absolute;
@@ -297,7 +301,7 @@ h5 {
 				animation-delay: 5s;
 				left: 9%;
 				bottom: 16%;
-				@include media-breakpoint-down('sm'){
+				@include media-breakpoint-down('sm') {
 					left: 0;
 				}
 			}
@@ -325,7 +329,7 @@ h5 {
 					right: 5%;
 					bottom: 23%;
 				}
-				@include media-breakpoint-down('sm'){
+				@include media-breakpoint-down('sm') {
 					right: 0;
 				}
 			}
@@ -465,12 +469,11 @@ h5 {
 		margin-top: 2rem;
 		position: relative;
 		.b-banner-images {
-			border-bottom: 5px solid $gray-color;
 			display: flex;
 			justify-content: center;
-			img{
+			img {
 				width: 100%;
-				height: 550px;
+				height: 620px;
 			}
 			@include media-breakpoint-down('md') {
 				display: none;
@@ -557,12 +560,16 @@ h5 {
 .b-social-proof-section {
 	background: $theme-yellow-gradient;
 	overflow: auto;
+	.b-flex-container{
+		@include media-breakpoint-up('sm'){
+			padding: 50px 0;
+		}
+	}
 	.b-proof-section-header {
 		h2,
 		span {
 			color: $white;
 			text-align: center;
-			margin-bottom: 20px;
 		}
 		span {
 			color: $black;
@@ -589,6 +596,10 @@ h5 {
 		}
 		h3 {
 			font-weight: $medium;
+			margin-bottom: 20px;
+			@include media-breakpoint-down('md'){
+				margin-bottom: 10px;
+			}
 		}
 	}
 	.b-section-chart {
@@ -606,7 +617,7 @@ h5 {
 	}
 	.b-section-caption {
 		color: $black;
-		font-size: 1rem;
+		font-size: 0.8rem;
 		float: right;
 		@include media-breakpoint-down('sm') {
 			font-size: 0.6rem;

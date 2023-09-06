@@ -14,7 +14,13 @@ const options: ChartOptions<'bar'> = {
             display: true,
             position: 'top',
             labels: {
-                font: (() => ({ size: 12  }))
+                font: (context) => {
+                    const canvasWidth = context.chart.canvas.width;
+                    if (canvasWidth <= 1000) {
+                        return { size: 8 };
+                    }
+                    return { size: 12 };
+                }
             }
         },
         title: {
@@ -44,7 +50,7 @@ const data: ChartData<'bar'> = {
                 anchor: 'end',
                 font: (context) => {
                     const canvasWidth = context.chart.canvas.width;
-                    if (canvasWidth <= 676) {
+                    if (canvasWidth <= 1000) {
                         return { size: 8 };
                     }
                     return { size: 12 };
@@ -64,7 +70,7 @@ const data: ChartData<'bar'> = {
                 anchor: 'end',
                 font: (context) => {
                     const canvasWidth = context.chart.canvas.width;
-                    if (canvasWidth <= 676) {
+                    if (canvasWidth <= 1000) {
                         return { size: 8 };
                     }
                     return { size: 12 };
