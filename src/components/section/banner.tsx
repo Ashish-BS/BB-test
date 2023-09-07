@@ -27,9 +27,9 @@ const BannerSection: React.FC = () => {
                         ))} */}
                         <Image src={BannerImage.src} width={1200} height={590} alt='banner-image' />
                     </div>
-                    <div className='b-banner-static-image'>
+                    {/* <div className='b-banner-static-image'>
                         <Image src={BannerImage.src} width={1200} height={440} alt='banner-image' />
-                    </div>
+                    </div> */}
                 </div>
             </div>
             <Bubbles />
