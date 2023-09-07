@@ -1,5 +1,6 @@
-import CallToActionSection from '@/components/section/cta'
 import React from 'react'
+import CallToActionSection from '@/components/section/cta'
+import whatHappensNextData from '@/fixtures/what-happens-next.json'
 
 const ContactUs: React.FC = () => {
     return (
@@ -160,10 +161,9 @@ const ContactUs: React.FC = () => {
                                 </div>
                                 <div className="b-instructions">
                                     <ul>
-                                        <li>We'll initiate communication through your preferred mode of communication to understand project requirements and scope.</li>
-                                        <li>We sign an NDA (Non-Disclosure Agreement) and SLA (Service Level Agreement) to ensure safety and define scope of project.</li>
-                                        <li>We will share a project proposal with you.</li>
-                                        <li>We initiate project development and delivery once we receive your approval.</li>
+                                        {whatHappensNextData.map(item => (
+                                            <li key={item.id}>{item.description}</li>
+                                        ))}
                                     </ul>
                                     <div className="b-policy-container">
                                         <p>This site is protected by reCAPTCHA and the google<b>&nbsp;Privacy Policy&nbsp;</b>and <b>&nbsp;Terms of Service Policy&nbsp;</b>apply.</p>
