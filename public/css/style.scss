@@ -114,11 +114,19 @@ h5 {
 }
 
 .b-fill-btn-hover {
+	transition: 0.3s !important;
+	&:hover {
+		background: $theme-black !important;
+		color: white !important;
+		border: none !important;
+	}
+}
+.b-btn-border-hover {
 	transition: 0.3s;
 	&:hover {
 		background: $theme-black;
 		color: white;
-		border: none;
+		border: 1px solid $theme-black !important;
 	}
 }
 
@@ -771,7 +779,8 @@ h5 {
 			line-height: 31px;
 		}
 	}
-	button {
+	a {
+		text-decoration: none;
 		margin-top: 2rem;
 		padding-inline: 30px;
 		padding-block: 10px;
@@ -798,5 +807,208 @@ h5 {
 	}
 	50% {
 		opacity: 1;
+	}
+}
+
+// contact-us page
+.b-contact-us-section {
+	padding: 50px 0 0 0;
+	.b-section-heading {
+		margin-bottom: 50px;
+	}
+	.b-tagline {
+		text-align: center;
+		span {
+			font-family: 'Bebas';
+			font-size: 3.5rem;
+			font-weight: 400;
+			line-height: 5rem;
+			text-align: center;
+		}
+		.b-bordered-text {
+			color: $theme-yellow;
+			margin-left: 5px;
+		}
+	}
+	.b-form-container {
+		padding: 0 20px;
+		label,
+		input,
+		h1,
+		h2 {
+			color: $theme-black;
+		}
+		.b-section-header {
+			margin-bottom: 0;
+		}
+		.b-bold-label {
+			font-weight: $bold;
+		}
+		.b-form-body {
+			padding: 25px 0;
+			input {
+				padding: 10px;
+				border-radius: 6px;
+				border: 1px solid #ccc;
+				margin-top: 5px;
+			}
+			input[type='checkbox'],
+			input[type='radio'] {
+				padding: 0;
+				margin: 0;
+			}
+			input[type='checkbox'] {
+				position: relative;
+				-webkit-appearance: none;
+				appearance: none;
+				background: $theme-grey;
+				width: 15px;
+				height: 15px;
+				cursor: pointer;
+				border-radius: 4px;
+				&::before {
+					content: '';
+					position: absolute;
+					top: 55%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					width: 100%;
+					height: 100%;
+					pointer-events: none;
+					background-image: url("data:image/svg+xml;utf8, <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='white' class='bi bi-check2' viewBox='0 0 16 16'><path d='M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z'/></svg> ");
+					background-size: contain;
+					background-repeat: no-repeat;
+					display: none;
+				}
+				&:checked {
+					&::before {
+						display: block;
+					}
+					background: linear-gradient(64deg, #02ed5e -5.22%, #0b76e0 87.65%);
+					color: white;
+					&::before {
+						accent-color: linear-gradient(64deg, #02ed5e -5.22%, #0b76e0 87.65%);
+					}
+				}
+			}
+			input[type='radio'] {
+				display: none;
+				padding: 5px;
+				cursor: pointer;
+				& + ::before {
+					content: '';
+					display: inline-block;
+					vertical-align: middle;
+					width: 15px;
+					height: 15px;
+					margin-right: 0.3rem;
+					border-radius: 50%;
+					border-style: solid;
+					border-width: 0.1rem;
+					border-color: gray;
+					cursor: pointer;
+				}
+				&:checked {
+					& + ::before {
+						border: 1px solid #02ed5e;
+						background: radial-gradient(#02ed5e 0%, #02ed5e 40%, transparent 50%, transparent);
+					}
+				}
+			}
+			.b-group {
+				label {
+					font-weight: $bold;
+				}
+			}
+
+			.b-checkbox-section,
+			.b-timeline-section,
+			.b-hear-about-us-section,
+			.b-communication-section {
+				padding: 20px 0;
+				div {
+					display: flex;
+					align-items: center;
+					gap: 0.2rem;
+					&:nth-child(n + 2) {
+						padding-top: 10px;
+					}
+				}
+			}
+			.b-information-section {
+				padding: 20px 0;
+			}
+			.b-hear-about-us-section {
+				select {
+					width: 100%;
+					padding: 10px;
+					border-radius: 6px;
+					border: 1px solid #d0d0d0;
+					&:focus,
+					&:hover {
+						cursor: pointer;
+					}
+				}
+			}
+			.b-submit-btn {
+				padding: 20px 0;
+				button {
+					border: none;
+					background: $theme-yellow-gradient;
+					box-shadow: none;
+					padding-inline: 30px;
+					padding-block: 10px;
+					border-radius: 30px;
+					font-weight: $medium;
+					color: #000;
+				}
+			}
+		}
+		.b-instruction-section {
+			background: $theme-grey;
+			padding: 50px;
+			.b-instructions {
+				ul {
+					padding: 0;
+				}
+				li {
+					list-style: none;
+					font-weight: $medium;
+					position: relative;
+					margin-left: 25px;
+					margin-top: 20px;
+					&::before {
+						content: '';
+						position: absolute;
+						background: url('../images/arrow-circle-right.svg');
+						width: 25px;
+						height: 25px;
+						top: 0;
+						left: -26px;
+						background-size: 25px;
+					}
+				}
+				.b-policy-container {
+					padding: 20px;
+					background: #fff;
+					border-radius: 20px;
+					p {
+						margin: 0;
+						text-align: center;
+					}
+				}
+			}
+		}
+		input[type='text'],
+		select {
+			outline: none;
+			box-shadow: none;
+			&.form-select {
+				background-image: url("data:image/svg+xml,<svg width='23' height='13' viewBox='0 0 23 13' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M11.3438 12.3751C11.0801 12.3751 10.8161 12.2743 10.6147 12.0729L0.302221 1.76041C-0.10074 1.35745 -0.10074 0.704924 0.302221 0.302221C0.705182 -0.100482 1.3577 -0.10074 1.76041 0.302221L11.3438 9.88563L20.9272 0.302221C21.3302 -0.10074 21.9827 -0.10074 22.3854 0.302221C22.7881 0.705182 22.7884 1.3577 22.3854 1.76041L12.0729 12.0729C11.8716 12.2743 11.6076 12.3751 11.3438 12.3751Z' fill='gray'/></svg>");
+			}
+			&:focus {
+				border: 1px solid $theme-black !important;
+			}
+		}
 	}
 }

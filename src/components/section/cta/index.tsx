@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const CallToActionSection: React.FC = () => {
@@ -6,7 +7,7 @@ const CallToActionSection: React.FC = () => {
             <div className='container-fluid'>
                 <div className="d-flex justify-content-center align-items-center flex-column">
                     <h4>Know about our winning organic marketing strategy.</h4>
-                    <button className='b-cta-button b-fill-btn-hover'>Let's talk</button>
+                    <Link href={'/contact-us'} className='b-cta-button b-fill-btn-hover'>Let's talk</Link>
                 </div>
             </div>
         </section>
