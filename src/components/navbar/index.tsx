@@ -1,9 +1,7 @@
 import React from 'react'
-import Image from 'next/image';
 import Link from 'next/link'
 import { useRouter } from 'next/router';
 import navbarItems from '../../fixtures/navbar.json';
-import Logo from '../../../public/images/logo.svg'
 
 const Navbar:React.FC = () => {
     const router = useRouter();
@@ -11,8 +9,8 @@ const Navbar:React.FC = () => {
     return (
         <header className='b-header'>
             <nav className="navbar navbar-expand-lg navbar-light">
-                <div className="container">
-                    <Link className="navbar-brand b-navbar-brand" href="/"><Image src={Logo.src} width={170} height={50} alt='BombayBees logo' /></Link>
+                <div className="container justify-content-end">
+                    {/* <Link className="navbar-brand b-navbar-brand" href="/"><Image src={Logo.src} width={170} height={50} alt='BombayBees logo' /></Link> */}
                     {/* <div
                         className="collapse navbar-collapse justify-content-center"
                         id="navbarSupportedContent"
@@ -33,7 +31,7 @@ const Navbar:React.FC = () => {
                         </ul>
                     </div> */}
                     <div className="b-header-right">
-                        <Link href="/contact-us" className="btn b-contact-btn b-fill-btn-hover">
+                        <Link href="/contact-us" className="btn b-contact-btn b-btn-border-hover">
                             Let's talk
                         </Link>
                         <button

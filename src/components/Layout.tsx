@@ -13,7 +13,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <>
       <Header>
         <Toaster position="bottom-center" />
-        {/* <Navbar /> */}
+        <Navbar />
         {children}
       </Header>
       <Footer />
