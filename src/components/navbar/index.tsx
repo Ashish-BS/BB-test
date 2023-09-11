@@ -1,21 +1,19 @@
 import React from 'react'
 import Link from 'next/link'
-import { useRouter } from 'next/router';
-import navbarItems from '../../fixtures/navbar.json';
+import Logo from '../../../public/images/logo.svg'
+import Image from 'next/image';
 
-const Navbar:React.FC = () => {
-    const router = useRouter();
-    const currentPath = router.pathname;
+const Navbar: React.FC = () => {
     return (
         <header className='b-header'>
             <nav className="navbar navbar-expand-lg navbar-light">
                 <div className="container justify-content-end">
-                    {/* <Link className="navbar-brand b-navbar-brand" href="/"><Image src={Logo.src} width={170} height={50} alt='BombayBees logo' /></Link> */}
-                    {/* <div
+                    <Link className="navbar-brand b-navbar-brand" href="/"><Image src={Logo.src} width={170} height={50} alt='BombayBees logo' /></Link>
+                    <div
                         className="collapse navbar-collapse justify-content-center"
                         id="navbarSupportedContent"
                     >
-                        <ul className="navbar-nav">
+                        {/* <ul className="navbar-nav">
                             {navbarItems?.length ? navbarItems.map(item => (
                                 <li
                                     key={item.id}
@@ -28,8 +26,8 @@ const Navbar:React.FC = () => {
                                 </li>
 
                             )) : null}
-                        </ul>
-                    </div> */}
+                        </ul> */}
+                    </div>
                     <div className="b-header-right">
                         <Link href="/contact-us" className="btn b-contact-btn b-btn-border-hover">
                             Let's talk
@@ -61,7 +59,7 @@ const Navbar:React.FC = () => {
                             />
                         </div>
                         <div className='offcanvas-body'>
-                            <ul className="navbar-nav">
+                            {/* <ul className="navbar-nav">
                                 {navbarItems?.length ? navbarItems.map(item => (
                                     <li
                                         key={item.id}
@@ -74,7 +72,7 @@ const Navbar:React.FC = () => {
                                     </li>
 
                                 )) : null}
-                            </ul>
+                            </ul> */}
 
                             <Link href="/contact-us" data-bs-dismiss="offcanvas" className="btn b-contact-btn">
                                 Let's talk

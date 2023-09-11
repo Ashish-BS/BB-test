@@ -10,7 +10,7 @@ const SocialProofSection: React.FC = () => {
                         <h2 className='b-section-header'>Social <span className='b-section-header b-bordered-text'>Proof</span></h2>
                     </div>
                     <div className='b-section-description'>
-                        <h3>Numbers don't lie!</h3>
+                        <p>Numbers don't lie!</p>
                         <p>Check out Bombaybees remarkable social stats and the impact we've made!</p>
                     </div>
                     <div className='b-section-chart'>

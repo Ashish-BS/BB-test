@@ -6,6 +6,10 @@ import config from '@/constants';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ChartDataLabels);
 
+// temporarily data is hardcodeded
+const labels = ['Facebook', 'Instagram', 'YouTube'];
+const reach = [config.SOCIAL_MEDIA_STATS.FACEBOOK.REACH, config.SOCIAL_MEDIA_STATS.INSTAGRAM.REACH, config.SOCIAL_MEDIA_STATS.YOUTUBE.REACH]
+const followers = [config.SOCIAL_MEDIA_STATS.FACEBOOK.FOLLOWERS, config.SOCIAL_MEDIA_STATS.INSTAGRAM.FOLLOWERS, config.SOCIAL_MEDIA_STATS.YOUTUBE.FOLLOWERS]
 
 
 const options: ChartOptions<'bar'> = {
@@ -13,7 +17,10 @@ const options: ChartOptions<'bar'> = {
     scales: {
         y: {
             grid: {
-                color: 'white'
+                color: 'white',
+            },
+            ticks: {
+                stepSize: 30000,
             },
         },
         x: {
@@ -42,10 +49,6 @@ const options: ChartOptions<'bar'> = {
     },
 };
 
-// temporarily data is hardcodeded
-const labels = ['Facebook', 'Instagram', 'YouTube'];
-const reach = [config.SOCIAL_MEDIA_STATS.FACEBOOK.REACH, config.SOCIAL_MEDIA_STATS.INSTAGRAM.REACH, config.SOCIAL_MEDIA_STATS.YOUTUBE.REACH]
-const followers = [config.SOCIAL_MEDIA_STATS.FACEBOOK.FOLLOWERS, config.SOCIAL_MEDIA_STATS.INSTAGRAM.FOLLOWERS, config.SOCIAL_MEDIA_STATS.YOUTUBE.FOLLOWERS]
 
 const data: ChartData<'bar'> = {
     labels,
@@ -57,7 +60,7 @@ const data: ChartData<'bar'> = {
             datalabels: {
                 display: true,
                 color: "#165BAA",
-                formatter: Math.round,
+                formatter: (value => (value / 1000) + "K"),
                 align: 'top',
                 anchor: 'end',
                 font: (context) => {
