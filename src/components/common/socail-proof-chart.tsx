@@ -1,101 +1,85 @@
 import React from 'react';
-import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ChartData, ChartOptions } from 'chart.js';
-import { Bar } from 'react-chartjs-2';
+import { Chart as ChartJS, CategoryScale, ChartData, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, ChartOptions } from 'chart.js';
+import {  Line } from 'react-chartjs-2';
 import ChartDataLabels from "chartjs-plugin-datalabels";
-import config from '@/constants';
 
-ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend, ChartDataLabels);
-
+ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend,
+    ChartDataLabels
+);
 // temporarily data is hardcodeded
-const labels = ['Facebook', 'Instagram', 'YouTube'];
-const reach = [config.SOCIAL_MEDIA_STATS.FACEBOOK.REACH, config.SOCIAL_MEDIA_STATS.INSTAGRAM.REACH, config.SOCIAL_MEDIA_STATS.YOUTUBE.REACH]
-const followers = [config.SOCIAL_MEDIA_STATS.FACEBOOK.FOLLOWERS, config.SOCIAL_MEDIA_STATS.INSTAGRAM.FOLLOWERS, config.SOCIAL_MEDIA_STATS.YOUTUBE.FOLLOWERS]
+const labels = ['Facebook', 'Instagram', 'YouTube']
+
+const reachPercent = [58.02, 371.77, 759.63]
+const followerPercent = [8.47, 267.88, 67.32]
 
 
-const options: ChartOptions<'bar'> = {
+export const options: ChartOptions<'line'> = {
     responsive: true,
     scales: {
         y: {
-            grid: {
-                color: 'white',
-            },
+            max: 1000,
             ticks: {
-                stepSize: 30000,
-            },
+                stepSize: 250
+            }
         },
         x: {
+            bounds: 'data',
             grid: {
-                color: 'white'
-            }
-        }
+                display: false
+            },
+            offset: true
+        },
+
     },
     plugins: {
         legend: {
-            display: true,
-            position: 'top',
-            labels: {
-                font: (context) => {
-                    const canvasWidth = context.chart.canvas.width;
-                    if (canvasWidth <= 1000) {
-                        return { size: 8 };
-                    }
-                    return { size: 12 };
-                }
-            }
+            position: 'top' as const,
         },
         title: {
-            display: false
+            display: false,
         },
     },
 };
 
-
-const data: ChartData<'bar'> = {
+const data: ChartData<'line'> = {
     labels,
     datasets: [
         {
-            label: 'Reach',
-            data: labels.map((_, index) => reach[index]),
-            backgroundColor: '#165BAA',
+            label: 'Reach %',
+            data: labels.map((label, index) => (reachPercent[index])),
+            borderColor: 'blue',
+            backgroundColor: 'blue',
+            tension: 0.2,
             datalabels: {
                 display: true,
-                color: "#165BAA",
-                formatter: (value => (value / 1000) + "K"),
+                color: "blue",
                 align: 'top',
                 anchor: 'end',
-                font: (context) => {
-                    const canvasWidth = context.chart.canvas.width;
-                    if (canvasWidth <= 1000) {
-                        return { size: 8 };
-                    }
-                    return { size: 12 };
-                },
-            },
-            barPercentage: 0.5,
+            }
         },
         {
-            label: 'Followers',
-            data: labels.map((_, index) => followers[index]),
-            backgroundColor: '#FA7E1E',
+            label: 'Followers %',
+            data: labels.map((label, index) => (followerPercent[index])),
+            borderColor: 'red',
+            backgroundColor: 'red',
+            tension: 0.2,
             datalabels: {
                 display: true,
-                color: "#FA7E1E",
-                formatter: Math.round,
+                color: "red",
                 align: 'top',
                 anchor: 'end',
-                font: (context) => {
-                    const canvasWidth = context.chart.canvas.width;
-                    if (canvasWidth <= 1000) {
-                        return { size: 8 };
-                    }
-                    return { size: 12 };
-                }
-            },
-            barPercentage: 0.5
-        },
-    ],
+            }
+        }
+    ]
 };
 
 export function SocialProofChart() {
-    return <Bar options={options} data={data} />;
+    return <Line options={options} data={data} />;
 }
