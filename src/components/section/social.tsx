@@ -16,9 +16,9 @@ const SocialProofSection: React.FC = () => {
                     <div className='b-section-chart'>
                         <SocialProofChart />
                     </div>
-                </div>
-                <div className='b-section-caption'>
-                    <p>*For YouTube, consider reach as views and followers as subscribers.</p>
+                    <div className='b-section-caption'>
+                        <p>*For YouTube, consider reach as views and followers as subscribers.</p>
+                    </div>
                 </div>
             </div>
         </section>
