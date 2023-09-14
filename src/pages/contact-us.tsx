@@ -1,5 +1,4 @@
 import React from 'react'
-import CallToActionSection from '@/components/section/cta'
 import whatHappensNextData from '@/fixtures/what-happens-next.json'
 
 const ContactUs: React.FC = () => {
@@ -49,32 +48,20 @@ const ContactUs: React.FC = () => {
                                                 <label htmlFor="desiredServices" className='b-bold-label'>Desired Services&nbsp;<span className='text-danger'>*</span></label>
                                             </div>
                                             <div className="col-lg-4">
-                                                <input type="checkbox" id="mobileAppDevelopment" name='mobileAppDevelopment' value={'mobileAppDevelopment'} />
-                                                <label htmlFor="mobileAppDevelopment">Mobile App Development</label>
+                                                <input type="checkbox" id="websiteDevelopment" name='websiteDevelopment' value={'websiteDevelopment'} />
+                                                <label htmlFor="websiteDevelopment">Website Development</label>
                                             </div>
                                             <div className="col-lg-4">
-                                                <input type="checkbox" id="webDevelopment" name='webDevelopment' value={'webDevelopment'} />
-                                                <label htmlFor="webDevelopment">Web Development</label>
+                                                <input type="checkbox" id="seo" name='seo' value={'seo'} />
+                                                <label htmlFor="seo">SEO</label>
                                             </div>
                                             <div className="col-lg-4">
-                                                <input type="checkbox" id="prototypeDevelopment" name='prototypeDevelopment' value={'prototypeDevelopment'} />
-                                                <label htmlFor="prototypeDevelopment">Prototype/MVP Development</label>
+                                                <input type="checkbox" id="searchEngineMarketing" name='searchEngineMarketing' value={'searchEngineMarketing'} />
+                                                <label htmlFor="searchEngineMarketing">Search Engine Marketing</label>
                                             </div>
                                             <div className="col-lg-4">
-                                                <input type="checkbox" id="cloudInfrastructureSolution" name='cloudInfrastructureSolution' value={'cloudInfrastructureSolution'} />
-                                                <label htmlFor="cloudInfrastructureSolution">Cloud Infrastructure Solution</label>
-                                            </div>
-                                            <div className="col-lg-4">
-                                                <input type="checkbox" id="websiteMaintenance" name='websiteMaintenance' value={'websiteMaintenance'} />
-                                                <label htmlFor="websiteMaintenance">Website Maintenance</label>
-                                            </div>
-                                            <div className="col-lg-4">
-                                                <input type="checkbox" id="socialMediaManagement" name='socialMediaManagement' value={'socialMediaManagement'} />
-                                                <label htmlFor="socialMediaManagement">Social Media Management</label>
-                                            </div>
-                                            <div className="col-lg-8">
-                                                <input type="checkbox" id="digitalMarketing" name='digitalMarketing' value={'digitalMarketing'} />
-                                                <label htmlFor="digitalMarketing">Digital Marketing (Social Media, Content Writing, SEO, Branding)</label>
+                                                <input type="checkbox" id="socialMediaMarketing" name='socialMediaMarketing' value={'socialMediaMarketing'} />
+                                                <label htmlFor="socialMediaMarketing">Social Media Marketing</label>
                                             </div>
                                             <div className="col-lg-4">
                                                 <input type="checkbox" id="others" name='others' value={'others'} />
@@ -174,9 +161,6 @@ const ContactUs: React.FC = () => {
                     </div>
                 </div>
             </section >
-            <div className="b-cta-container">
-                <CallToActionSection />
-            </div>
         </>
     )
 }
