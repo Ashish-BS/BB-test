@@ -18,6 +18,15 @@ export default function App({ Component, pageProps }: AppProps) {
 				<meta charSet='utf-8' />
 				<meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no' />
 				<title>BombayBees</title>
+				{pageProps && pageProps.metaTitle ?
+					<meta name='title' content={pageProps.metaTitle} />
+					: null}
+				{pageProps && pageProps.metaDescription ?
+					<meta name='description' content={pageProps.metaDescription} />
+					: null}
+				{pageProps && pageProps.metaKeywords ?
+					<meta name='keywords' content={pageProps.metaKeywords} />
+					: null}
 				{/* <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png" /> */}
 				{/* <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png" /> */}
 			</Head>

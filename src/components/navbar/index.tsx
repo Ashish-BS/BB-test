@@ -7,7 +7,7 @@ const Navbar: React.FC = () => {
     return (
         <header className='b-header'>
             <nav className="navbar navbar-expand-lg navbar-light">
-                <div className="container justify-content-end">
+                <div className="container justify-content-between">
                     <Link className="navbar-brand b-navbar-brand" href="/"><Image src={Logo.src} width={170} height={50} alt='BombayBees logo' /></Link>
                     <div
                         className="collapse navbar-collapse justify-content-center"
@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
                         <Link href="/contact-us" className="btn b-contact-btn b-btn-border-hover">
                             Let's talk
                         </Link>
-                        <button
+                        {/* <button
                             className="navbar-toggler"
                             type="button"
                             data-bs-toggle="offcanvas"
@@ -42,9 +42,9 @@ const Navbar: React.FC = () => {
                             <span className="icon-bar" />
                             <span className="icon-bar" />
                             <span className="icon-bar" />
-                        </button>
+                        </button> */}
                     </div>
-                    <div
+                    {/* <div
                         className="offcanvas offcanvas-end b-offcanvas-menu"
                         tabIndex={-1}
                         id="navbarOffcanvas"
@@ -59,7 +59,7 @@ const Navbar: React.FC = () => {
                             />
                         </div>
                         <div className='offcanvas-body'>
-                            {/* <ul className="navbar-nav">
+                            <ul className="navbar-nav">
                                 {navbarItems?.length ? navbarItems.map(item => (
                                     <li
                                         key={item.id}
@@ -72,14 +72,14 @@ const Navbar: React.FC = () => {
                                     </li>
 
                                 )) : null}
-                            </ul> */}
+                            </ul>
 
                             <Link href="/contact-us" data-bs-dismiss="offcanvas" className="btn b-contact-btn">
                                 Let's talk
                             </Link>
                         </div>
 
-                    </div>
+                    </div> */}
                 </div>
             </nav>
         </header>
