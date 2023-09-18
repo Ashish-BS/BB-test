@@ -19,6 +19,20 @@ const config = {
 			}
 		}
 	},
+	SOCIAL_MEDIA_STATS: {
+		FACEBOOK: {
+			REACH: 34420,
+			FOLLOWERS: 3886
+		},
+		INSTAGRAM: {
+			REACH: 306170,
+			FOLLOWERS: 29890
+		},
+		YOUTUBE: {
+			REACH: 2680,
+			FOLLOWERS: 254
+		}
+	},
 	API_VERSION: 'v1'
 };
 

@@ -1,0 +1,38 @@
+[
+	{
+		"id": 1,
+		"title": "Sly Strategist",
+		"imageUrl": "/images/sly-strategist.jpg",
+		"imageAlt": "sly-strategist"
+	},
+	{
+		"id": 2,
+		"title": "Jungle Jester",
+		"imageUrl": "/images/jungle-jester.jpg",
+		"imageAlt": "jungle-jester"
+	},
+	{
+		"id": 3,
+		"title": "Roaring Manager",
+		"imageUrl": "/images/roaring-manager.jpg",
+		"imageAlt": "roaring-manager"
+	},
+	{
+		"id": 4,
+		"title": "Stubborn Accountant",
+		"imageUrl": "/images/stubborn-accountant.jpg",
+		"imageAlt": "stubborn-accountant"
+	},
+    {
+		"id": 5,
+		"title": "Loyal Assistant",
+		"imageUrl": "/images/loyal-assistant.jpg",
+		"imageAlt": "loyal-assistant"
+	},
+    {
+		"id": 6,
+		"title": "Gallop Guru",
+		"imageUrl": "/images/gallop-guru.jpg",
+		"imageAlt": "gallop-guru"
+	}
+]

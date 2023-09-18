@@ -3,6 +3,7 @@ import { Toaster } from 'react-hot-toast';
 import Header from "./header";
 import Footer from "./footer";
 import Navbar from "./navbar";
+import ReturnToTop from "./common/return-to-top";
 
 type LayoutProps = {
   children: React.ReactNode;
@@ -17,6 +18,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         {children}
       </Header>
       <Footer />
+      <ReturnToTop />
     </>
   );
 };

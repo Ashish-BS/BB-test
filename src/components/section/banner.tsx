@@ -1,11 +1,11 @@
 import React from 'react';
 import Image from 'next/image';
-import BannerArea from '../../../public/images/banner-area.jpg';
+import BannerImage from '../../../public/images/banner-area.png';
 import Bubbles from '../common/bubbles';
 
 const BannerSection: React.FC = () => {
     return (
-        <section className='b-banner-section' data-testid='b-banner-section'>
+        <section className='b-banner-section b-section' data-testid='b-banner-section'>
             <div className='b-banner-heading'>
                 <div className='container'>
                     <h1 className='b-tagline'>
@@ -13,20 +13,26 @@ const BannerSection: React.FC = () => {
                         <span className='b-bordered-text'>business potential</span>
                         <span className='d-block'> with Revolutionary Digital Marketing Solutions</span></h1>
                 </div>
-                <Bubbles />
             </div>
             <div className="b-banner-image-section">
-                <div className='b-banner-image'>
-                    <Image src={BannerArea.src} width={1523} height={718} alt='banner-area' />
-                </div>
-                <div className='b-image-caption'>
-                    <div className='container'>
-                        <p>
-                            Our digital marketing solution will increase your online visibility and drive more traffic to your website, delivering measurable results and a higher ROI.
-                        </p>
+                <div className="container-fluid p-0">
+                    <div className='b-banner-images'>
+                        {/* {bannerCharactersData.map(character => (
+                            <div className='b-banner-group' key={character.id}>
+                                <div className="b-callout-container">
+                                    <Callout title={character.title} />
+                                </div>
+                                <Image src={character.imageUrl} width={455} height={440} alt={character.imageAlt} priority className='b-banner-image' />
+                            </div>
+                        ))} */}
+                        <Image src={BannerImage.src} width={1200} height={590} alt='banner-image' />
                     </div>
+                    {/* <div className='b-banner-static-image'>
+                        <Image src={BannerImage.src} width={1200} height={440} alt='banner-image' />
+                    </div> */}
                 </div>
             </div>
+            <Bubbles />
         </section>
     )
 }

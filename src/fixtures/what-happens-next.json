@@ -1,0 +1,18 @@
+[
+	{
+		"id": "1",
+		"description": "We'll initiate communication through your preferred mode of communication to understand project requirements and scope."
+	},
+	{
+		"id": "2",
+		"description": "We sign an NDA (Non-Disclosure Agreement) and SLA (Service Level Agreement) to ensure safety and define scope of project."
+	},
+	{
+		"id": "3",
+		"description": "We will share a project proposal with you."
+	},
+	{
+		"id": "4",
+		"description": "We initiate project development and delivery once we receive your approval."
+	}
+]
