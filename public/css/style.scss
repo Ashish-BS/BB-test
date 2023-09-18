@@ -247,6 +247,9 @@ h5 {
 				font-weight: $medium;
 				padding-inline: 25px;
 				padding-block: 10px;
+				&:focus {
+					box-shadow: none;
+				}
 				@include media-breakpoint-down('sm') {
 					font-size: 16px;
 					padding-inline: 15px;

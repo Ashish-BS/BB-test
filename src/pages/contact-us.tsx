@@ -133,7 +133,7 @@ const ContactUs: React.FC = () => {
                                         </div>
                                         <div className="row b-submit-btn">
                                             <div className='col-lg-12'>
-                                                <button className='b-fill-btn-hover'>Let's talk</button>
+                                                <button className='b-fill-btn-hover'>Submit</button>
                                             </div>
 
                                         </div>
