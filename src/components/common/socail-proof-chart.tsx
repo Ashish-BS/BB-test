@@ -1,6 +1,6 @@
 import React from 'react';
 import { Chart as ChartJS, CategoryScale, ChartData, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, ChartOptions } from 'chart.js';
-import {  Line } from 'react-chartjs-2';
+import { Line } from 'react-chartjs-2';
 import ChartDataLabels from "chartjs-plugin-datalabels";
 
 ChartJS.register(
@@ -34,7 +34,7 @@ export const options: ChartOptions<'line'> = {
             grid: {
                 display: false
             },
-            offset: true
+            offset: true,
         },
 
     },
@@ -62,7 +62,14 @@ const data: ChartData<'line'> = {
                 color: "blue",
                 align: 'top',
                 anchor: 'end',
-            }
+                font(context) {
+                    if (context.chart.width <= 768) {
+                        return { size: 10 }
+                    }
+                    return { size: 16 }
+                },
+            },
+
         },
         {
             label: 'Followers %',
@@ -73,8 +80,19 @@ const data: ChartData<'line'> = {
             datalabels: {
                 display: true,
                 color: "red",
-                align: 'top',
+                align: (context => {
+                    if (context.chart.width <= 768) {
+                        return 'bottom'
+                    }
+                    return 'top'
+                }),
                 anchor: 'end',
+                font(context) {
+                    if (context.chart.width <= 768) {
+                        return { size: 10 }
+                    }
+                    return { size: 16 }
+                },
             }
         }
     ]
