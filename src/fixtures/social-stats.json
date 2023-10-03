@@ -1,0 +1,5 @@
+[
+	{ "id": 1, "title": "Facebook", "icon": "/images/facebook.svg", "followers": "8.47%", "reach": "371.77%" },
+	{ "id": 2, "title": "Instagram", "icon": "/images/instagram.svg", "followers": "267.88%", "reach": "371.77%" },
+	{ "id": 3, "title": "YouTube", "icon": "/images/youtube.svg", "followers": "67.32%", "reach": "759.63%" }
+]

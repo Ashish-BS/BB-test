@@ -1,5 +1,5 @@
 import React from 'react'
-import { SocialProofChart } from '../common/socail-proof-chart';
+import { SocialProofChart } from '../common/social-proof-chart';
 
 const SocialProofSection: React.FC = () => {
     return (
@@ -15,9 +15,6 @@ const SocialProofSection: React.FC = () => {
                     </div>
                     <div className='b-section-chart'>
                         <SocialProofChart />
-                    </div>
-                    <div className='b-section-caption'>
-                        <p>*For YouTube, consider reach as views and followers as subscribers.</p>
                     </div>
                 </div>
             </div>

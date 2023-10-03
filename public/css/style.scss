@@ -652,14 +652,45 @@ h5 {
 	.b-section-chart {
 		margin-top: 20px;
 		width: 100%;
-		img {
-			width: 100% !important;
-			height: 100% !important;
-			background-color: $white;
-		}
-		canvas {
-			background-color: white;
-			border-radius: 8px;
+		.b-stats-card {
+			padding: 20px;
+			border-radius: 30px;
+			position: relative;
+			&:after {
+				content: '';
+				width: 70px;
+				height: 70px;
+				border-radius: 50%;
+				position: absolute;
+				background: $theme-yellow-gradient;
+				opacity: 0.2;
+				right: -11px;
+				top: -7px;
+			}
+			.card-header {
+				background: white;
+			}
+			.card-body {
+				.v-card-content {
+					display: flex;
+					gap: 2rem;
+					flex-wrap: wrap;
+					@include media-breakpoint-down('sm') {
+						flex-wrap: nowrap;
+						gap: 1rem;
+					}
+					.b-reach,
+					.b-followers {
+						span {
+							display: flex;
+							align-items: center;
+							gap: 5px;
+							font-size: 2rem;
+							font-weight: $semibold;
+						}
+					}
+				}
+			}
 		}
 	}
 	.b-section-caption {
