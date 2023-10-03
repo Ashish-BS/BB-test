@@ -8,7 +8,7 @@ const Card:React.FC<CardPropType> = ({followers, icon, reach, title}) => {
   return (
     <div className='card b-stats-card'>
         <div className="card-header border-0">
-            <Image src={icon} alt={`${title} icon`} width={40} height={40} />
+            <Image src={icon} alt={`${title} icon`} width={50} height={50} />
         </div>
         <div className="card-body">
             <div className="v-card-content">
