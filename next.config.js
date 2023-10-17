@@ -5,28 +5,6 @@ const nextConfig = {
   reactStrictMode: true,
   generateEtags: false,
 
-  async rewrites() {
-    return [
-      { source: "/careers", destination: "/career" },
-      { source: "/solutions", destination: "/" },
-      { source: "/product", destination: "/case-study/campusby" },
-      { source: "/why-us", destination: "/about-us" },
-      { source: "/our-expertise", destination: "/case-study" },
-      { source: "/case-study/myc", destination: "/case-study/my-candidature" },
-      {
-        source: "/case-study/psh",
-        destination: "/case-study/planet-superheroes",
-      },
-      {
-        source: "/case-study/australian-tree",
-        destination: "/case-study/australian-tree-id",
-      },
-      {
-        source: "/openings/windows-active-directory-bs-58-1",
-        destination: "/openings/specialist-windows-active-directory-bs-58-1",
-      },
-    ];
-  },
   images: {
     domains: [
       process.env.NEXT_PUBLIC_IMAGES_DOMAIN,
