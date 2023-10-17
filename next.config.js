@@ -4,9 +4,7 @@ const headers = require("./src/lib/headers");
 const nextConfig = {
   reactStrictMode: true,
   generateEtags: false,
-  // sassOptions: {
-  // 	includePaths: [path.join(__dirname, 'styles')]
-  // },
+
   async rewrites() {
     return [
       { source: "/careers", destination: "/career" },
