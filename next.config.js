@@ -4,7 +4,9 @@ const headers = require("./src/lib/headers");
 const nextConfig = {
   reactStrictMode: true,
   generateEtags: false,
-
+  // sassOptions: {
+  // 	includePaths: [path.join(__dirname, 'styles')]
+  // },
   images: {
     domains: [
       process.env.NEXT_PUBLIC_IMAGES_DOMAIN,
