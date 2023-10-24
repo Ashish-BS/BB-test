@@ -604,7 +604,7 @@ export default function ContanctUs() {
               ) : (
                 <></>
               )}
-              {/* <div className="col-lg-12 col-xl-4">
+              <div className="col-lg-12 col-xl-4">
                 <div className="b-contact-form-right">
                   <div className="b-what-happen-next">
                     <div className="b-what-happen-next-heading">
@@ -642,7 +642,7 @@ export default function ContanctUs() {
                     </div>
                   </div>
                 </div>
-              </div> */}
+              </div>
             </div>
           </div>
         </div>
