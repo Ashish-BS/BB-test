@@ -5,7 +5,6 @@ import ShortDescription from "../common/ShortDescription";
 import { getLocaleDate } from "@/utils/date";
 import { formatName, isSet } from "@/utils/common/utility-functions";
 import { BlogCardPropType } from "@/types/components/component-types/blog-card";
-import removeMarkdown from "remove-markdown";
 
 const BlogCard: React.FC<BlogCardPropType> = ({ blog, isFeatured }) => {
   return (
@@ -62,14 +61,7 @@ const BlogCard: React.FC<BlogCardPropType> = ({ blog, isFeatured }) => {
             <h2>{blog.attributes.title}</h2>
           </Link>
         )}
-        {blog.attributes.content && (
-          <div className="b-blog-desc">
-            <ShortDescription
-              text={removeMarkdown(blog.attributes.content)}
-              numberOfCharactersToShow={25}
-            />
-          </div>
-        )}
+        {blog.attributes.content && <div className="b-blog-desc"></div>}
         <Link
           href={`/blog/${encodeURI(blog.attributes.slug)}`}
           className="b-read-more"
