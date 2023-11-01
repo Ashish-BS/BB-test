@@ -9,11 +9,11 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 import { SwiperSlide, Swiper } from "swiper/react";
-import { BlogPageProps } from "../types/components/pages-types/blog";
-import ResultnotFound from "../components/common/ResultNotFound";
-import ShortDescription from "../components/common/ShortDescription";
-import NoResponseFromCms from "../components/common/NoResponse";
-import { fetchBlogs } from "../services/blogs";
+import { BlogPageProps } from "../../types/components/pages-types/blog";
+import ResultnotFound from "../../components/common/ResultNotFound";
+import ShortDescription from "../../components/common/ShortDescription";
+import NoResponseFromCms from "../../components/common/NoResponse";
+import { fetchBlogs } from "../../services/blogs";
 import { getLocaleDate } from "@/utils/date";
 import { BlogAPIResponseType } from "@/types/components/data/blog";
 import config from "@/constants";
@@ -103,7 +103,6 @@ const Blogs: NextPage<
             <h1>
               <span className="b-custom-underline">Blog</span>
             </h1>
-            <Link className="nav-link" href=" /blog"></Link>
             <p>
               We're excited to share our team's treasure trove of knowledge,
               carefully penned down for you.

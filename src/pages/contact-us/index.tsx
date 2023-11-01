@@ -9,21 +9,21 @@ import PhoneInput from "react-phone-input-2";
 import { phone } from "phone";
 import "react-phone-input-2/lib/style.css";
 
-import Loader from "../components/loader/LoadingIcon";
+import Loader from "../../components/loader/LoadingIcon";
 import dynamic from "next/dynamic";
 const DesiredServices = dynamic(
-  () => import("../components/form/desired-services"),
+  () => import("../../components/form/desired-services"),
   { ssr: false }
 );
-import { postContactFormDetails } from "../services/contact-us";
+import { postContactFormDetails } from "../../services/contact-us";
 import {
   ContactUsValidationSchema,
   customInputValidationTest,
-} from "../validation/contact-us";
-import { ContactUsType } from "../types/components/form-schema/contact-us.types";
-import { CountryDetail } from "../types/components/data/phone-country";
-import { EnquiryEnum } from "../enums/enquiry.enum";
-import config from "../constants";
+} from "../../validation/contact-us";
+import { ContactUsType } from "../../types/components/form-schema/contact-us.types";
+import { CountryDetail } from "../../types/components/data/phone-country";
+import { EnquiryEnum } from "../../enums/enquiry.enum";
+import config from "../../constants";
 
 import ImgLocationAhmedabad from "../../public/images/staticmap-512x512-ahmedabad.png";
 import ImgLocationAhmedabadBSquare2 from "../../public/images/staticmap-512x512-ahmedabad-bsquare-2.png";
@@ -39,7 +39,7 @@ import { getStoredUserJsonData } from "@/utils/common/utility-functions";
 import { GetStaticProps } from "next";
 import { setInquiryType } from "@/slices/inquirySlice";
 import { loadRecaptcha, removeRecaptcha } from "@/utils/url/recaptcha";
-import WhatHappenNext from "../fixtures/what-happens-next.json";
+import WhatHappenNext from "../../fixtures/what-happens-next.json";
 
 export default function ContanctUs() {
   const [loading, setLoading] = useState(false);
