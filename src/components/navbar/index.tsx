@@ -1,19 +1,26 @@
-import React from 'react'
-import Link from 'next/link'
-import Logo from '../../../public/images/logo.svg'
-import Image from 'next/image';
+import React from "react";
+import Link from "next/link";
+import Logo from "../../../public/images/logo.svg";
+import Image from "next/image";
 
 const Navbar: React.FC = () => {
-    return (
-        <header className='b-header'>
-            <nav className="navbar navbar-expand-lg navbar-light">
-                <div className="container justify-content-between">
-                    <Link className="navbar-brand b-navbar-brand" href="/"><Image src={Logo.src} width={170} height={50} alt='BombayBees logo' /></Link>
-                    <div
-                        className="collapse navbar-collapse justify-content-center"
-                        id="navbarSupportedContent"
-                    >
-                        {/* <ul className="navbar-nav">
+  return (
+    <header className="b-header">
+      <nav className="navbar navbar-expand-lg navbar-light">
+        <div className="container justify-content-between">
+          <Link className="navbar-brand b-navbar-brand" href="/">
+            <Image
+              src={Logo.src}
+              width={170}
+              height={50}
+              alt="BombayBees logo"
+            />
+          </Link>
+          <div
+            className="collapse navbar-collapse justify-content-center"
+            id="navbarSupportedContent"
+          >
+            {/* <ul className="navbar-nav">
                             {navbarItems?.length ? navbarItems.map(item => (
                                 <li
                                     key={item.id}
@@ -27,12 +34,21 @@ const Navbar: React.FC = () => {
 
                             )) : null}
                         </ul> */}
-                    </div>
-                    <div className="b-header-right">
-                        <Link href="/contact-us" className="btn b-contact-btn b-btn-border-hover">
-                            Let's talk
-                        </Link>
-                        {/* <button
+          </div>
+          <div className="b-header-right">
+            <Link
+              href="/contact-us"
+              className="btn b-contact-btn b-btn-border-hover"
+            >
+              Let's talk
+            </Link>
+            <Link
+              className="btn b-contact-btn b-btn-border-hover m-3"
+              href="/blog"
+            >
+              Blog
+            </Link>
+            {/* <button
                             className="navbar-toggler"
                             type="button"
                             data-bs-toggle="offcanvas"
@@ -43,8 +59,8 @@ const Navbar: React.FC = () => {
                             <span className="icon-bar" />
                             <span className="icon-bar" />
                         </button> */}
-                    </div>
-                    {/* <div
+          </div>
+          {/* <div
                         className="offcanvas offcanvas-end b-offcanvas-menu"
                         tabIndex={-1}
                         id="navbarOffcanvas"
@@ -80,10 +96,10 @@ const Navbar: React.FC = () => {
                         </div>
 
                     </div> */}
-                </div>
-            </nav>
-        </header>
-    )
-}
+        </div>
+      </nav>
+    </header>
+  );
+};
 
-export default Navbar
+export default Navbar;
