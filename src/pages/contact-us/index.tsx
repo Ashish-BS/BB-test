@@ -21,7 +21,7 @@ import {
   customInputValidationTest,
 } from "../../validation/contact-us";
 import { ContactUsType } from "../../types/components/form-schema/contact-us.types";
-import { CountryDetail } from "../../types/components/data/phone-country";
+import { CountryDetail } from "../../types/data/phone-country";
 import { EnquiryEnum } from "../../enums/enquiry.enum";
 import config from "../../constants";
 

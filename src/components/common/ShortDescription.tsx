@@ -1,4 +1,4 @@
-import { ShortDescriptionPropType } from "@/types/components/short-description";
+import { ShortDescriptionPropType } from "@/types/component-types/short-description";
 import React from "react";
 
 const ShortDescription: React.FC<ShortDescriptionPropType> = (props) => {
