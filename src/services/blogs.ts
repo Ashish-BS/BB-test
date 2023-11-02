@@ -1,5 +1,5 @@
 import config from "@/constants";
-import { BlogReturnType } from "../types/components/services/blog";
+import { BlogReturnType } from "../types/services/blog";
 import { fetchGet } from "./service-clients";
 
 export const fetchBlogs = async (filter?: {

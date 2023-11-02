@@ -29,9 +29,9 @@ import ImgSocialTwitter from "../../../public/images/social-twitter.svg";
 import ImgSocialWhatsApp from "../../../public/images/social-whatsapp.svg";
 
 import { fetchBlog, fetchBlogs } from "@/services/blogs";
-import { BlogDetailsPageProps } from "@/types/components/pages-types/blog";
+import { BlogDetailsPageProps } from "@/types/page-types/blog";
 import { getLocaleDate } from "@/utils/date";
-import { BlogAPIResponseType } from "@/types/components/data/blog";
+import { BlogAPIResponseType } from "@/types/data/blog";
 import {
   getStoredUserJsonData,
   isSet,

@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { NoResponsePropType } from "@/types/components/component-types/NoResponse";
+import { NoResponsePropType } from "@/types/component-types/NoResponse";
 
 const NoResponseFromCms: React.FC<NoResponsePropType> = (props) => {
   return (

@@ -9,13 +9,14 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 import { SwiperSlide, Swiper } from "swiper/react";
-import { BlogPageProps } from "../../types/components/pages-types/blog";
+import { BlogPageProps } from "@/types/page-types/blog";
+import CallToAction from "../../components/section/call-to-action/index";
 import ResultnotFound from "../../components/common/ResultNotFound";
 import ShortDescription from "../../components/common/ShortDescription";
 import NoResponseFromCms from "../../components/common/NoResponse";
 import { fetchBlogs } from "../../services/blogs";
 import { getLocaleDate } from "@/utils/date";
-import { BlogAPIResponseType } from "@/types/components/data/blog";
+import { BlogAPIResponseType } from "@/types/data/blog";
 import config from "@/constants";
 import {
   formatName,
@@ -30,9 +31,9 @@ import { fetchAllBlogsCategories } from "@/services/categories";
 import BlogCard from "@/components/card/blog-card";
 import { debounce } from "lodash";
 import removeMarkdown from "remove-markdown";
-import { CategoryType } from "@/types/components/data/category";
-import { BlogReturnType } from "@/types/components/services/blog";
-import { CategoryReturnType } from "@/types/components/services/category";
+import { CategoryType } from "@/types/data/category";
+import { BlogReturnType } from "@/types/services/blog";
+import { CategoryReturnType } from "@/types/services/category";
 
 const Blogs: NextPage<
   InferGetServerSidePropsType<typeof getServerSideProps>
@@ -386,7 +387,7 @@ const Blogs: NextPage<
                           <Image
                             width={24}
                             height={24}
-                            src="../images/search-normal.svg"
+                            src="/images/search-normal.svg"
                             alt="Search-icon"
                           />
                           <input
@@ -458,6 +459,7 @@ const Blogs: NextPage<
           )}
         </div>
       </section>
+      <CallToAction />
     </>
   );
 };
