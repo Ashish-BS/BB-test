@@ -31,7 +31,7 @@ import BlogCard from "@/components/card/blog-card";
 import { debounce } from "lodash";
 import removeMarkdown from "remove-markdown";
 import { CategoryType } from "@/types/components/data/category";
-import { BlogReturnType } from "@/types/components/services/blogg";
+import { BlogReturnType } from "@/types/components/services/blog";
 import { CategoryReturnType } from "@/types/components/services/category";
 import { relative } from "path";
 
