@@ -2,13 +2,40 @@ import React from "react";
 import Link from "next/link";
 import Logo from "../../../public/images/logo.svg";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import { string } from "yup";
+
+interface NavItemProps {
+  path: string;
+  label: string;
+  currentPath: string;
+}
+
+const NavItem: React.FC<NavItemProps> = ({ path, label, currentPath }) => (
+  <li className={`nav-item b-nav-item ${currentPath === path ? "active" : ""}`}>
+    <Link className="nav-link b-nav-link" href={path}>
+      {label}
+    </Link>
+  </li>
+);
 
 const Navbar: React.FC = () => {
+  const router = useRouter();
+  const currentPath = router.pathname;
+
+  const navItems = [
+    { path: "/", label: "Home" },
+    { path: "/blog", label: "Blogs" },
+    // { path: "/about", label: "About" },
+    // { path: "/testimonials", label: "Testimonials" },
+    // { path: "/xyz", label: "What will you get?" },
+  ];
+
   return (
     <header className="b-header">
       <nav className="navbar navbar-expand-lg navbar-light">
-        <div className="container justify-content-between">
-          <Link className="navbar-brand b-navbar-brand" href="/">
+        <div className="container">
+          <Link className="navbar-brand b-navbar-brand mb-0" href="/">
             <Image
               src={Logo.src}
               width={170}
@@ -16,25 +43,20 @@ const Navbar: React.FC = () => {
               alt="BombayBees logo"
             />
           </Link>
-          <div
-            className="collapse navbar-collapse justify-content-center"
-            id="navbarSupportedContent"
-          >
-            {/* <ul className="navbar-nav">
-                            {navbarItems?.length ? navbarItems.map(item => (
-                                <li
-                                    key={item.id}
-                                    className={`nav-item b-nav-item ${currentPath === item.link ? "active" : ""
-                                        }`}
-                                >
-                                    <Link className="nav-link b-nav-link" href={item.link}>
-                                        {item.title}
-                                    </Link>
-                                </li>
 
-                            )) : null}
-                        </ul> */}
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav">
+              {navItems.map((item) => (
+                <NavItem
+                  key={item.path}
+                  path={item.path}
+                  label={item.label}
+                  currentPath={currentPath}
+                />
+              ))}
+            </ul>
           </div>
+
           <div className="b-header-right">
             <Link
               href="/contact-us"
@@ -42,60 +64,55 @@ const Navbar: React.FC = () => {
             >
               Let's talk
             </Link>
-            <Link
-              className="btn b-contact-btn b-btn-border-hover m-3"
-              href="/blog"
+
+            <button
+              className="navbar-toggler"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#navbarOffcanvas"
+              aria-controls="navbarOffcanvas"
             >
-              Blog
-            </Link>
-            {/* <button
-                            className="navbar-toggler"
-                            type="button"
-                            data-bs-toggle="offcanvas"
-                            data-bs-target="#navbarOffcanvas"
-                            aria-controls="navbarOffcanvas"
-                        >
-                            <span className="icon-bar" />
-                            <span className="icon-bar" />
-                            <span className="icon-bar" />
-                        </button> */}
+              <span className="icon-bar" />
+              <span className="icon-bar" />
+              <span className="icon-bar" />
+            </button>
           </div>
-          {/* <div
-                        className="offcanvas offcanvas-end b-offcanvas-menu"
-                        tabIndex={-1}
-                        id="navbarOffcanvas"
-                        aria-labelledby="navbarOffcanvas"
-                    >
-                        <div className="offcanvas-header">
-                            <button
-                                type="button"
-                                className="btn-close text-reset"
-                                data-bs-dismiss="offcanvas"
-                                aria-label="Close"
-                            />
-                        </div>
-                        <div className='offcanvas-body'>
-                            <ul className="navbar-nav">
-                                {navbarItems?.length ? navbarItems.map(item => (
-                                    <li
-                                        key={item.id}
-                                        className={`nav-item b-nav-item ${currentPath === item.link ? "active" : ""
-                                            }`}
-                                    >
-                                        <Link className="nav-link b-nav-link" data-bs-dismiss="offcanvas" href={item.link}>
-                                            {item.title}
-                                        </Link>
-                                    </li>
 
-                                )) : null}
-                            </ul>
+          <div
+            className="offcanvas offcanvas-end b-offcanvas-menu"
+            tabIndex={-1}
+            id="navbarOffcanvas"
+            aria-labelledby="navbarOffcanvas"
+          >
+            <div className="offcanvas-header">
+              <button
+                type="button"
+                className="btn-close text-reset"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              />
+            </div>
+            <div className="offcanvas-body">
+              <ul className="navbar-nav">
+                {navItems.map((item) => (
+                  <NavItem
+                    key={item.path}
+                    path={item.path}
+                    label={item.label}
+                    currentPath={currentPath}
+                  />
+                ))}
+              </ul>
 
-                            <Link href="/contact-us" data-bs-dismiss="offcanvas" className="btn b-contact-btn">
-                                Let's talk
-                            </Link>
-                        </div>
-
-                    </div> */}
+              <Link
+                href="/contact-us"
+                data-bs-dismiss="offcanvas"
+                className="btn b-contact-btn"
+              >
+                Let's talk
+              </Link>
+            </div>
+          </div>
         </div>
       </nav>
     </header>
