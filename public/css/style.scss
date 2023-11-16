@@ -419,10 +419,14 @@ h5 {
 		}
 
 		.offcanvas {
-			background: $theme-yellow-gradient;
+			
 
 			&.b-offcanvas-menu {
 				width: 100%;
+				background-image: url("../images/offcanvas-circle.png");
+				background-size: 100%;
+				background-repeat: no-repeat;
+				background-position: center;
 
 				.offcanvas-header {
 					justify-content: end;
@@ -5409,4 +5413,22 @@ a {
 		}
 	}
 }
+}
+
+.b-common-btn-no-arrow {
+	margin-top: 2cqb;
+  background-color: $theme-yellow;
+  color: #1e1e1e;
+  padding: 15px 25px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 50px;
+  display: inline-block;
+  transition: 0.3s;
+  position: relative;
+  border: none;
+  &:hover {
+    background-color: var(--color-theme-primary);
+    color: var(--color-theme-secondary);
+  }
 }
