@@ -7,9 +7,7 @@ type HeaderProps = {
 const Header: React.FC<HeaderProps> = ({ children }) => {
   return (
     <>
-      <div className="b-wrapper">
-          {children}
-      </div>
+      <div className="b-wrapper">{children}</div>
     </>
   );
 };
