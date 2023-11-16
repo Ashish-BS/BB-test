@@ -1,23 +1,9 @@
-import React from "react";
 import Link from "next/link";
 import Logo from "../../../public/images/logo.svg";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { string } from "yup";
-
-interface NavItemProps {
-  path: string;
-  label: string;
-  currentPath: string;
-}
-
-const NavItem: React.FC<NavItemProps> = ({ path, label, currentPath }) => (
-  <li className={`nav-item b-nav-item ${currentPath === path ? "active" : ""}`}>
-    <Link className="nav-link b-nav-link" href={path}>
-      {label}
-    </Link>
-  </li>
-);
+import NavItem from "../navitems";
 
 const Navbar: React.FC = () => {
   const router = useRouter();
@@ -107,7 +93,7 @@ const Navbar: React.FC = () => {
               <Link
                 href="/contact-us"
                 data-bs-dismiss="offcanvas"
-                className="btn b-contact-btn"
+                className="btn b-common-btn-no-arrow "
               >
                 Let's talk
               </Link>
