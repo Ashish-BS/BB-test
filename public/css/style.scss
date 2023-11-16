@@ -4925,6 +4925,9 @@ a {
 	}
 }
 
+
+.errorPage{
+
 .b-banner-section {
 	padding-top: 86px;
 	position: relative;
@@ -4961,7 +4964,7 @@ a {
 
 		.icon {
 			fill: var(--color-theme-secondary);
-			.b-banneridth: 380px;
+			
 
 			@include media-breakpoint-down(md) {
 				width: 250px;
@@ -5319,4 +5322,5 @@ a {
 			}
 		}
 	}
+}
 }
