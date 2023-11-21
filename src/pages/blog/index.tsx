@@ -38,6 +38,7 @@ import { CategoryReturnType } from "@/types/services/category";
 const Blogs: NextPage<
   InferGetServerSidePropsType<typeof getServerSideProps>
 > = (props) => {
+  console.log(props.blogs);
   let categoryIndex = -1;
   props.category &&
     props.categories &&
@@ -95,6 +96,7 @@ const Blogs: NextPage<
       }
     }
   };
+
   return (
     <>
       <section className="b-blog-section" data-testid="b-blog-section">
@@ -108,7 +110,7 @@ const Blogs: NextPage<
               carefully penned down for you.
             </p>
           </div>
-          {!props.blogs ? (
+          {/* {!props.blogs ? (
             <NoResponseFromCms
               description={config.MESSAGE.NO_RESPONSE_FROM_CMS}
               className="b-no-content"
@@ -236,227 +238,219 @@ const Blogs: NextPage<
                 </Swiper>
 
                 <div className="swiper-pagination-3"></div>
-                <div className="b-blog-list">
-                  <div className="b-blog-head row">
-                    {props.categories && props.categories.length ? (
-                      <>
-                        <div className="b-blog-head-left col-lg-9 col-md-10">
-                          <ul className="b-blog-head-left-list">
-                            <li onClick={() => filterByCategory("")}>
-                              <span
-                                className={`${
-                                  props.category === "" ? "active" : ""
-                                }`}
-                              >
-                                All
-                              </span>
-                            </li>
-                            {props.categories &&
-                              props.categories.length &&
-                              props.categories
-                                .slice(0, 3)
-                                .map((category, index) => (
-                                  <li
-                                    onClick={() =>
-                                      filterByCategory(category.attributes.slug)
-                                    }
-                                    key={`${index}-${category.id}`}
-                                  >
-                                    <span
-                                      className={`${
-                                        props.category ===
-                                        category.attributes.slug
-                                          ? "active"
-                                          : ""
-                                      }`}
-                                    >
-                                      {category.attributes.name}
-                                    </span>
-                                  </li>
-                                ))}
-                            <li>
-                              <div
-                                className={`b-blog-head-select ${
-                                  categoryIndex > 2 ? "active" : ""
-                                }`}
-                              >
-                                <div className="dropdown">
-                                  <button
-                                    className="btn btn-secondary dropdown-toggle"
-                                    type="button"
-                                    id="dropdownMenuButton1"
-                                    data-bs-toggle="dropdown"
-                                    aria-expanded="false"
-                                  >
-                                    {categoryIndex > 2
-                                      ? `${props.selectedCategoryName}`
-                                      : `More`}
-                                  </button>
-                                  <ul
-                                    className="dropdown-menu"
-                                    aria-labelledby="dropdownMenuButton1"
-                                  >
-                                    {props.categories &&
-                                      props.categories.length &&
-                                      props.categories
-                                        .slice(3)
-                                        .map((category) => (
-                                          <li key={category.id}>
-                                            <button
-                                              className={`dropdown-item ${
-                                                props.category ===
-                                                category.attributes.slug
-                                                  ? "selected"
-                                                  : ""
-                                              }`}
-                                              onClick={() =>
-                                                filterByCategory(
-                                                  category.attributes.slug
-                                                )
-                                              }
-                                            >
-                                              {category.attributes.name}
-                                            </button>
-                                          </li>
-                                        ))}
-                                  </ul>
-                                </div>
-                              </div>
-                            </li>
-                          </ul>
-                        </div>
-                        <div className="b-case-filters b-blogs-filters col-lg-4 col-md-5 col-sm-12">
-                          <div className="b-case-select">
-                            <div className="dropdown">
-                              <button
-                                className="btn btn-secondary dropdown-toggle"
-                                type="button"
-                                id="dropdownMenuButton1"
-                                data-bs-toggle="dropdown"
-                                aria-expanded="false"
-                              >
-                                {props.selectedCategoryName &&
-                                props.selectedCategoryName.length
-                                  ? `${props.selectedCategoryName}`
-                                  : `All`}
-                              </button>
-                              <ul
-                                className="dropdown-menu"
-                                aria-labelledby="dropdownMenuButton1"
-                              >
-                                <li>
-                                  <button
-                                    className={`dropdown-item ${
-                                      props.category === "" ? "selected" : ""
-                                    }`}
-                                    onClick={() => filterByCategory("")}
-                                  >
-                                    All
-                                  </button>
-                                </li>
-                                {props.categories &&
-                                  props.categories.length &&
-                                  props.categories.map((category) => (
-                                    <li key={category.id}>
-                                      <button
-                                        className={`dropdown-item ${
-                                          props.category ===
-                                          category.attributes.slug
-                                            ? "selected"
-                                            : ""
-                                        }`}
-                                        onClick={() =>
-                                          filterByCategory(
-                                            category.attributes.slug
-                                          )
-                                        }
-                                      >
-                                        {category.attributes.name}
-                                      </button>
-                                    </li>
-                                  ))}
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </>
-                    ) : null}
-                    <div className="b-blog-head-right col-lg-3 col-md-6 col-sm-12">
-                      <a className="active">
-                        <div className="b-search-input">
-                          <Image
-                            width={24}
-                            height={24}
-                            src="/images/search-normal.svg"
-                            alt="Search-icon"
-                          />
-                          <input
-                            type="text"
-                            className="form-control"
-                            placeholder="Search"
-                            onChange={(e) => handleSearchChange(e)}
-                            value={searchedKeywordsOrText}
-                          />
-                        </div>
-                      </a>
-                    </div>
-                  </div>
-                  {props.blogs && (
-                    <div className="b-blog-listing">
-                      <div className="row">
-                        {props.blogs.length === 0 ? (
-                          <>
-                            <ResultnotFound
-                              textMessage={
-                                props.selectedCategoryName &&
-                                props.selectedCategoryName.length > 0
-                                  ? config.MESSAGE
-                                      .BLOG_NOT_FOUND_WITH_CATEGORY +
-                                    `"${props.selectedCategoryName}"`
-                                  : searchedKeywordsOrText &&
-                                    searchedKeywordsOrText.length > 0
-                                  ? config.MESSAGE
-                                      .BLOG_NOT_FOUND_WITH_CATEGORY +
-                                    `"${searchedKeywordsOrText}"`
-                                  : config.MESSAGE.BLOG_NOT_FOUND_GENERIC
-                              }
-                              pageName={config.PAGE_NAME.BLOG}
-                              multiple={
-                                featuredBlogs && featuredBlogs.length > 1
-                                  ? true
-                                  : false
-                              }
-                            />
-                            {featuredBlogs &&
-                              featuredBlogs.length &&
-                              featuredBlogs.map((blog, index) => (
-                                <div
-                                  className="col-lg-6"
-                                  key={blog.id + index + Math.random()}
-                                >
-                                  <BlogCard blog={blog} isFeatured />
-                                </div>
-                              ))}
-                          </>
-                        ) : (
-                          props.blogs &&
-                          props.blogs.length &&
-                          props.blogs.map((blog, index) => (
-                            <div
-                              className="col-lg-6"
-                              key={blog.id + index + Math.random()}
-                            >
-                              <BlogCard blog={blog} />
-                            </div>
-                          ))
-                        )}
-                      </div>
-                    </div>
-                  )}
-                </div>
               </>
             )
-          )}
+          )} */}
+          {props.blogs && props.blogs.length > 0}
+          <div className="b-blog-list">
+            <div className="b-blog-head row">
+              {props.categories && props.categories.length ? (
+                <>
+                  <div className="b-blog-head-left col-lg-9 col-md-10">
+                    <ul className="b-blog-head-left-list">
+                      <li onClick={() => filterByCategory("")}>
+                        <span
+                          className={`${props.category === "" ? "active" : ""}`}
+                        >
+                          All
+                        </span>
+                      </li>
+                      {props.categories &&
+                        props.categories.length &&
+                        props.categories.slice(0, 3).map((category, index) => (
+                          <li
+                            onClick={() =>
+                              filterByCategory(category.attributes.slug)
+                            }
+                            key={`${index}-${category.id}`}
+                          >
+                            <span
+                              className={`${
+                                props.category === category.attributes.slug
+                                  ? "active"
+                                  : ""
+                              }`}
+                            >
+                              {category.attributes.name}
+                            </span>
+                          </li>
+                        ))}
+                      <li>
+                        <div
+                          className={`b-blog-head-select ${
+                            categoryIndex > 2 ? "active" : ""
+                          }`}
+                        >
+                          <div className="dropdown">
+                            <button
+                              className="btn btn-secondary dropdown-toggle"
+                              type="button"
+                              id="dropdownMenuButton1"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            >
+                              {categoryIndex > 2
+                                ? `${props.selectedCategoryName}`
+                                : `More`}
+                            </button>
+                            <ul
+                              className="dropdown-menu"
+                              aria-labelledby="dropdownMenuButton1"
+                            >
+                              {props.categories &&
+                                props.categories.length &&
+                                props.categories.slice(3).map((category) => (
+                                  <li key={category.id}>
+                                    <button
+                                      className={`dropdown-item ${
+                                        props.category ===
+                                        category.attributes.slug
+                                          ? "selected"
+                                          : ""
+                                      }`}
+                                      onClick={() =>
+                                        filterByCategory(
+                                          category.attributes.slug
+                                        )
+                                      }
+                                    >
+                                      {category.attributes.name}
+                                    </button>
+                                  </li>
+                                ))}
+                            </ul>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div className="b-case-filters b-blogs-filters col-lg-4 col-md-5 col-sm-12">
+                    <div className="b-case-select">
+                      <div className="dropdown">
+                        <button
+                          className="btn btn-secondary dropdown-toggle"
+                          type="button"
+                          id="dropdownMenuButton1"
+                          data-bs-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          {props.selectedCategoryName &&
+                          props.selectedCategoryName.length
+                            ? `${props.selectedCategoryName}`
+                            : `All`}
+                        </button>
+                        <ul
+                          className="dropdown-menu"
+                          aria-labelledby="dropdownMenuButton1"
+                        >
+                          <li>
+                            <button
+                              className={`dropdown-item ${
+                                props.category === "" ? "selected" : ""
+                              }`}
+                              onClick={() => filterByCategory("")}
+                            >
+                              All
+                            </button>
+                          </li>
+                          {props.categories &&
+                            props.categories.length &&
+                            props.categories.map((category) => (
+                              <li key={category.id}>
+                                <button
+                                  className={`dropdown-item ${
+                                    props.category === category.attributes.slug
+                                      ? "selected"
+                                      : ""
+                                  }`}
+                                  onClick={() =>
+                                    filterByCategory(category.attributes.slug)
+                                  }
+                                >
+                                  {category.attributes.name}
+                                </button>
+                              </li>
+                            ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </>
+              ) : null}
+              <div className="b-blog-head-right col-lg-3 col-md-6 col-sm-12">
+                <a className="active">
+                  <div className="b-search-input">
+                    <Image
+                      width={24}
+                      height={24}
+                      src="/images/search-normal.svg"
+                      alt="Search-icon"
+                    />
+                    <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Search"
+                      onChange={(e) => handleSearchChange(e)}
+                      value={searchedKeywordsOrText}
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
+            {props.blogs && (
+              <div className="b-blog-listing">
+                <div className="row">
+                  {props.blogs.length === 0 ? (
+                    <>
+                      <ResultnotFound
+                        textMessage={
+                          props.selectedCategoryName &&
+                          props.selectedCategoryName.length > 0
+                            ? config.MESSAGE.BLOG_NOT_FOUND_WITH_CATEGORY +
+                              `"${props.selectedCategoryName}"`
+                            : searchedKeywordsOrText &&
+                              searchedKeywordsOrText.length > 0
+                            ? config.MESSAGE.BLOG_NOT_FOUND_WITH_CATEGORY +
+                              `"${searchedKeywordsOrText}"`
+                            : config.MESSAGE.BLOG_NOT_FOUND_GENERIC
+                        }
+                        pageName={config.PAGE_NAME.BLOG}
+                        multiple={
+                          featuredBlogs && featuredBlogs.length > 1
+                            ? true
+                            : false
+                        }
+                      />
+                      {featuredBlogs &&
+                        featuredBlogs.length &&
+                        featuredBlogs.map((blog, index) => (
+                          <div
+                            className="col-lg-6"
+                            key={blog.id + index + Math.random()}
+                          >
+                            <BlogCard blog={blog} isFeatured />
+                          </div>
+                        ))}
+                    </>
+                  ) : (
+                    props.blogs &&
+                    props.blogs.length &&
+                    props.blogs.map((blog, index) => {
+                      console.log(blog); // Add your console.log statement here
+                      return (
+                        <div
+                          className="col-lg-6"
+                          key={blog.id + index + Math.random()}
+                        >
+                          <BlogCard blog={blog} />
+                        </div>
+                      );
+                    })
+                  )}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </section>
       <CallToAction />

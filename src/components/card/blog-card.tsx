@@ -8,6 +8,7 @@ import { BlogCardPropType } from "@/types/component-types/blog-card";
 import removeMarkdown from "remove-markdown";
 
 const BlogCard: React.FC<BlogCardPropType> = ({ blog, isFeatured }) => {
+  console.log(blog);
   return (
     <div className="b-blog-item" data-testid="b-blog-item">
       <div className="b-blog-image-container">
@@ -51,7 +52,7 @@ const BlogCard: React.FC<BlogCardPropType> = ({ blog, isFeatured }) => {
           {blog.attributes?.publishDate && (
             <li>{getLocaleDate(blog.attributes.publishDate)}</li>
           )}
-          {blog.attributes.author.data && (
+          {blog.attributes.author?.data && (
             <li>
               {formatName(blog.attributes?.author?.data?.attributes?.fullname)}
             </li>
