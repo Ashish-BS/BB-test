@@ -26,7 +26,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
       metaTitle:
         "Unlock your business potential with revolutionary digital marketing solutions",
       metaDescription:
-        "Unlock explosive social media growth for your business with our proven digital marketing strategies.",
+        "Drive explosive business growth with proven digital strategies and elevate your brand through effective online marketing techniques.",
       metaKeywords:
         "Social media growth, Social media promotion, Increase online presence, Social media strategies, Brand visibility, Online marketing services, Meme page",
     },

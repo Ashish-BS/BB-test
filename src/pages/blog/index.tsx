@@ -106,8 +106,8 @@ const Blogs: NextPage<
               <span className="b-custom-underline">Blog</span>
             </h1>
             <p>
-              We're excited to share our team's treasure trove of knowledge,
-              carefully penned down for you.
+              Boost your online presence with our expertly crafted digital
+              marketing blogs. Stay ahead with the latest trends and strategies.
             </p>
           </div>
           {/* {!props.blogs ? (
@@ -543,11 +543,11 @@ export const getServerSideProps: GetServerSideProps<BlogPageProps> = async (
         searchBlog,
         category,
         selectedCategoryName,
-        metaTitle: "Blog | Insights & Latest Updates",
+        metaTitle: "Blog | Digital Marketing Trends To Boost Brand",
         metaDescription:
-          "Stay informed with insights and updates on the latest technology trends, including cloud computing, AI, machine learning, etc.",
+          "Stay ahead with the latest trends and expert strategies in digital marketing. Boost your brand and capture your audience's attention effectively.",
         metaKeywords:
-          "Bombay Softwares, blog, technology trends, cloud computing, AI, machine learning, computer vision, natural language processing, Android development, iOS development, wearable technology, Internet of Things, chatbot, Redux",
+          "Digital marketing, online presence, brand boosting, marketing trends, expert strategies, target audience, SEO, online strategy, content marketing, social media, digital advertising, audience engagement.",
       },
     };
   }
