@@ -24,10 +24,6 @@ import { ContactUsType } from "../../types/components/form-schema/contact-us.typ
 import { CountryDetail } from "../../types/data/phone-country";
 import { EnquiryEnum } from "../../enums/enquiry.enum";
 import config from "../../constants";
-
-import ImgLocationAhmedabad from "../../public/images/staticmap-512x512-ahmedabad.png";
-import ImgLocationAhmedabadBSquare2 from "../../public/images/staticmap-512x512-ahmedabad-bsquare-2.png";
-import ImgLocationNaviMumbai from "../../public/images/staticmap-512x512-cyber-one.png";
 import {
   convertToBase64,
   decrypt,
