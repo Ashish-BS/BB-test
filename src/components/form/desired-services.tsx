@@ -22,146 +22,102 @@ const DesiredServices: React.FC<IDesiredServiceProps> = ({
             <input
               className="b-desired-service-checkbox"
               type="checkbox"
-              value="Mobile App Development"
+              value="Website Development"
               {...salesForm("desiredService.0")}
-              id="mobile-app-development"
-              onChange={() => {
+              id="website-development"
+              onChange={(e) => {
                 {
-                  setSalesFormValue(
-                    "desiredService.0",
-                    "Mobile App Development"
-                  );
+                  if (e.target.checked) {
+                    setSalesFormValue(
+                      "desiredService.0",
+                      "Website Development"
+                    );
+                  } else {
+                    setSalesFormValue("desiredService.0", false);
+                  }
                 }
                 clearSalesFormError("desiredService");
               }}
             />
-            <label className="mb-0" htmlFor="mobile-app-development">
-              Mobile App Development
+            <label className="mb-0" htmlFor="website-development">
+              Website Development
             </label>
           </div>
           <div className="d-flex align-items-start b-desired-service-list">
             <input
               className="b-desired-service-checkbox"
               type="checkbox"
-              value="Web Application Development"
+              value="Seo"
               {...salesForm("desiredService.1")}
-              id="web-application-development"
-              onChange={() => {
+              id="seo"
+              onChange={(e) => {
                 {
-                  setSalesFormValue(
-                    "desiredService.1",
-                    "Web Application Development"
-                  );
+                  if (e.target.checked) {
+                    setSalesFormValue("desiredService.1", "Seo");
+                  } else {
+                    setSalesFormValue("desiredService.1", false);
+                  }
                 }
                 clearSalesFormError("desiredService");
               }}
             />
-            <label className="mb-0" htmlFor="web-application-development">
-              Web Application Development
+            <label className="mb-0" htmlFor="seo">
+              SEO
             </label>
           </div>
+
           <div className="d-flex align-items-start b-desired-service-list">
             <input
               className="b-desired-service-checkbox"
               type="checkbox"
-              value="Prototype/MVP Development"
+              value="Search Engine Marketing"
               {...salesForm("desiredService.2")}
-              id="prototype/MVP-development"
-              onChange={() => {
+              id="search-engine-marketing"
+              onChange={(e) => {
                 {
-                  setSalesFormValue(
-                    "desiredService.2",
-                    "Prototype/MVP Development"
-                  );
+                  if (e.target.checked) {
+                    setSalesFormValue(
+                      "desiredService.2",
+                      "Search Engine Marketing"
+                    );
+                  } else {
+                    setSalesFormValue("desiredService.2", false);
+                  }
                 }
                 clearSalesFormError("desiredService");
               }}
             />
-            <label className="mb-0" htmlFor="prototype/MVP-development">
-              Prototype/MVP Development
+            <label className="mb-0" htmlFor="search-engine-marketing">
+              Search Engine Marketing
             </label>
           </div>
+
           <div className="d-flex align-items-start b-desired-service-list">
             <input
               className="b-desired-service-checkbox"
               type="checkbox"
-              value="Cloud Infrastructure Solution"
+              value="Social Media Marketing"
               {...salesForm("desiredService.3")}
-              id="cloud-infrastructure-solution"
-              onChange={() => {
+              id="social-media-marketing"
+              onChange={(e) => {
                 {
-                  setSalesFormValue(
-                    "desiredService.3",
-                    "Cloud Infrastructure Solution"
-                  );
+                  if (e.target.checked) {
+                    setSalesFormValue(
+                      "desiredService.3",
+                      "Social Media Marketing"
+                    );
+                  } else {
+                    setSalesFormValue("desiredService.3", false);
+                  }
                 }
                 clearSalesFormError("desiredService");
               }}
             />
-            <label className="mb-0" htmlFor="cloud-infrastructure-solution">
-              Cloud Infrastructure Solution
+            <label className="mb-0" htmlFor="social-media-marketing">
+              Social Media Marketing
             </label>
           </div>
-          <div className="d-flex align-items-start b-desired-service-list">
-            <input
-              className="b-desired-service-checkbox"
-              type="checkbox"
-              value="Website Maintenance"
-              {...salesForm("desiredService.4")}
-              id="website-maintenance"
-              onChange={() => {
-                {
-                  setSalesFormValue("desiredService.4", "Website Maintenance");
-                }
-                clearSalesFormError("desiredService");
-              }}
-            />
-            <label className="mb-0" htmlFor="website-maintenance">
-              Website Maintenance
-            </label>
-          </div>
-          <div className="d-flex align-items-start b-desired-service-list">
-            <input
-              className="b-desired-service-checkbox"
-              type="checkbox"
-              value="Social Media Management"
-              {...salesForm("desiredService.5")}
-              id="social-media-management"
-              onChange={() => {
-                {
-                  setSalesFormValue(
-                    "desiredService.5",
-                    "Social Media Management"
-                  );
-                }
-                clearSalesFormError("desiredService");
-              }}
-            />
-            <label className="mb-0" htmlFor="social-media-management">
-              Social Media Management
-            </label>
-          </div>
-          <div className="d-flex align-items-start b-desired-service-list">
-            <input
-              className="b-desired-service-checkbox"
-              type="checkbox"
-              value="Digital Marketing (Social Media, Content Writing, SEO, Branding)"
-              {...salesForm("desiredService.6")}
-              id="digital-marketing"
-              onChange={() => {
-                {
-                  setSalesFormValue(
-                    "desiredService.6",
-                    "Digital Marketing (Social Media, Content Writing, SEO, Branding)"
-                  );
-                }
-                clearSalesFormError("desiredService");
-              }}
-            />
-            <label className="mb-0" htmlFor="digital-marketing">
-              Digital Marketing (Social Media, Content Writing, SEO, Branding)
-            </label>
-          </div>
+
           <div className="d-flex align-items-start b-desired-service-list">
             <input
               className="b-desired-service-checkbox"
