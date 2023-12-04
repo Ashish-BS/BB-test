@@ -202,6 +202,7 @@ h5 {
 	}
 }
 
+
 .b-footer {
 	text-align: center;
 	background-color: $theme-black;
@@ -211,6 +212,139 @@ h5 {
 
 	@include media-breakpoint-down('sm') {
 		font-size: 12px;
+	}
+}
+
+.bb-footerContainer {
+	background: $theme-yellow-gradient;
+
+	p {
+		font-weight: 500;
+	}
+
+	.bb-footer {
+		display: flex;
+		min-height: 1rem;
+		padding-top: 5rem;
+		padding-bottom: 5rem;
+
+		@include media-breakpoint-down('sm') {
+			padding-top: 0;
+			padding-bottom: 1rem;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.content {
+			@include media-breakpoint-down('sm') {
+				text-align: center;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+				margin-top: 1.2rem;
+				margin-bottom: 2rem;
+			}
+
+			.b-common-btn-no-arrow {
+				background-color: white;
+				color: #1e1e1e;
+				padding: 10px 20px;
+				font-size: 1rem;
+				font-weight: 500;
+				border-radius: 50px;
+				display: inline-block;
+				transition: 0.3s;
+				position: relative;
+
+				&:hover {
+					background-color: var(--color-theme-primary);
+					color: var(--color-theme-secondary);
+				}
+
+				@include media-breakpoint-down('sm') {
+					margin-top: 1.8rem;
+				}
+			}
+
+			h3 {
+				font-size: 1.5rem;
+				line-height: 1.5rem;
+				color: $theme-black;
+				margin-top: 0.5rem;
+				font-weight: 600;
+
+				@include media-breakpoint-down('sm') {
+					font-size: 1.4rem;
+				}
+			}
+		}
+
+		.footer-social {
+			display: flex;
+
+			.middle {
+				display: flex;
+				flex-wrap: wrap;
+			}
+
+			.btn-social {
+				transition: 0.3s;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 37px;
+				height: 37px;
+				border-radius: 25%;
+				box-shadow: 0 5px 15px -5px var(--box-shadow);
+				background-color: white;
+				color: var(--color-background-base-00013);
+				overflow: hidden;
+				padding: 5px;
+				text-align: center;
+				font-size: 1rem;
+				margin-right: 7px;
+
+				@include media-breakpoint-down(lg) {
+					margin-bottom: 10px;
+					width: 35px;
+					height: 35px;
+				}
+
+				@include media-breakpoint-down(md) {
+					font-size: 0.8rem;
+				}
+
+				img {
+					font-size: 46px;
+					transition: 0.2s;
+				}
+
+				&:hover {
+					background: var(--color-theme-primary);
+					color: white;
+
+					img {
+						filter: invert(1);
+					}
+				}
+			}
+		}
+
+		.icons {
+			display: flex;
+			flex-direction: column;
+			@include media-breakpoint-down(sm) {
+					display: flex;
+						flex-direction: column;
+						justify-content: center;
+						align-items: center;
+				
+				}
+			
+		}
 	}
 }
 
@@ -810,12 +944,16 @@ h5 {
 	overflow: auto;
 
 	.b-flex-container {
-		@include media-breakpoint-up('sm') {
-			padding: 50px 0;
+		padding: 50px 0;
+		@include media-breakpoint-down('sm') {
+			padding: 20px 0;
+			
 		}
 	}
 
 	.b-proof-section-header {
+		
+
 
 		h2,
 		span {
@@ -944,7 +1082,9 @@ h5 {
 // how we do it section styles
 .b-how-we-do-it {
 	background-color: $theme-grey;
-
+	@include media-breakpoint-down('sm') {
+			padding: 20px 0;
+		}
 	.b-bordered-text {
 		color: $theme-yellow;
 		border-color: $black;
@@ -1011,6 +1151,10 @@ h5 {
 
 // what will you get section styles
 .b-what-will-you-get {
+
+	@include media-breakpoint-down('sm') {
+			padding: 20px 0;
+		}
 	.b-bordered-text {
 		color: $theme-yellow;
 		border-color: $black;

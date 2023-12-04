@@ -125,7 +125,7 @@ const DesiredServices: React.FC<IDesiredServiceProps> = ({
               value="Others (please specify)"
               id="others"
               onClick={() => setOther((prev) => !prev)}
-              {...salesForm("desiredService.7")}
+              {...salesForm("desiredService.4")}
               checked={other}
             />
             <label className="mb-0" htmlFor="others">

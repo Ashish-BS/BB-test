@@ -3,8 +3,7 @@ import BannerSection from "@/components/section/banner";
 import HowWeDoItSection from "@/components/section/how-we-do-it";
 import SocialProofSection from "@/components/section/social";
 import WhatYouWillGetSection from "@/components/section/what-will-you-get";
-import CallToActionSection from "@/components/section/call-to-action";
-import Link from "next/link";
+// import CallToActionSection from "@/components/section/call-to-action";
 
 const Home: NextPage = () => {
   return (
@@ -13,7 +12,7 @@ const Home: NextPage = () => {
       <SocialProofSection />
       <HowWeDoItSection />
       <WhatYouWillGetSection />
-      <CallToActionSection />
+      {/* <CallToActionSection /> */}
     </>
   );
 };
