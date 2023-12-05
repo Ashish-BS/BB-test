@@ -1496,6 +1496,7 @@ h5 {
 
 .b-blog-section {
 	padding-top: 50px;
+	height: 100vh;
 
 	@include media-breakpoint-down(lg) {
 		padding-top: 100px;
