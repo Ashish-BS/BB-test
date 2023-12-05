@@ -4441,8 +4441,10 @@ a {
 }
 
 .b-contact-section {
-	 
-	.b-tagline {
+@include media-breakpoint-up(large) {
+		margin-bottom: 60px; 
+	}
+.b-tagline {
 		     margin-bottom: 1rem;
 			text-align: center;
 			
@@ -4515,7 +4517,7 @@ a {
 
 			.tab-pane {
 				.b-project-estimate {
-					@include media-breakpoint-down(sm) {
+					@include media-breakpoint-up(lg) {
 						text-align: left;
 					}
 
