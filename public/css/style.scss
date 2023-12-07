@@ -217,16 +217,17 @@ h5 {
 
 .bb-footerContainer {
 	background: $theme-yellow-gradient;
+	min-height: 2rem;
 
 	p {
 		font-weight: 500;
+	
 	}
 
 	.bb-footer {
 		display: flex;
-		min-height: 1rem;
-		padding-top: 5rem;
-		padding-bottom: 5rem;
+		padding-top: 3.8rem;
+		padding-bottom: 3.8rem;
 
 		@include media-breakpoint-down('sm') {
 			padding-top: 0;
@@ -484,24 +485,34 @@ h5 {
 				padding: 0;
 			}
 
-			&.active,
-			&:hover {
+			
+			
 				&:after {
-					content: '';
-					position: absolute;
-					display: block;
-					width: 8px;
-					height: 8px;
-					background-color: $theme-yellow;
-					border-radius: 50%;
-					left: 50%;
-					transform: translate(-50%, -50%);
+					bottom: -4px;
+						content: "";
+						display: block;
+						height: 2px;
+						left: 0;
+						position: absolute;
+						background: $theme-yellow;
+						opacity: 0.6;
+						transition: width 0.3s ease 0s, opacity 0.3s ease 0s;
+						width: 0;
 
 					@include media-breakpoint-down('lg') {
 						display: none;
 					}
-				}
-			}
+					
+				 }
+				             &.active,
+								 &:hover {
+								 	&:after {
+								 		width: 100%;
+								 		opacity: 0.9;
+								 	}
+								 }
+			
+
 		}
 
 		.b-header-right {
@@ -1496,7 +1507,7 @@ h5 {
 
 .b-blog-section {
 	padding-top: 50px;
-	height: 100vh;
+
 
 	@include media-breakpoint-down(lg) {
 		padding-top: 100px;
@@ -1888,6 +1899,7 @@ h5 {
 				.b-blog-head-select {
 					&:hover {
 						.dropdown-toggle {
+							color: $white;
 							&:after {
 								filter: brightness(100) invert(0);
 							}
@@ -1922,6 +1934,7 @@ h5 {
 						}
 
 						.dropdown-toggle {
+							color: $white;
 							border: none;
 							background-color: transparent;
 							position: relative;
@@ -2096,6 +2109,7 @@ h5 {
 						}
 
 						.dropdown-toggle {
+							color: black !important;
 							border: 1px solid #d0d0d0;
 							height: 50px;
 							background-color: transparent;
@@ -2139,6 +2153,7 @@ h5 {
 		}
 
 		.b-blog-listing {
+			min-height: 100vh;
 			.b-blog-item {
 				box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.04),
 					0px 8px 16px rgba(0, 0, 0, 0.08);
