@@ -459,52 +459,6 @@ const BlogDetails: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
           </div>
         </section>
       ) : null}
-
-      <section className="b-call-to-action b-call-subscribe-section">
-        <div className="container">
-          <div className="b-call-to-action-content">
-            <div className="b-section-title">
-              <h2>
-                Join our <span className="b-custom-underline">Newsletter</span>
-              </h2>
-              <p>
-                Get insights on latest trends in technology and industry
-                delivered straight to your inbox.
-              </p>
-            </div>
-            <form onSubmit={handleSubmit(formSubmitHandler)}>
-              <div className="b-call-subscribe">
-                <div className="d-flex flex-column">
-                  <input
-                    type="text"
-                    placeholder="Enter your email"
-                    className={`form-control ${
-                      errors.email ? "is-invalid" : ""
-                    }`}
-                    {...register("email")}
-                  />
-                  {errors.email && (
-                    <span className="text-danger">{errors.email.message}</span>
-                  )}
-                </div>
-                <button
-                  className={`btn ${loading ? "px-5" : ""}`}
-                  type="submit"
-                  disabled={loading || showCheckIcon}
-                >
-                  {loading ? (
-                    <Loader loadingText="Subscribing" />
-                  ) : showCheckIcon ? (
-                    <SuccessIcon text="Subscribed" />
-                  ) : (
-                    "Subscribe Now"
-                  )}
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </section>
     </>
   );
 };

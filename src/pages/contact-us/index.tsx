@@ -810,11 +810,11 @@ export default function ContanctUs() {
 export const getStaticProps: GetStaticProps = () => {
   return {
     props: {
-      metaTitle: "Contact us | Get in Touch for Inquiries & Support",
+      metaTitle: "Contact us | Bombaybees",
       metaDescription:
-        "Feel free to contact us for any queries; we will ensure you receive prompt support.",
+        "Let's connect to discuss how we can grow your business forward using proven growth marketing strategies.",
       metaKeywords:
-        "Bombay Softwares, Contact us, Sales inquiry, Hiring inquiry, Support",
+        "Bombaybees, Contact us, Sales inquiry, Digital Marketing Services, Growth Marketing Services",
     },
   };
 };

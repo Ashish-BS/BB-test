@@ -5,7 +5,7 @@ import { fetchGet } from "./service-clients";
 export const fetchBlogs = async (filter?: {
   [key: string]: any;
 }): Promise<BlogReturnType> => {
-  let url = `${process.env.NEXT_PUBLIC_CONTENT_API_URL}/posts?populate=*&sort=publishDate:desc&filters[publishingPlatforms][$eq]=Bombay Bees`;
+  let url = `${process.env.NEXT_PUBLIC_CONTENT_API_URL}/posts?populate=*&sort=publishDate:desc&filters[publishingPlatforms][$eq]=Bombay Bees&`;
   if (filter) {
     const { page, pageSize, searchBlog, isFeaturedBlog, category } = filter;
     if (page) {

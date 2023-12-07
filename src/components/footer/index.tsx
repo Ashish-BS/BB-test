@@ -24,20 +24,32 @@ const Footer: React.FC = () => {
               <p>Follow us</p>
             </div>
             <div className="middle">
-              <Link href="_#" target="_blank" className="btn-social">
+              <Link
+                href="https://www.facebook.com/bombaybeesofficial"
+                target="_blank"
+                className="btn-social"
+              >
                 <img src="images/facebookBB.svg" alt="facebook svg" />
               </Link>
               <Link
-                href="https://www.facebook.com/bombaysoftwares"
+                href="https://www.instagram.com/bombaybees"
                 target="_blank"
                 className="btn-social"
               >
                 <img src="images/instagramBB.svg" alt="instagram SVG" />
               </Link>
-              <Link href="_#" target="_blank" className="btn-social">
+              <Link
+                href="https://twitter.com/bombay_bees"
+                target="_blank"
+                className="btn-social"
+              >
                 <img src="images/twitterBB.svg" alt="twitter SVG" />
               </Link>
-              <Link href="_#" target="_blank" className="btn-social">
+              <Link
+                href="https://www.youtube.com/channel/UCeFJdgdX7bSG64Fc_xEQVJQ?sub_confirmation=1"
+                target="_blank"
+                className="btn-social"
+              >
                 <img src="images/youtubeBB.svg" alt="Youtube SVG" />
               </Link>
             </div>

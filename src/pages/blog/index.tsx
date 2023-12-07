@@ -10,7 +10,6 @@ import { useRouter } from "next/router";
 import { Navigation, Pagination, Scrollbar, A11y, Autoplay } from "swiper";
 import { SwiperSlide, Swiper } from "swiper/react";
 import { BlogPageProps } from "@/types/page-types/blog";
-import CallToAction from "../../components/section/call-to-action/index";
 import ResultnotFound from "../../components/common/ResultNotFound";
 import ShortDescription from "../../components/common/ShortDescription";
 import NoResponseFromCms from "../../components/common/NoResponse";
@@ -453,7 +452,6 @@ const Blogs: NextPage<
           </div>
         </div>
       </section>
-      <CallToAction />
     </>
   );
 };
