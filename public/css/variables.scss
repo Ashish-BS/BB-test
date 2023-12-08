@@ -1,5 +1,12 @@
 /* declaring the css variables colors */
 
+:root{
+	
+	--color-background-base-00012: #ffffff;
+	--color-theme-secondary: #ffffff;
+	--color-theme-primary: #060607;
+}
+
 // colors
 $black: #000000;
 $white: #ffffff;
@@ -38,3 +45,4 @@ $medium: 500;
 $semibold: 600;
 $bold: 700;
 $extrabold: 800;
+
