@@ -8,10 +8,12 @@ import NavItem from "../navitems";
 const Navbar: React.FC = () => {
   const router = useRouter();
   const currentPath = router.pathname;
+  // currentPath = currentPath.replace(/\/(blog)(\/|$)/, "/$1");
+  // console.log("fwefuewfweyfebfewygfby", currentPath);
 
   const navItems = [
     { path: "/", label: "Home" },
-    { path: "/blog", label: "Blogs" },
+    { path: "/blog", label: "Blog" },
     // { path: "/about", label: "About" },
     // { path: "/testimonials", label: "Testimonials" },
     // { path: "/xyz", label: "What will you get?" },

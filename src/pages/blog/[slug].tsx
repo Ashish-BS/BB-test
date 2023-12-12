@@ -43,6 +43,7 @@ import { generateImageTags } from "@/utils/common/parseHtml";
 import SuccessIcon from "@/components/common/Success";
 import { convertToBase64, encrypt } from "@/utils/common/encrypt-decrypt";
 import { loadRecaptcha, removeRecaptcha } from "@/utils/url/recaptcha";
+import { Link as ReactScrollLink } from "react-scroll";
 
 const BlogDetails: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
   props
@@ -54,6 +55,8 @@ const BlogDetails: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
   const [titleImageBgColor, setTitleImageBgColor] = useState(
     config.COLOR_PALETTE.BG_PRIMARY_COLOR
   );
+  const [scrollOffset, setScrollOffset] = useState<number>(0);
+  const [navigationList, setNavigationList] = useState<Element[]>([]);
   const router = useRouter();
 
   const defaultUserData = getStoredUserJsonData(
@@ -144,6 +147,17 @@ const BlogDetails: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
     }
   };
 
+  const addContainerClassToBlogSection = () => {
+    const blogSection = document.getElementsByClassName(
+      "b-blog-section-container"
+    );
+    if (window.screen.width < 992) {
+      blogSection[0]?.classList.add("container");
+    } else {
+      blogSection[0]?.classList.remove("container");
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop =
@@ -187,6 +201,38 @@ const BlogDetails: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
       removeRecaptcha();
     };
   }, []);
+
+  useEffect(() => {
+    setNavigationList(
+      Array.from(document.querySelectorAll(".b-blog-details-section h2, h3"))
+    );
+    loadRecaptcha();
+    addContainerClassToBlogSection();
+    window.addEventListener("resize", () => {
+      addContainerClassToBlogSection();
+    });
+    return () => {
+      removeRecaptcha();
+      window.removeEventListener("resize", () => {
+        addContainerClassToBlogSection();
+      });
+    };
+  }, []);
+  useEffect(() => {
+    if (navigationList && navigationList.length) {
+      navigationList.forEach((item: any) =>
+        item.setAttribute("id", item.textContent.split(" ").join(""))
+      );
+    }
+  }, [navigationList]);
+
+  useEffect(() => {
+    setScrollOffset(
+      -86 -
+        document.getElementsByClassName(`${sectionHeaderClass}`)[0]
+          ?.clientHeight
+    );
+  }, [isSticky]);
 
   return (
     <>
@@ -291,79 +337,116 @@ const BlogDetails: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
       </section>
       <section className="b-blog-details-section">
         <div className="container">
-          <div className="b-blog-detail-head">
-            <div className="b-section-title">
-              {props.blog?.attributes?.title && (
-                <h1>{props.blog.attributes.title}</h1>
-              )}
-              {props.blog?.attributes?.publishDate && (
-                <p>
-                  {getLocaleDate(props.blog.attributes.publishDate)} |{" "}
-                  {
-                    props.blog?.attributes?.author?.data?.attributes?.fullname.split(
-                      " "
-                    )[0]
-                  }{" "}
-                  {props.blog?.attributes?.author?.data?.attributes?.fullname.split(
-                    " "
-                  ).length > 1
-                    ? props.blog?.attributes?.author?.data?.attributes?.fullname
-                        .split(" ")[1]
-                        .slice(0, 1) + "."
-                    : ""}
-                </p>
-              )}
-              <ul className="b-blog-category">
-                {props.blog.attributes.category.data && (
-                  <li>
-                    <span className="badge">
-                      {props.blog.attributes.category.data.attributes.name}
-                    </span>
-                  </li>
-                )}
-              </ul>
-            </div>
-          </div>
-          {isSet(props.blog.attributes.featuredImage) &&
-            isSet(props.blog.attributes.featuredImage?.data) && (
+          <div className="row">
+            <div className="col-lg-4">
               <div
-                className="b-blog-details-image"
-                style={{ backgroundColor: titleImageBgColor }}
+                className={`b-blog-content-navigator-block d-none d-lg-block`}
+                style={{ top: isSticky ? -scrollOffset : 0 }}
               >
-                <Image
-                  width={1170}
-                  height={695}
-                  onLoad={setTitleImageHexValue}
-                  priority
-                  src={
-                    props.blog.attributes.featuredImage.data.attributes.url.includes(
-                      process.env.NEXT_PUBLIC_BLOG_IMAGES_DOMAIN as string
-                    )
-                      ? `${props.blog.attributes.featuredImage.data.attributes.url}`
-                      : `${process.env.NEXT_PUBLIC_IMAGES_URL}${props.blog.attributes.featuredImage.data.attributes.url}`
-                  }
-                  alt={
-                    props.blog.attributes.featuredImage.data.attributes
-                      .alternativeText
-                  }
-                />
+                <nav
+                  id="navbar-example3"
+                  className="b-blog-content-navigator d-block navbar navbar-expand-lg flex-column align-items-stretch p-3"
+                >
+                  <nav className="nav nav-pills flex-column">
+                    {navigationList.map((item, index) => (
+                      <ReactScrollLink
+                        key={index}
+                        to={`${item.textContent?.split(" ").join("")}`}
+                        spy={true}
+                        smooth={true}
+                        duration={50}
+                        offset={scrollOffset}
+                      >
+                        <a
+                          className={`nav-link d-inline-block text-black ${
+                            item.localName === "h3" ? "ms-5" : ""
+                          }`}
+                          href={`${item.textContent}`}
+                        >
+                          {item.textContent}
+                        </a>
+                      </ReactScrollLink>
+                    ))}
+                  </nav>
+                </nav>
               </div>
-            )}
-          <div className="b-blog-details">
-            <div className="b-blog-detail-item b-custom-blog-style">
-              <span
-                dangerouslySetInnerHTML={{
-                  __html: props.blog.attributes.content,
-                }}
-              />
             </div>
-            {props.blog.attributes.quote &&
-              props.blog.attributes.quoteAuthor && (
-                <div className="b-quote-section">
-                  <p>{props.blog.attributes.quote}</p>
-                  <span>{props.blog.attributes.quoteAuthor}</span>
+            <div className="col-lg-8">
+              <div className="b-blog-detail-head">
+                <div className="b-section-title">
+                  {props.blog?.attributes?.title && (
+                    <h1>{props.blog.attributes.title}</h1>
+                  )}
+                  {props.blog?.attributes?.publishDate && (
+                    <p>
+                      {getLocaleDate(props.blog.attributes.publishDate)} |{" "}
+                      {
+                        props.blog?.attributes?.author?.data?.attributes?.fullname.split(
+                          " "
+                        )[0]
+                      }{" "}
+                      {props.blog?.attributes?.author?.data?.attributes?.fullname.split(
+                        " "
+                      ).length > 1
+                        ? props.blog?.attributes?.author?.data?.attributes?.fullname
+                            .split(" ")[1]
+                            .slice(0, 1) + "."
+                        : ""}
+                    </p>
+                  )}
+                  <ul className="b-blog-category">
+                    {props.blog.attributes.category.data && (
+                      <li>
+                        <span className="badge">
+                          {props.blog.attributes.category.data.attributes.name}
+                        </span>
+                      </li>
+                    )}
+                  </ul>
                 </div>
-              )}
+              </div>
+              {isSet(props.blog.attributes.featuredImage) &&
+                isSet(props.blog.attributes.featuredImage?.data) && (
+                  <div
+                    className="b-blog-details-image"
+                    style={{ backgroundColor: titleImageBgColor }}
+                  >
+                    <Image
+                      width={1170}
+                      height={695}
+                      onLoad={setTitleImageHexValue}
+                      priority
+                      src={
+                        props.blog.attributes.featuredImage.data.attributes.url.includes(
+                          process.env.NEXT_PUBLIC_BLOG_IMAGES_DOMAIN as string
+                        )
+                          ? `${props.blog.attributes.featuredImage.data.attributes.url}`
+                          : `${process.env.NEXT_PUBLIC_IMAGES_URL}${props.blog.attributes.featuredImage.data.attributes.url}`
+                      }
+                      alt={
+                        props.blog.attributes.featuredImage.data.attributes
+                          .alternativeText
+                      }
+                    />
+                  </div>
+                )}
+              <div className="b-blog-details">
+                <div className="b-blog-detail-item b-custom-blog-style">
+                  <span
+                    dangerouslySetInnerHTML={{
+                      __html: props.blog.attributes.content,
+                    }}
+                  />
+                </div>
+                {props.blog.attributes.quote &&
+                  props.blog.attributes.quoteAuthor && (
+                    <div className="b-quote-section">
+                      <p>{props.blog.attributes.quote}</p>
+                      <span>{props.blog.attributes.quoteAuthor}</span>
+                    </div>
+                  )}
+              </div>
+            </div>
           </div>
         </div>
       </section>
