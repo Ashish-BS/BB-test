@@ -213,6 +213,9 @@ export default function ContanctUs() {
               <span className="contact-heading">CONTACT</span>
               <span className="b-bordered-text">US</span>
             </h1>
+            <p className="b-tagline-para">
+              Reach out to us for any questions or assistance.
+            </p>
             <div className="row">
               {inquiryType !==
               config.LOCAL_STORAGE_VARIABLES.INQUIRY.HIRING_INQUIRY ? (
@@ -600,6 +603,7 @@ export default function ContanctUs() {
               ) : (
                 <></>
               )}
+
               <div className="col-lg-12 col-xl-4">
                 <div className="b-contact-form-right">
                   <div className="b-what-happen-next">

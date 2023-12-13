@@ -109,7 +109,7 @@ const Blogs: NextPage<
               marketing blogs. Stay ahead with the latest trends and strategies.
             </p>
           </div>
-          {/* {!props.blogs ? (
+          {!props.blogs ? (
             <NoResponseFromCms
               description={config.MESSAGE.NO_RESPONSE_FROM_CMS}
               className="b-no-content"
@@ -239,7 +239,7 @@ const Blogs: NextPage<
                 <div className="swiper-pagination-3"></div>
               </>
             )
-          )} */}
+          )}
           {props.blogs && props.blogs.length > 0}
           <div className="b-blog-list">
             <div className="b-blog-head row">
