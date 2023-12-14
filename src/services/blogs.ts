@@ -15,7 +15,7 @@ export const fetchBlogs = async (filter?: {
       url += `pagination[pageSize]=${pageSize}`;
     }
     if (searchBlog && searchBlog.trim().length) {
-      url += `&filters[$or][0][title][$containsi]=${searchBlog}&filters[$or][1][content][$containsi]=${searchBlog}`;
+      url += `&filters[$or][0][title][$containsi]=${searchBlog}&filters[$or][1][content][$containsi]=${searchBlog}&filters[$or][2][author][fullname][$containsi]=${searchBlog}`;
     }
     if (isFeaturedBlog) {
       url += `&filters[isFeaturedPost][$eq]=true`;

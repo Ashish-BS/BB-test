@@ -38,6 +38,7 @@ const Blogs: NextPage<
   InferGetServerSidePropsType<typeof getServerSideProps>
 > = (props) => {
   console.log(props.blogs);
+  // console.log(" config.PAGE_NAME.BLOG", props.searchBlog);
   let categoryIndex = -1;
   props.category &&
     props.categories &&
@@ -67,6 +68,7 @@ const Blogs: NextPage<
 
   const searchBlog = useCallback(
     debounce((searchTerm: string) => {
+      // console.log(`Searching............................`);
       if (props.blogs) {
         router.replace({
           pathname: config.PAGE_NAME.BLOG,
@@ -80,6 +82,7 @@ const Blogs: NextPage<
   const handleSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchedKeywordsOrText(e.target.value);
     searchBlog.cancel();
+    console.log("searchedKeywordsOrText", searchedKeywordsOrText);
     if (searchedKeywordsOrText.trim().length > 0) {
       searchBlog(e.target.value);
     }
@@ -541,11 +544,11 @@ export const getServerSideProps: GetServerSideProps<BlogPageProps> = async (
         searchBlog,
         category,
         selectedCategoryName,
-        metaTitle: "Blog | Digital Marketing Trends To Boost Brand",
+        metaTitle: "Blog | Insights & Latest Updates",
         metaDescription:
-          "Stay ahead with the latest trends and expert strategies in digital marketing. Boost your brand and capture your audience's attention effectively.",
+          "Stay informed with insights and updates on the latest technology trends, including cloud computing, AI, machine learning, etc.",
         metaKeywords:
-          "Digital marketing, online presence, brand boosting, marketing trends, expert strategies, target audience, SEO, online strategy, content marketing, social media, digital advertising, audience engagement.",
+          "Bombay Softwares, blog, technology trends, cloud computing, AI, machine learning, computer vision, natural language processing, Android development, iOS development, wearable technology, Internet of Things, chatbot, Redux",
       },
     };
   }

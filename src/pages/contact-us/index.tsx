@@ -149,8 +149,6 @@ export default function ContanctUs() {
       toast(config.MESSAGE.GENERIC_ERROR, config.TOASTER_OPTIONS.ERROR);
       setShowSuccessIcon(false);
       setLoading(false);
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -589,7 +587,13 @@ export default function ContanctUs() {
                                     className="btn"
                                     disabled={loading || showSuccessIcon}
                                   >
-                                    Submit
+                                    {loading ? (
+                                      <Loader loadingText="Submitting" />
+                                    ) : showSuccessIcon ? (
+                                      <SuccessIcon text={"Submitted"} />
+                                    ) : (
+                                      "Submit"
+                                    )}
                                   </button>
                                 </div>
                               </div>
