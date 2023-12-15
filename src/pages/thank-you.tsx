@@ -245,7 +245,7 @@ const SuccessPage = () => {
               </Link>
             </div>
           </div>
-          <div className="col-lg-6 b-error-image-container">
+          {/* <div className="col-lg-6 b-error-image-container">
             <div className="b-error-image">
               <Image
                 width={200}
@@ -261,7 +261,7 @@ const SuccessPage = () => {
                 }}
               />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

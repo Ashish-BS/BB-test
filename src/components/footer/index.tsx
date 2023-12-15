@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
             <Link
               href="/contact-us"
               data-bs-dismiss="offcanvas"
-              className="btn b-common-btn-no-arrow "
+              className="b-common-btn-no-arrow "
             >
               Let's talk
             </Link>

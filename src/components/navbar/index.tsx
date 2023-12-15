@@ -48,7 +48,7 @@ const Navbar: React.FC = () => {
           <div className="b-header-right">
             <Link
               href="/contact-us"
-              className="btn b-contact-btn b-btn-border-hover"
+              className="b-contact-btn b-btn-border-hover"
             >
               Let's talk
             </Link>
@@ -95,7 +95,7 @@ const Navbar: React.FC = () => {
               <Link
                 href="/contact-us"
                 data-bs-dismiss="offcanvas"
-                className="btn b-common-btn-no-arrow "
+                className="b-common-btn-no-arrow "
               >
                 Let's talk
               </Link>
