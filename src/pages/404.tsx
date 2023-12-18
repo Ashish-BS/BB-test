@@ -24,7 +24,7 @@ export default function NotFound() {
                   </Link>
                 </div>
               </div>
-              <div className="col-lg-6 b-error-image-container">
+              {/* <div className="col-lg-6 b-error-image-container">
                 <div className="b-error-image">
                   <Image
                     width={50}
@@ -40,7 +40,7 @@ export default function NotFound() {
                     }}
                   />
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>

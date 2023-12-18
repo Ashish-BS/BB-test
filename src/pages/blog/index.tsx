@@ -103,15 +103,14 @@ const Blogs: NextPage<
     <>
       <section className="b-blog-section" data-testid="b-blog-section">
         <div className={props.blogs ? "container" : ""}>
-          <div className="b-section-title">
-            <h1>
-              <span className="b-custom-underline">Blog</span>
-            </h1>
-            <p>
-              Boost your online presence with our expertly crafted digital
-              marketing blogs. Stay ahead with the latest trends and strategies.
-            </p>
-          </div>
+          <h1 className="b-tagline">
+            <span className="b-bordered-text">Blog</span>
+          </h1>
+          <p className="b-tagline-para">
+            Boost your online presence with our expertly crafted digital
+            marketing blogs.
+            <br /> Stay ahead with the latest trends and strategies.
+          </p>
           {!props.blogs ? (
             <NoResponseFromCms
               description={config.MESSAGE.NO_RESPONSE_FROM_CMS}

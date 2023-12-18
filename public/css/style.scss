@@ -259,7 +259,7 @@ h5 {
 				color: #1e1e1e;
 				padding: 10px 20px;
 				font-size: 1rem;
-				font-weight: 500;
+
 				border-radius: 50px;
 				display: inline-block;
 				transition: 0.3s;
@@ -574,8 +574,8 @@ h5 {
 				}
 
 				&:hover {
-					background-color: var(--color-theme-secondary);
-					color: var(--color-theme-primary);
+					background-color: black;
+					color: white
 				}
 			}
 
@@ -1545,8 +1545,32 @@ h5 {
 }
 
 .b-blog-section {
-	padding-top: 50px;
+	padding-top: 40px;
 
+	.b-tagline {
+		text-align: center;
+
+		span {
+			font-family: 'Bebas';
+			font-size: 3.5rem;
+			font-weight: 400;
+			line-height: 5rem;
+			text-align: center;
+		}
+
+		.b-bordered-text {
+			color: $theme-yellow;
+			margin-left: 5px;
+		}
+
+
+	}
+
+	.b-tagline-para {
+		text-align: center;
+		font-size: 1.1rem;
+		margin-top: 0.65rem;
+	}
 
 	@include media-breakpoint-down(lg) {
 		padding-top: 20px;
@@ -1577,7 +1601,13 @@ h5 {
 		text-align: center;
 		margin-bottom: 30px;
 
-		// margin-top: -40px;
+		@include media-breakpoint-down(lg) {
+			margin-top: -40px;
+			margin-bottom: -5px;
+		}
+
+
+
 		.swiper-pagination-bullet {
 			background-color: #444444;
 			opacity: 1;
@@ -2198,6 +2228,7 @@ h5 {
 								vertical-align: middle;
 								filter: invert(1);
 							}
+
 						}
 
 						.dropdown-menu {
@@ -2205,6 +2236,13 @@ h5 {
 
 							.dropdown-item {
 								padding: 0.5rem 1rem;
+
+								&:hover {
+									background-color: $theme-yellow;
+									border-color: $theme-yellow;
+									color: black !important;
+
+								}
 
 							}
 						}
@@ -4953,11 +4991,13 @@ a {
 							}
 
 							&:hover {
-								background-color: var(--color-theme-secondary);
-								color: var(--color-theme-primary);
+								background-color: black;
+								color: white;
+
 
 								@include media-breakpoint-down(xl) {
 									background-color: $theme-yellow;
+									color: black
 								}
 							}
 						}
@@ -5548,10 +5588,12 @@ a {
 
 		&.b-error-page-no-data {
 			height: auto;
+
 		}
 
 		&.b-error-page {
 			overflow: hidden;
+
 
 			&.b-no-content {
 				padding: 220px 0px;
@@ -5565,20 +5607,20 @@ a {
 				padding: 100px 0px;
 			}
 
-			&:after {
-				@include media-breakpoint-down(lg) {
-					content: "";
-					position: absolute;
-					left: 0;
-					bottom: -9px;
-					background-image: url("../images/offcanvas-logo.png");
-					background-size: 159px auto;
-					background-repeat: no-repeat;
-					background-position: center;
-					width: 159px;
-					height: 250px;
-				}
-			}
+			// &:after {
+			// 	@include media-breakpoint-down(lg) {
+			// 		content: "";
+			// 		position: absolute;
+			// 		left: 0;
+			// 		bottom: -9px;
+			// 		background-image: url("../images/offcanvas-logo.png");
+			// 		background-size: 159px auto;
+			// 		background-repeat: no-repeat;
+			// 		background-position: center;
+			// 		width: 159px;
+			// 		height: 250px;
+			// 	}
+			// }
 
 			.container {
 				position: static;
@@ -5613,7 +5655,8 @@ a {
 			.b-error-content {
 				position: relative;
 				z-index: 1;
-                text-align: left;
+				text-align: left;
+
 				@include media-breakpoint-down(lg) {
 					text-align: center;
 				}
@@ -5734,9 +5777,13 @@ a {
 }
 
 .accordion-title {
-	font-size: 1.2rem;
+	font-size: 24px;
 	font-weight: 600;
 	margin-top: 1rem;
+
+	@include media-breakpoint-down(lg) {
+		font-size: 1.3rem;
+	}
 }
 
 // LoadingIcon in contact us page after hitting submit button
@@ -5771,11 +5818,11 @@ a {
 	align-items: center;
 	justify-content: center;
 	height: 92vh;
-	
+
 
 	@include media-breakpoint-down(lg) {
 		padding-top: 130px;
-		height: auto;
+		height: 92vh;
 		display: block;
 	}
 
@@ -5800,47 +5847,47 @@ a {
 			left: -90px;
 		}
 
-				.icon {
-					margin-left: -50px;
-					opacity: 0.6;
-					margin-top: -10px;
-				}
-		
-				.cls-1,
-				.cls-2,
-				.cls-3,
-				.cls-4 {
-					fill: none;
-					stroke-miterlimit: 13;
-					stroke-width: 4px;
-				}
-		
-				.cls-1 {
-					stroke: #ffce17;
-				}
-		
-				.cls-2 {
-					stroke: #000;
-				}
-		
-				.cls-3 {
-					stroke: #231f20;
-				}
-		
-				.cls-4 {
-					stroke: #010101;
-				}
-		
-				.cls-5 {
-					fill: #231f20;
-				}
-		
-				/* Adjusted media breakpoint for better responsiveness */
-				@media screen and (max-width: 768px) {
-					.icon {
-						width: 100%;
-					}
-				}
+		.icon {
+			margin-left: -50px;
+			opacity: 0.6;
+			margin-top: -10px;
+		}
+
+		.cls-1,
+		.cls-2,
+		.cls-3,
+		.cls-4 {
+			fill: none;
+			stroke-miterlimit: 13;
+			stroke-width: 4px;
+		}
+
+		.cls-1 {
+			stroke: #ffce17;
+		}
+
+		.cls-2 {
+			stroke: #000;
+		}
+
+		.cls-3 {
+			stroke: #231f20;
+		}
+
+		.cls-4 {
+			stroke: #010101;
+		}
+
+		.cls-5 {
+			fill: #231f20;
+		}
+
+		/* Adjusted media breakpoint for better responsiveness */
+		@media screen and (max-width: 768px) {
+			.icon {
+				width: 100%;
+			}
+		}
 	}
 
 	.container {
@@ -6036,20 +6083,20 @@ a {
 			padding: 100px 0px;
 		}
 
-		&:after {
-			@include media-breakpoint-down(lg) {
-				content: "";
-				position: absolute;
-				left: 0;
-				bottom: -9px;
-				background-image: url("../images/offcanvas-logo.png");
-				background-size: 159px auto;
-				background-repeat: no-repeat;
-				background-position: center;
-				width: 159px;
-				height: 250px;
-			}
-		}
+		// &:after {
+		// 	@include media-breakpoint-down(lg) {
+		// 		content: "";
+		// 		position: absolute;
+		// 		left: 0;
+		// 		bottom: -9px;
+		// 		background-image: url("../images/offcanvas-logo.png");
+		// 		background-size: 159px auto;
+		// 		background-repeat: no-repeat;
+		// 		background-position: center;
+		// 		width: 159px;
+		// 		height: 250px;
+		// 	}
+		// }
 
 		.container {
 			position: static;
