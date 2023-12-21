@@ -9,17 +9,9 @@ import {
 } from "next";
 import { useRouter } from "next/router";
 import { toast } from "react-hot-toast";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
 import html from "remark-html";
 import { remark } from "remark";
 import jsDom from "jsdom";
-
-import { EnquiryEnum } from "../../enums/enquiry.enum";
-import { NewsletterValidationSchema } from "../../validation/newsletter";
-import { NewsletterType } from "../../types/components/form-schema/newsletter.types";
-import { subscribeToNewsletter } from "@/services/contact-us";
-import Loader from "../../components/loader/LoadingIcon";
 import config from "../../constants";
 import getUserAgentInfo from "../../utils/common/user-agent";
 
@@ -40,8 +32,6 @@ import {
   formatName,
 } from "@/utils/common/utility-functions";
 import { generateImageTags } from "@/utils/common/parseHtml";
-import SuccessIcon from "@/components/common/Success";
-import { convertToBase64, encrypt } from "@/utils/common/encrypt-decrypt";
 import { loadRecaptcha, removeRecaptcha } from "@/utils/url/recaptcha";
 import { Link as ReactScrollLink } from "react-scroll";
 
@@ -49,8 +39,6 @@ const BlogDetails: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
   props
 ) => {
   const [isSticky, setIsSticky] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [showCheckIcon, setShowCheckIcon] = useState(false);
   const [relatedBlogs] = useState<BlogAPIResponseType[]>(props.relatedBlogs);
   const [titleImageBgColor, setTitleImageBgColor] = useState(
     config.COLOR_PALETTE.BG_PRIMARY_COLOR
@@ -68,69 +56,6 @@ const BlogDetails: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
   const sectionHeaderClass = isSticky
     ? "b-blog-details-header b-blog-sticky-header"
     : "b-blog-details-header";
-
-  const formSubmitHandler = async (data: NewsletterType) => {
-    try {
-      setLoading(true);
-      //@ts-ignore
-      grecaptcha.ready(function () {
-        //@ts-ignore
-        grecaptcha
-          .execute(process.env.NEXT_PUBLIC_GOOGLE_CAPTCHA_SITE_KEY, {
-            action: "submit",
-          })
-          .then(async function (token: any) {
-            const response = await subscribeToNewsletter(data);
-            if (response.success) {
-              setLoading(false);
-              setShowCheckIcon(true);
-              typeof localStorage !== "undefined" &&
-                localStorage.setItem(
-                  convertToBase64(
-                    config.LOCAL_STORAGE_VARIABLES.USER_DATA
-                  ) as string,
-                  encrypt(
-                    JSON.stringify({ ...defaultUserData, ...data })
-                  ) as string
-                );
-              setTimeout(() => {
-                router.push(
-                  {
-                    pathname: "/thank-you",
-                    query: {
-                      page: router.pathname,
-                      redirectedFrom: data.formType,
-                      q: router.query["slug"],
-                    },
-                  },
-                  "/thank-you"
-                );
-              }, 1000);
-            } else {
-              toast(config.MESSAGE.GENERIC_ERROR, config.TOASTER_OPTIONS.ERROR);
-              setLoading(false);
-            }
-          });
-      });
-    } catch (error: any) {
-      console.log("error", error);
-      setShowCheckIcon(false);
-      toast(config.MESSAGE.GENERIC_ERROR, config.TOASTER_OPTIONS.ERROR);
-      setLoading(false);
-    }
-  };
-
-  const {
-    register,
-    formState: { errors },
-    handleSubmit,
-  } = useForm<NewsletterType>({
-    resolver: yupResolver(NewsletterValidationSchema),
-    defaultValues: {
-      formType: EnquiryEnum.NEWSLETTER,
-      email: defaultUserData?.email,
-    },
-  });
 
   const setTitleImageHexValue = () => {
     const img = document.querySelector(
@@ -261,7 +186,7 @@ const BlogDetails: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
               <ul>
                 <li>
                   <Link
-                    href={`https://www.facebook.com/sharer/sharer.php?u=https://www.bombaysoftwares.com/props.blog/${encodeURI(
+                    href={`https://www.facebook.com/sharer/sharer.php?u=https://www.bombaybees.com/props.blog/${encodeURI(
                       router.query["slug"] as string
                     )}`}
                     target="_blank"
@@ -277,7 +202,7 @@ const BlogDetails: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
                 </li>
                 <li>
                   <Link
-                    href={`https://www.linkedin.com/share?text=https://www.bombaysoftwares.com/blog/${encodeURI(
+                    href={`https://www.linkedin.com/share?text=https://www.bombaybees.com/blog/${encodeURI(
                       router.query["slug"] as string
                     )}`}
                     target="_blank"
@@ -293,7 +218,7 @@ const BlogDetails: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
                 </li>
                 <li>
                   <Link
-                    href={`https://twitter.com/intent/tweet?url=https://bombaysoftwares.com/blog/${encodeURI(
+                    href={`https://twitter.com/intent/tweet?url=https://bombaybees.com/blog/${encodeURI(
                       router.query["slug"] as string
                     )}`}
                     target="_blank"
@@ -357,14 +282,14 @@ const BlogDetails: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
                         duration={50}
                         offset={scrollOffset}
                       >
-                        <a
+                        <Link
                           className={`nav-link d-inline-block text-black ${
                             item.localName === "h3" ? "ms-5" : ""
                           }`}
                           href={`${item.textContent}`}
                         >
                           {item.textContent}
-                        </a>
+                        </Link>
                       </ReactScrollLink>
                     ))}
                   </nav>
@@ -634,9 +559,9 @@ export const getStaticProps: GetStaticProps<BlogDetailsPageProps> = async (
           metaDescription: blogData?.attributes?.metaDescription
             ? blogData?.attributes?.metaDescription
             : null,
-          metaImage: blogData?.attributes?.featuredImage?.data?.attributes?.url
-            ? blogData?.attributes?.featuredImage?.data?.attributes?.url
-            : null,
+          // metaImage: blogData?.attributes?.featuredImage?.data?.attributes?.url
+          //   ? blogData?.attributes?.featuredImage?.data?.attributes?.url
+          //   : null,
           metaKeywords: blogData?.attributes?.metaKeywords
             ? blogData?.attributes?.metaKeywords
             : null,

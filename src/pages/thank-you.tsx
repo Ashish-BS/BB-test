@@ -213,7 +213,17 @@ const SuccessPage = () => {
         <div className="row">
           <div className="col-lg-6">
             <div className="b-error-content b-thanks-page">
-              {pageSource &&
+              <h1>
+                <span className="b-custom-underline">{greetingText}</span>
+              </h1>
+              <p>
+                Your message has been received. We appreciate your interest and
+                will be in touch soon.
+              </p>
+              <Link href="/blog">
+                <button className="b-common-btn">Continue reading...</button>
+              </Link>
+              {/* {pageSource &&
               pageSource.includes(config.PAGE_NAME.CONTACT_US) ? (
                 <>
                   <h1>
@@ -224,8 +234,8 @@ const SuccessPage = () => {
                     and will be in touch soon.
                   </p>
                 </>
-              ) : null}
-              <Link href={redirectionUrl}>
+              ) : null} */}
+              {/* <Link href={redirectionUrl}>
                 {pageSource && pageSource.includes(config.PAGE_NAME.BLOG) ? (
                   <>
                     <h1>
@@ -242,7 +252,7 @@ const SuccessPage = () => {
                 ) : (
                   <button className="b-common-btn">Go to Home</button>
                 )}
-              </Link>
+              </Link> */}
             </div>
           </div>
           {/* <div className="col-lg-6 b-error-image-container">

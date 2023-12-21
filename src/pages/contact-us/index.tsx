@@ -106,8 +106,10 @@ export default function ContanctUs() {
       const filterCommunicationMode = data.communicationMode.filter(
         (service) => service && service
       );
+      const source = "bombaybees.com";
       const contactData: ContactUsType = {
         ...data,
+        source: source,
         desiredService: filterDesiredServices,
         communicationMode: filterCommunicationMode,
       };
@@ -119,8 +121,10 @@ export default function ContanctUs() {
             action: "submit",
           })
           .then(async function (token: any) {
+            // contactData.source = "bombaybees.com";
             const response = await postContactFormDetails(contactData);
             if (response.success) {
+              console.log(contactData);
               setShowSuccessIcon(true);
               typeof localStorage !== "undefined" &&
                 localStorage.setItem(
