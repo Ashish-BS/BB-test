@@ -15,14 +15,24 @@ const Card: React.FC<CardPropType> = ({ followers, icon, reach, title }) => {
             <label htmlFor="reach">Reach</label>
             <span>
               {reach}
-              <Image src={GreenArrow} alt="Green arrow" />
+              <Image
+                src={GreenArrow}
+                alt="Green arrow"
+                width={50}
+                height={50}
+              />
             </span>
           </div>
           <div className="b-followers">
             <label htmlFor="reach">Followers</label>
             <span>
               {followers}
-              <Image src={GreenArrow} alt="Green arrow" />
+              <Image
+                src={GreenArrow}
+                alt="Green arrow"
+                width={50}
+                height={50}
+              />
             </span>
           </div>
         </div>

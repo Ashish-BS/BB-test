@@ -8,7 +8,7 @@ import { BlogCardPropType } from "@/types/component-types/blog-card";
 import removeMarkdown from "remove-markdown";
 
 const BlogCard: React.FC<BlogCardPropType> = ({ blog, isFeatured }) => {
-  console.log(blog);
+  // console.log(blog);
   return (
     <div className="b-blog-item" data-testid="b-blog-item">
       <div className="b-blog-image-container">

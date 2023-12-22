@@ -34,6 +34,7 @@ const BannerSection: React.FC = () => {
                             </div>
                         ))} */}
             <Image
+              priority
               src={BannerImage.src}
               width={1200}
               height={590}

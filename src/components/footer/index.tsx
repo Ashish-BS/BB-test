@@ -1,5 +1,11 @@
 import Link from "next/link";
 import React from "react";
+import instagramIcon from "../../../public/images/instagramBB.svg";
+import facebookIcon from "../../../public/images/facebookBB.svg";
+import youtubeIcon from "../../../public/images/youtubeBB.svg";
+import twitterIcon from "../../../public/images/twitterBB.svg";
+
+import Image from "next/image";
 
 const Footer: React.FC = () => {
   return (
@@ -21,7 +27,7 @@ const Footer: React.FC = () => {
 
           <div className="footer-social icons col-lg-2 col-md-4 ">
             <div className="followUs">
-              <p>Follow us</p>
+              <h4 className="bb-followUS-tag">Follow us</h4>
             </div>
             <div className="middle">
               <Link
@@ -29,28 +35,38 @@ const Footer: React.FC = () => {
                 target="_blank"
                 className="btn-social"
               >
-                <img src="images/facebookBB.svg" alt="facebook svg" />
+                <Image
+                  src={facebookIcon}
+                  alt="facebook"
+                  width={23}
+                  height={20}
+                />
               </Link>
               <Link
                 href="https://www.instagram.com/bombaybees"
                 target="_blank"
                 className="btn-social"
               >
-                <img src="images/instagramBB.svg" alt="instagram SVG" />
+                <Image
+                  src={instagramIcon}
+                  alt="instagram"
+                  width={26}
+                  height={24}
+                />
               </Link>
               <Link
                 href="https://twitter.com/bombay_bees"
                 target="_blank"
                 className="btn-social"
               >
-                <img src="images/twitterBB.svg" alt="twitter SVG" />
+                <Image src={twitterIcon} alt="twitter" width={24} height={19} />
               </Link>
               <Link
                 href="https://www.youtube.com/channel/UCeFJdgdX7bSG64Fc_xEQVJQ?sub_confirmation=1"
                 target="_blank"
                 className="btn-social"
               >
-                <img src="images/youtubeBB.svg" alt="Youtube SVG" />
+                <Image src={youtubeIcon} alt="youtube" width={22} height={19} />
               </Link>
             </div>
           </div>

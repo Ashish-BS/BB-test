@@ -37,7 +37,7 @@ import { CategoryReturnType } from "@/types/services/category";
 const Blogs: NextPage<
   InferGetServerSidePropsType<typeof getServerSideProps>
 > = (props) => {
-  console.log(props.blogs);
+  // console.log(props.blogs);
   // console.log(" config.PAGE_NAME.BLOG", props.searchBlog);
   let categoryIndex = -1;
   props.category &&
@@ -437,7 +437,7 @@ const Blogs: NextPage<
                     props.blogs &&
                     props.blogs.length &&
                     props.blogs.map((blog, index) => {
-                      console.log(blog); // Add your console.log statement here
+                      // console.log(blog); // Add your console.log statement here
                       return (
                         <div
                           className="col-lg-6"

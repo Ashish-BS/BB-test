@@ -1,6 +1,7 @@
-import { EnquiryEnum } from '../../../enums/enquiry.enum';
+import { EnquiryEnum } from "../../../enums/enquiry.enum";
 
 export interface NewsletterType {
-	email: string;
-	formType: EnquiryEnum;
+  email: string;
+  formType: EnquiryEnum;
+  source?: string;
 }
