@@ -129,6 +129,66 @@ const DesiredServices: React.FC<IDesiredServiceProps> = ({
               Others (please specify)
             </label>
           </div>
+          <input
+            className="b-desired-service-checkbox hidden"
+            type="checkbox"
+            value="Social Media Marketing"
+            {...salesForm("desiredService.5")}
+            id="social-media-marketing"
+            onChange={(e) => {
+              {
+                if (e.target.checked) {
+                  setSalesFormValue(
+                    "desiredService.5",
+                    "Social Media Marketing"
+                  );
+                } else {
+                  setSalesFormValue("desiredService.5", false);
+                }
+              }
+              clearSalesFormError("desiredService");
+            }}
+          />
+          <input
+            className="b-desired-service-checkbox hidden"
+            type="checkbox"
+            value="Social Media Marketing"
+            {...salesForm("desiredService.6")}
+            id="social-media-marketing"
+            onChange={(e) => {
+              {
+                if (e.target.checked) {
+                  setSalesFormValue(
+                    "desiredService.6",
+                    "Social Media Marketing"
+                  );
+                } else {
+                  setSalesFormValue("desiredService.6", false);
+                }
+              }
+              clearSalesFormError("desiredService");
+            }}
+          />
+          <input
+            className="b-desired-service-checkbox hidden"
+            type="checkbox"
+            value="Social Media Marketing"
+            {...salesForm("desiredService.7")}
+            id="social-media-marketing"
+            onChange={(e) => {
+              {
+                if (e.target.checked) {
+                  setSalesFormValue(
+                    "desiredService.7",
+                    "Social Media Marketing"
+                  );
+                } else {
+                  setSalesFormValue("desiredService.7", false);
+                }
+              }
+              clearSalesFormError("desiredService");
+            }}
+          />
         </div>
 
         <div className={`row ${other ? "d-block" : "d-none"}`}>

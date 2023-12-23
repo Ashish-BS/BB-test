@@ -5061,8 +5061,11 @@ a {
 						}
 					}
 
+
+
 					.b-desired-service {
 						margin-top: 1.87rem;
+
 
 						.b-desired-service-heading {
 							font-weight: 600;
@@ -5077,6 +5080,10 @@ a {
 							@include media-breakpoint-down(md) {
 								margin-top: 6px;
 							}
+						}
+
+						.hidden {
+							display: none;
 						}
 
 						input[type='checkbox'] {
