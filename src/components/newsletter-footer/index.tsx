@@ -6,6 +6,8 @@ import { convertToBase64, encrypt } from "@/utils/common/encrypt-decrypt";
 import config from "../../constants";
 import { useRouter } from "next/router";
 import { toast } from "react-hot-toast";
+import Loader from "../../components/loader/LoadingIcon";
+import SuccessIcon from "@/components/common/Success";
 import {
   getStoredUserJsonData,
   isSet,
@@ -24,26 +26,12 @@ import twitterIcon from "../../../public/images/twitterBB.svg";
 import Image from "next/image";
 
 const SlugPageFooter: React.FC = () => {
+  const defaultUserData = getStoredUserJsonData(
+    config.LOCAL_STORAGE_VARIABLES.USER_DATA_NEWSLETTER
+  );
   const router = useRouter();
-
-  const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [showCheckIcon, setShowCheckIcon] = useState(false);
-
-  const defaultUserData = getStoredUserJsonData(
-    config.LOCAL_STORAGE_VARIABLES.USER_DATA
-  );
-
-  const handleInputChange = (e: any) => {
-    setEmail(e.target.value);
-  };
-
-  // const submitFormHandler = (e: any) => {
-  //   e.preventDefault();
-  //   console.log("Submitted email:", email);
-  //   setEmail("");
-  //   formSubmitHandler(formData);
-  // };
 
   const formSubmitHandler = async (data: NewsletterType) => {
     try {
@@ -64,7 +52,7 @@ const SlugPageFooter: React.FC = () => {
               typeof localStorage !== "undefined" &&
                 localStorage.setItem(
                   convertToBase64(
-                    config.LOCAL_STORAGE_VARIABLES.USER_DATA
+                    config.LOCAL_STORAGE_VARIABLES.USER_DATA_NEWSLETTER
                   ) as string,
                   encrypt(
                     JSON.stringify({ ...defaultUserData, ...data })
@@ -98,8 +86,8 @@ const SlugPageFooter: React.FC = () => {
   };
 
   const {
-    register,
-    formState: { errors },
+    register: newsLetterForm,
+    formState: { errors: newsLetterFormErrors },
     handleSubmit: handleFormSubmit,
   } = useForm<NewsletterType>({
     resolver: yupResolver(NewsletterValidationSchema),
@@ -125,18 +113,30 @@ const SlugPageFooter: React.FC = () => {
             <div className="bb-footer-input">
               <form onSubmit={handleFormSubmit(formSubmitHandler)}>
                 <input
-                  type="email"
-                  name="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={handleInputChange}
-                  className="bb-footerEmail"
+                  type="text"
+                  className={`bb-footerEmail ${
+                    newsLetterFormErrors.email ? "is-invalid" : ""
+                  }`}
+                  placeholder="johnsmith@example.com"
+                  {...newsLetterForm("email")}
                 />
+                {newsLetterFormErrors.email && (
+                  <span className="text-danger">
+                    {newsLetterFormErrors.email.message}
+                  </span>
+                )}
                 <button
                   data-bs-dismiss="offcanvas"
                   className="b-common-btn-no-arrow"
+                  disabled={loading || showCheckIcon}
                 >
-                  Subscribe Now
+                  {loading ? (
+                    <Loader loadingText="Submitting" />
+                  ) : showCheckIcon ? (
+                    <SuccessIcon text={"Submitted"} />
+                  ) : (
+                    " Subscribe Now"
+                  )}
                 </button>
               </form>
             </div>

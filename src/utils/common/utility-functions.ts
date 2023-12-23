@@ -22,13 +22,17 @@ export const isSet = (obj: any) => {
 };
 
 export const getStoredUserJsonData = (variableName: string) => {
-  return typeof localStorage !== "undefined"
-    ? JSON.parse(
-        decrypt(
-          localStorage.getItem(convertToBase64(variableName) as string)
-        ) as string
-      )
-    : "";
+  try {
+    return typeof localStorage !== "undefined"
+      ? JSON.parse(
+          decrypt(
+            localStorage.getItem(convertToBase64(variableName) as string)
+          ) as string
+        )
+      : "";
+  } catch (error) {
+    return null;
+  }
 };
 
 export function rgbToHex(red: number, green: number, blue: number) {

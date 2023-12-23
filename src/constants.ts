@@ -83,7 +83,8 @@ const config = {
     COUNTRY: "country",
     CHOSEN_PURPOSE: "chosen-purpose",
     DARK_MODE: "dark-mode",
-    USER_DATA: "user-data",
+    USER_DATA_CONTACT_US: "user-data-contact-us",
+    USER_DATA_NEWSLETTER: "user-data-contact-newsletter",
     INQUIRY: {
       INFORMATION: "information",
       HIRING_INQUIRY: "hiring-inquiry",

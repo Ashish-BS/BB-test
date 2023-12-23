@@ -47,10 +47,6 @@ const BlogDetails: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
   const [navigationList, setNavigationList] = useState<Element[]>([]);
   const router = useRouter();
 
-  const defaultUserData = getStoredUserJsonData(
-    config.LOCAL_STORAGE_VARIABLES.USER_DATA
-  );
-
   const { isDesktop } = getUserAgentInfo();
 
   const sectionHeaderClass = isSticky
@@ -282,14 +278,14 @@ const BlogDetails: NextPage<InferGetStaticPropsType<typeof getStaticProps>> = (
                         duration={50}
                         offset={scrollOffset}
                       >
-                        <Link
+                        <a
                           className={`nav-link d-inline-block text-black ${
                             item.localName === "h3" ? "ms-5" : ""
                           }`}
                           href={`${item.textContent}`}
                         >
                           {item.textContent}
-                        </Link>
+                        </a>
                       </ReactScrollLink>
                     ))}
                   </nav>

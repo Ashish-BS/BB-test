@@ -40,7 +40,7 @@ import WhatHappenNext from "../../fixtures/what-happens-next.json";
 export default function ContanctUs() {
   const [loading, setLoading] = useState(false);
   const defaultUserData = getStoredUserJsonData(
-    config.LOCAL_STORAGE_VARIABLES.USER_DATA
+    config.LOCAL_STORAGE_VARIABLES.USER_DATA_CONTACT_US
   );
   const [other, setOther] = useState(
     defaultUserData?.desiredService?.[7] ? true : false
@@ -129,7 +129,7 @@ export default function ContanctUs() {
               typeof localStorage !== "undefined" &&
                 localStorage.setItem(
                   convertToBase64(
-                    config.LOCAL_STORAGE_VARIABLES.USER_DATA
+                    config.LOCAL_STORAGE_VARIABLES.USER_DATA_CONTACT_US
                   ) as string,
                   encrypt(
                     JSON.stringify({ ...defaultUserData, ...data })

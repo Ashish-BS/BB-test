@@ -1,5 +1,5 @@
-import { IDesiredServiceProps } from "@/types/components/form-schema/contact-us.types";
 import React from "react";
+import { IDesiredServiceProps } from "@/types/components/form-schema/contact-us.types";
 
 const DesiredServices: React.FC<IDesiredServiceProps> = ({
   salesForm,
@@ -65,7 +65,6 @@ const DesiredServices: React.FC<IDesiredServiceProps> = ({
               SEO
             </label>
           </div>
-
           <div className="d-flex align-items-start b-desired-service-list">
             <input
               className="b-desired-service-checkbox"
@@ -91,7 +90,6 @@ const DesiredServices: React.FC<IDesiredServiceProps> = ({
               Search Engine Marketing
             </label>
           </div>
-
           <div className="d-flex align-items-start b-desired-service-list">
             <input
               className="b-desired-service-checkbox"
@@ -117,7 +115,6 @@ const DesiredServices: React.FC<IDesiredServiceProps> = ({
               Social Media Marketing
             </label>
           </div>
-
           <div className="d-flex align-items-start b-desired-service-list">
             <input
               className="b-desired-service-checkbox"
@@ -141,13 +138,13 @@ const DesiredServices: React.FC<IDesiredServiceProps> = ({
               type="text"
               placeholder="Enter other service name"
               defaultValue={
-                defaultUserData?.desiredService?.[7]
-                  ? defaultUserData.desiredService?.[7]
+                defaultUserData?.desiredService?.[4]
+                  ? defaultUserData.desiredService?.[4]
                   : ""
               }
-              {...salesForm("desiredService.7")}
+              {...salesForm("desiredService.4")}
               onChange={(e) => {
-                setSalesFormValue("desiredService.7", e.target.value);
+                setSalesFormValue("desiredService.4", e.target.value);
                 clearSalesFormError("desiredService");
               }}
             />
