@@ -16,6 +16,7 @@ const Card: React.FC<CardPropType> = ({ followers, icon, reach, title }) => {
             <span>
               {reach}
               <Image
+                className="greenArrow"
                 src={GreenArrow}
                 alt="Green arrow"
                 width={50}
@@ -28,6 +29,7 @@ const Card: React.FC<CardPropType> = ({ followers, icon, reach, title }) => {
             <span>
               {followers}
               <Image
+                className="greenArrow"
                 src={GreenArrow}
                 alt="Green arrow"
                 width={50}

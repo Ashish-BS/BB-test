@@ -18,8 +18,8 @@ const SocialProofSection: React.FC = () => {
           <div className="b-section-description">
             <p>Numbers don't lie!</p>
             <p>
-              Check out Bombaybees remarkable social stats and the impact we've
-              made!
+              Check out BombayBees remarkable social stats and the impact we've
+              made in the last quarter!
             </p>
           </div>
           <div className="b-section-chart">
